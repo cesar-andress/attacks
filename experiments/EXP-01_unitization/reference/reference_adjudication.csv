@@ -1,0 +1,27 @@
+case_id,reference_unit_count,reference_label,not_true_answer,segmentation_notes,plausible_alternative,experiment_id
+U01-01,1,REFERENCE_ADJUDICATION,true,single PE: appoint security lead,no,EXP-01
+U01-02,2,REFERENCE_ADJUDICATION,true,split lock vs move OR keep as one chained PE — reference keeps 2,yes,EXP-01
+U01-03,1,REFERENCE_ADJUDICATION,true,conditional protective action,no,EXP-01
+U01-04,1,REFERENCE_ADJUDICATION,true,exception within one PE,no,EXP-01
+U01-05,1,REFERENCE_ADJUDICATION,true,cross-ref still one PE,no,EXP-01
+U01-06,1,REFERENCE_ADJUDICATION,true,actor unspecified,no,EXP-01
+U01-07,1,REFERENCE_ADJUDICATION,true,passive prescription,no,EXP-01
+U01-08,1,REFERENCE_ADJUDICATION,true,planning PE,no,EXP-01
+U01-09,1,REFERENCE_ADJUDICATION,true,named support,no,EXP-01
+U01-10,1,REFERENCE_ADJUDICATION,true,assessment of executability,no,EXP-01
+U01-11,1,REFERENCE_ADJUDICATION,true,exercise requirement,no,EXP-01
+U01-12,1,REFERENCE_ADJUDICATION,true,evidence-based revision,no,EXP-01
+U01-13,1,REFERENCE_ADJUDICATION,true,setting/subgroup clause,no,EXP-01
+U01-14,1,REFERENCE_ADJUDICATION,true,options as one decision PE,no,EXP-01
+U01-15,1,REFERENCE_ADJUDICATION,true,generic inclusivity — support_present later may be 0,no,EXP-01
+U01-16,1,REFERENCE_ADJUDICATION,true,named individual plan,no,EXP-01
+U01-17,1,REFERENCE_ADJUDICATION,true,transmission demand,no,EXP-01
+U01-18,1,REFERENCE_ADJUDICATION,true,inhibitory acoustic+movement,no,EXP-01
+U01-19,1,REFERENCE_ADJUDICATION,true,responder interaction,no,EXP-01
+U01-20,1,REFERENCE_ADJUDICATION,true,multi-verb lifecycle; reference=1 unit with note that split is plausible,yes,EXP-01
+U01-21,1,REFERENCE_ADJUDICATION,true,Branch B surface; still a PE for unitization,no,EXP-01
+U01-22,0,REFERENCE_ADJUDICATION,true,no PE — rationale/statement only,no,EXP-01
+U01-23,1,REFERENCE_ADJUDICATION,true,exercise condition,no,EXP-01
+U01-24,2,REFERENCE_ADJUDICATION,true,plan PE + exercises PE,no,EXP-01
+U01-25,3,REFERENCE_ADJUDICATION,true,reference prefers 3 action units; 1 chained PE is plausible alternative,yes,EXP-01
+U01-26,2,REFERENCE_ADJUDICATION,true,generic consider + named support as separate units,no,EXP-01

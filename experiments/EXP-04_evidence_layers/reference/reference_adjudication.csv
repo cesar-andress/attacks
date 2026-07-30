@@ -1,0 +1,19 @@
+case_id,reference_layer,reference_label,not_true_answer,explanation,overclaim_flag,experiment_id
+L04-01,1,REFERENCE_ADJUDICATION,true,doctrine text,no,EXP-04
+L04-02,2,REFERENCE_ADJUDICATION,true,local adoption,no,EXP-04
+L04-03,3,REFERENCE_ADJUDICATION,true,capability/resources,no,EXP-04
+L04-04,4,REFERENCE_ADJUDICATION,true,exercised performance,no,EXP-04
+L04-05,5,REFERENCE_ADJUDICATION,true,real-world outcome,no,EXP-04
+L04-06,2,REFERENCE_ADJUDICATION,true,"adoption of document, not capability",no,EXP-04
+L04-07,3,REFERENCE_ADJUDICATION,true,actual availability,no,EXP-04
+L04-08,2,REFERENCE_ADJUDICATION,true,scheduled ≠ performed,no,EXP-04
+L04-09,4,REFERENCE_ADJUDICATION,true,observed drill performance,no,EXP-04
+L04-10,4,REFERENCE_ADJUDICATION,true,performance ≠ Layer 5 effectiveness — classify statement's evidenced layer as 4; overclaim flagged,yes,EXP-04
+L04-11,3,REFERENCE_ADJUDICATION,true,environmental capability/support,no,EXP-04
+L04-12,4,REFERENCE_ADJUDICATION,true,demonstrated comprehension issue,no,EXP-04
+L04-13,2,REFERENCE_ADJUDICATION,true,agreement adopted,no,EXP-04
+L04-14,4,REFERENCE_ADJUDICATION,true,exercised coordination,no,EXP-04
+L04-15,1,REFERENCE_ADJUDICATION,true,doctrine,no,EXP-04
+L04-16,3,REFERENCE_ADJUDICATION,true,capability gap report,no,EXP-04
+L04-17,5,REFERENCE_ADJUDICATION,true,outcome claim; weak causal warrant,yes,EXP-04
+L04-18,2,REFERENCE_ADJUDICATION,true,partial adoption,no,EXP-04

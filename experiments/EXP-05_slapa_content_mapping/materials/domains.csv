@@ -1,0 +1,9 @@
+domain_id,domain_label,experiment_id,validation_status
+A,Governance and doctrine adoption,EXP-05,planned_unvalidated
+B,Organisational sensing and threat detectability,EXP-05,planned_unvalidated
+C,Decision authority and interagency coordination,EXP-05,planned_unvalidated
+D,Protective-action executability,EXP-05,planned_unvalidated
+E,Inclusive access and functional supports,EXP-05,planned_unvalidated
+F,Security-by-design and environmental conditions,EXP-05,planned_unvalidated
+G,"Training, exercises, and organisational learning",EXP-05,planned_unvalidated
+H,Evidence use and revision,EXP-05,planned_unvalidated

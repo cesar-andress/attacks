@@ -1,0 +1,25 @@
+participant_id,expertise_profile_id,conflict_of_interest,domain_id,relevance_1_to_4,clarity_1_to_4,necessity_1_to_4,observability_1_to_4,applicability_across_settings_1_to_4,functional_diversity_sensitivity_1_to_4,misuse_risk_1_to_4,belongs_in_slapa_yes_no,primary_evidence_mode,qualitative_comment,experiment_id,dataset_role
+SYN-EXPERT-1,EPROF-01,none_declared,A,3,3,4,3,3,2,2,yes,document,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,B,3,3,4,2,3,2,4,yes,mixed,synthetic comment — Domain B must stay separate from D,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,C,3,3,4,3,3,2,2,yes,interview,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,D,4,3,4,3,3,4,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,E,4,3,4,3,3,4,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,F,3,3,3,3,3,2,2,yes,observation,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,G,4,3,4,3,3,2,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-1,EPROF-01,none_declared,H,3,3,4,3,3,2,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,A,3,3,4,3,3,2,2,yes,document,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,B,3,3,4,2,3,2,4,yes,mixed,synthetic comment — Domain B must stay separate from D,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,C,3,3,4,3,3,2,2,yes,interview,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,D,4,3,4,3,3,4,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,E,4,3,4,3,3,4,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,F,3,3,3,3,3,2,2,yes,observation,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,G,4,3,4,3,3,2,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-2,EPROF-02,none_declared,H,3,3,4,3,3,2,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,A,3,3,4,3,3,2,2,yes,document,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,B,3,3,4,2,3,2,4,yes,mixed,synthetic comment — Domain B must stay separate from D,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,C,3,3,4,3,3,2,2,yes,interview,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,D,4,3,4,3,3,4,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,E,4,3,4,3,3,4,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,F,3,3,3,3,3,2,2,yes,observation,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,G,4,3,4,3,3,2,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration
+SYN-EXPERT-3,EPROF-03,none_declared,H,3,3,4,3,3,2,2,yes,mixed,synthetic,EXP-05,synthetic_demonstration

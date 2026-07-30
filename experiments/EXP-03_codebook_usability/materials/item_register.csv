@@ -1,0 +1,17 @@
+item_id,response_type,item_text,construct,experiment_id,instrument_status,psychometric_claim
+US-01,likert_1_5,The codebook definitions were clear.,definition_clarity,EXP-03,designed_not_validated,none
+US-02,likert_1_5,The constructed examples were sufficient.,example_sufficiency,EXP-03,designed_not_validated,none
+US-03,likert_1_5,Decision rules were clear enough to apply.,decision_rule_clarity,EXP-03,designed_not_validated,none
+US-04,confidence_1_5,Overall confidence in my coding decisions.,confidence,EXP-03,designed_not_validated,none
+US-05,likert_1_5,Cognitive workload while coding was manageable.,cognitive_workload,EXP-03,designed_not_validated,none
+US-06,likert_1_5,Variables overlapped in confusing ways.,variable_overlap,EXP-03,designed_not_validated,none
+US-07,likert_1_5,It was difficult to locate evidence in the stimulus text.,evidence_location_difficulty,EXP-03,designed_not_validated,none
+US-08,likert_1_5,Separating explicit from entailed demands was difficult.,explicit_entailed_difficulty,EXP-03,designed_not_validated,none
+US-09,likert_1_5,The executability ladder was usable.,ladder_usability,EXP-03,designed_not_validated,none
+US-10,likert_1_5,The locus categories were usable.,locus_usability,EXP-03,designed_not_validated,none
+US-11,likert_1_5,The demand categories were usable.,demand_category_usability,EXP-03,designed_not_validated,none
+US-12,likert_1_5,I needed additional examples.,need_additional_examples,EXP-03,designed_not_validated,none
+US-13,likert_1_5,"Overall, the coding instrument was usable.",overall_usability,EXP-03,designed_not_validated,none
+US-14,minutes,Estimated minutes to code 10 PEs with this codebook.,coding_burden_estimate,EXP-03,designed_not_validated,none
+US-15,open_text,Which rule was most ambiguous?,open_ambiguity,EXP-03,designed_not_validated,none
+US-16,open_text,What one change would most improve usability?,open_improvement,EXP-03,designed_not_validated,none

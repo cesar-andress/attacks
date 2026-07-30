@@ -1,0 +1,4 @@
+expertise_profile_id,role_category,years_experience_band,setting_familiarity,btam_familiarity,afn_familiarity,notes
+EPROF-01,school_leadership,10-19,inclusive_mainstream,low,medium,synthetic
+EPROF-02,special_education,5-9,special_education,low,high,synthetic
+EPROF-03,emergency_police,10-19,multi,high,low,synthetic

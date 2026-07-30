@@ -1,0 +1,19 @@
+case_id,stimulus_text,source_status,experiment_id,NOT_EXECUTED
+L04-01,A national guidance document requires schools to maintain lockdown procedures.,synthetic_constructed,EXP-04,true
+L04-02,The school board approved a local lockdown policy last term.,synthetic_constructed,EXP-04,true
+L04-03,Two trained marshals and a working PA system are available during school hours.,synthetic_constructed,EXP-04,true
+L04-04,Observers timed a drill: all classes reached secure rooms in under four minutes.,synthetic_constructed,EXP-04,true
+L04-05,"After a real incident, after-action review found delayed lockdown initiation.",synthetic_constructed,EXP-04,true
+L04-06,The school has a written PEEP template on file.,synthetic_constructed,EXP-04,true
+L04-07,A named buddy is rostered and present for Student X during the school day.,synthetic_constructed,EXP-04,true
+L04-08,The calendar lists two lockdown drills for the year.,synthetic_constructed,EXP-04,true
+L04-09,Video of yesterday's drill shows students misunderstanding the PA message.,synthetic_constructed,EXP-04,true
+L04-10,"The drill went smoothly, so the school claims the plan would work in a real attack.",synthetic_constructed,EXP-04,true
+L04-11,Accessible exit signage is installed throughout the building.,synthetic_constructed,EXP-04,true
+L04-12,A comprehension check during drill showed three students could not interpret the signs under noise.,synthetic_constructed,EXP-04,true
+L04-13,A memorandum of understanding with local police is signed.,synthetic_constructed,EXP-04,true
+L04-14,"During a tabletop, police liaison and school leads completed the escalation decision tree in 8 minutes.",synthetic_constructed,EXP-04,true
+L04-15,National doctrine says plans should be inclusive.,synthetic_constructed,EXP-04,true
+L04-16,Staff report that inclusive adaptations are rarely staffed on drill day.,synthetic_constructed,EXP-04,true
+L04-17,Incident statistics show fewer injuries after a new plan — attributed causally without design.,synthetic_constructed,EXP-04,true
+L04-18,The centre downloaded the national template but never completed local fields.,synthetic_constructed,EXP-04,true

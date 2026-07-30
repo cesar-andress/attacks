@@ -1,0 +1,33 @@
+participant_id,item_id,response_value,experiment_id,pass_type,dataset_role
+SYN-RATER-1,US-01,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-02,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-03,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-04,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-05,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-06,2,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-07,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-08,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-09,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-10,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-11,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-12,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-13,4,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-14,45,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-15,Ladder rung 4 vs familiarisation drills,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-1,US-16,Add more rung examples,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-01,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-02,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-03,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-04,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-05,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-06,2,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-07,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-08,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-09,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-10,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-11,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-12,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-13,3,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-14,45,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-15,Ladder rung 4 vs familiarisation drills,EXP-03,independent_human,synthetic_demonstration
+SYN-RATER-2,US-16,Add more rung examples,EXP-03,independent_human,synthetic_demonstration

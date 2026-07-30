@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cesar-andress/attacks/schemas/experiments/experiment_register.schema.json",
+  "title": "Experiment register row",
+  "type": "object",
+  "required": ["experiment_id", "title", "current_status", "claims_prohibited"],
+  "properties": {
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^EXP-0[1-6]$"
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "designed_not_executed",
+        "internally_tested_synthetic",
+        "piloted",
+        "independently_replicated",
+        "content_validated",
+        "field_validated"
+      ]
+    }
+  }
+}

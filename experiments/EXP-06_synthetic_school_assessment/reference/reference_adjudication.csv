@@ -1,0 +1,25 @@
+case_id,domain_id,reference_can_assess,reference_layer_emphasis,reference_label,not_true_answer,notes,experiment_id
+CASE-A,A,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,B,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,C,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,D,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,E,partial,3,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,F,partial,3,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,G,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-A,H,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,A,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,B,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,C,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,D,yes,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,E,yes,3,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,F,partial,3,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,G,yes,4,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-B,H,yes,4,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,A,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,B,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,C,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,D,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,E,partial,3,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,F,partial,3,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,G,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06
+CASE-C,H,partial,2,REFERENCE_ADJUDICATION,true,Provisional synthetic reference; domain profiles only; no total score.,EXP-06

@@ -1,0 +1,9 @@
+participant_id,expertise_profile_id,conflict_of_interest,domain_id,relevance_1_to_4,clarity_1_to_4,necessity_1_to_4,observability_1_to_4,applicability_across_settings_1_to_4,functional_diversity_sensitivity_1_to_4,misuse_risk_1_to_4,belongs_in_slapa_yes_no,primary_evidence_mode,qualitative_comment,experiment_id
+,,,A,,,,,,,,,,,EXP-05
+,,,B,,,,,,,,,,,EXP-05
+,,,C,,,,,,,,,,,EXP-05
+,,,D,,,,,,,,,,,EXP-05
+,,,E,,,,,,,,,,,EXP-05
+,,,F,,,,,,,,,,,EXP-05
+,,,G,,,,,,,,,,,EXP-05
+,,,H,,,,,,,,,,,EXP-05

@@ -1,0 +1,27 @@
+participant_id,case_id,units_identified,unit_boundaries_notes,confidence_1_to_5,pass_type,experiment_id,dataset_role
+SYN-CODER-A,U01-01,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-02,2,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-03,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-04,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-05,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-06,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-07,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-08,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-09,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-10,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-11,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-12,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-13,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-14,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-15,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-16,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-17,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-18,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-19,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-20,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-21,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-22,0,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-23,1,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-24,2,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-25,3,synthetic match,4,independent_human,EXP-01,synthetic_demonstration
+SYN-CODER-A,U01-26,2,synthetic match,4,independent_human,EXP-01,synthetic_demonstration

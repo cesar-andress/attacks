@@ -1,0 +1,33 @@
+case_id,stimulus_text,case_focus,disagreement_interest,source_status,experiment_id,NOT_EXECUTED
+C02-01,Appoint a security lead.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-02,Plans should be inclusive and accessible for learners with SEND.,codebook_ambiguity,codebook_ambiguity,synthetic_constructed,EXP-02,true
+C02-03,Provide strobe alarms for occupants who cannot hear audible alerts.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-04,"On hearing the alarm, evacuate via the nearest exit.",rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-05,"If escape is possible, run; otherwise hide.",rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-06,Remain silent until released.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-07,Follow RUN HIDE TELL.,plausible_alternative,plausible_alternative,synthetic_constructed,EXP-02,true
+C02-08,Personal emergency evacuation plans should be in place for those who need them.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-09,Verify by drill that occupants with mobility limitations can reach the secure area within the target time.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-10,Conduct familiarisation drills so staff know the lockdown announcement.,codebook_ambiguity,codebook_ambiguity,synthetic_constructed,EXP-02,true
+C02-11,Revise the procedure using findings from the annual drill review.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-12,Exercise findings may inform plan updates.,benchmark_dependent,benchmark_dependent,synthetic_constructed,EXP-02,true
+C02-13,Use the physical security assessment tool to review campus layers.,coder_mistake_trap,coder_mistake_trap,synthetic_constructed,EXP-02,true
+C02-14,Teaching establishments especially destined for persons who cannot self-evacuate are in scope regardless of size.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-15,Staff shall participate in the plan according to their capacities.,codebook_ambiguity,codebook_ambiguity,synthetic_constructed,EXP-02,true
+C02-16,Call emergency services and report your location if safe.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-17,Keep hands visible and empty; do not run toward officers.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-18,Try to stay calm.,ambiguous_memo_case,ambiguous_memo_case,synthetic_constructed,EXP-02,true
+C02-19,Staff should report concerning behaviour to the threat-assessment team.,out_of_scope_branch_b,out_of_scope_branch_b,synthetic_constructed,EXP-02,true
+C02-20,Consider individual needs during drills.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-21,Assign buddies/marshals to assist learners who need support during evacuation.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-22,A PA lockdown message should prompt students to close and lock doors and move to safe areas.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-23,"After a drill revealed an inaccessible egress route, the college amended its plan with reasonable adjustments.",plausible_alternative,plausible_alternative,synthetic_constructed,EXP-02,true
+C02-24,School violence is a serious concern.,rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-25,"Remain secured until released by law enforcement, which may be prolonged.",rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-26,Attention should be paid to pupils with disabilities and those with personalised reception plans during exercises.,benchmark_dependent,benchmark_dependent,synthetic_constructed,EXP-02,true
+C02-27,"Identify alarm signals, routes, and secure locations as common procedures.",rule_application,rule_application,synthetic_constructed,EXP-02,true
+C02-28,Distinguish threat behaviour from disability-related behaviour known for the student.,out_of_scope_branch_b,out_of_scope_branch_b,synthetic_constructed,EXP-02,true
+C02-29,The planning team should include a special-education professional when assessing threat referrals.,out_of_scope_branch_b,out_of_scope_branch_b,synthetic_constructed,EXP-02,true
+C02-30,"Settings should test their protective plans using practice drills, taking individual trauma into account.",benchmark_dependent,benchmark_dependent,synthetic_constructed,EXP-02,true
+C02-31,Keep noise down during the drill.,ambiguous_memo_case,ambiguous_memo_case,synthetic_constructed,EXP-02,true
+C02-32,Barricade the door with heavy furniture.,rule_application,rule_application,synthetic_constructed,EXP-02,true

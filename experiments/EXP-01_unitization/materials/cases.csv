@@ -1,0 +1,27 @@
+case_id,case_type,stimulus_text,language,source_status,copyright_status,difficulty,experiment_id,NOT_EXECUTED
+U01-01,simple_one_action,Schools must appoint a security lead.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-02,multi_action_sentence,Staff must lock classroom doors and move students to the safe corner.,en,synthetic_constructed,original_for_calibration,high,EXP-01,true
+U01-03,conditional,"If a lockdown is announced, occupants shall remain in place until released.",en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-04,exception,"Evacuate using the nearest exit, except when the exit is blocked by smoke.",en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-05,cross_reference,Follow the response options in Annex B when an intruder is reported.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-06,actor_ambiguity,Appropriate personnel should secure the perimeter.,en,synthetic_constructed,original_for_calibration,medium,EXP-01,true
+U01-07,passive_voice,Doors are to be locked from the inside during a lockdown.,en,synthetic_constructed,original_for_calibration,medium,EXP-01,true
+U01-08,planning_requirement,Each centre shall maintain a written emergency response plan.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-09,support_provision,Provide a visual alert equivalent for occupants who cannot hear the siren.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-10,assessment_provision,Verify whether all occupants can reach the secure room within three minutes.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-11,exercise_provision,Conduct at least two lockdown drills each school year.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-12,revision_provision,Revise the lockdown procedure using findings from the annual drill review.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-13,setting_specific,Special education classrooms must have an assigned buddy for each evacuation route.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-14,multi_option,"Settings should consider lockdown, invacuation, or evacuation as response options.",en,synthetic_constructed,original_for_calibration,high,EXP-01,true
+U01-15,generic_inclusive,Plans should be inclusive and accessible for learners with special educational needs.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-16,named_plan_support,Personal emergency evacuation plans must be in place for identified individuals.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-17,communication_demand,"If safe, call emergency services and report your location.",en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-18,inhibitory,Remain silent and still until an all-clear is given.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-19,responder_interaction,Keep hands visible and empty when officers enter the room.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-20,bundle_lifecycle,"The titular shall elaborate, implement, maintain, and review the self-protection plan.",en,synthetic_constructed,original_for_calibration,high,EXP-01,true
+U01-21,threat_assessment_oos,Staff should report concerning behaviour to the threat-assessment team.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-22,non_prescription,School violence is a serious societal concern requiring attention.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-23,drill_with_constraint,Exercises must proceed without surprise effects and without replica weapons.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
+U01-24,multi_site,"If the school spans distant sites, each site shall prepare its own plan and two annual exercises.",en,synthetic_constructed,original_for_calibration,high,EXP-01,true
+U01-25,ambiguous_unit_boundary,"On hearing the alarm, close and lock doors, then move to the safe area and await instructions.",en,synthetic_constructed,original_for_calibration,high,EXP-01,true
+U01-26,support_unlinked,Consider individual needs. Provide strobe alarms in hallways.,en,synthetic_constructed,original_for_calibration,low,EXP-01,true
