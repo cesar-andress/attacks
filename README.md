@@ -21,6 +21,8 @@ These are **two separate analytical branches**. The repository deliberately does
 
 **Broader research programme:** Paper 1 (this documentary audit) is the empirical foundation of a four-paper programme on inclusive organisational preparedness (SLAPA architecture planned/unvalidated). Programme docs: [`docs/research_program/`](docs/research_program/). Operational Priority 1 remains completing RP-P1.
 
+**Experimental Development Pack:** Synthetic methodological experiments EXP-01–EXP-06 under [`experiments/`](experiments/) — designed for future coder/expert studies; **not** a validated SLAPA survey; human experiments **not** executed. Run `make release-check`.
+
 ## What this study is (and is not)
 
 | This study **is** | This study **is not** |
@@ -104,15 +106,17 @@ Before main coding:
 ```text
 attacks/
 ├── README.md
+├── Makefile              # validate / test / experiment-demo / release-check
 ├── LICENSE
 ├── CITATION.cff
 ├── pyproject.toml
-├── docs/                 # protocol, codebook, research_program, data dictionary
-├── schemas/              # JSON Schemas for L0/L1/L2/coding
+├── docs/                 # protocol, codebook, research_program, release
+├── experiments/          # Experimental Development Pack (EXP-01…06)
+├── schemas/              # JSON Schemas for L0/L1/L2/coding/experiments
 ├── data/                 # CSV templates (empty / constructed only)
 ├── src/school_security_audit/   # validation library (importable)
 ├── scripts/              # CLI wrappers
-└── tests/                # constructed fixtures only
+└── tests/                # constructed fixtures + experiment tests
 ```
 
 ## Quick start
@@ -123,21 +127,14 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
 
-# Validate empty/template corpus metadata
-python3 scripts/validate_metadata.py
-
-# Validate coding templates / fixtures
-python3 scripts/validate_coding.py
-
-# Run tests
-python3 -m pytest -q
+# Full public validation contract (includes synthetic experiment demo)
+make release-check
 ```
 
 Without installing the package:
 
 ```bash
-PYTHONPATH=src python3 scripts/validate_metadata.py
-PYTHONPATH=src python3 -m pytest -q
+PYTHONPATH=src make release-check
 ```
 
 ## Citation

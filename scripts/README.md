@@ -15,6 +15,10 @@ ssa-validate-metadata
 ssa-validate-coding
 ssa-validate-pilot-phase
 ssa-validate-research-program
+ssa-validate-experiments
+
+# Or Makefile
+make release-check
 ```
 
 Phase A record regeneration (dev only; does not authorize Phase B):

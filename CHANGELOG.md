@@ -5,6 +5,22 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [0.4.0] — 2026-07-31
+
+### Added
+
+- Experimental Development Pack (`experiments/EXP-01`…`EXP-06`) with synthetic
+  stimuli, reference adjudications, response templates, analysis plans, ethics
+  checklist, and data-management plan.
+- Experiment validators, synthetic analysis/report generator, and tests.
+- Makefile targets: `validate`, `test`, `experiment-demo`, `release-check`.
+- Release notes and validation contract for the first annotated tag.
+
+### Notes
+
+- Pack is **internally_tested_synthetic** only; not a validated SLAPA survey;
+  human experiments not executed; complete pilot still blocked on CF-02.
+
 ## [0.3.3] — 2026-07-31
 
 ### Added
