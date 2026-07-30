@@ -1,0 +1,2 @@
+coder_id,coding_round,codebook_version,pe_id,executability_rung,executability_locus,demand_inhibitory_acoustic,demand_inhibitory_acoustic_source,demand_inhibitory_acoustic_trigger
+coder_a,pilot,0.1.0,pe_demo_001,1,not_specified,1,ambiguous_memo,CONSTRUCTED uncertain silence cue

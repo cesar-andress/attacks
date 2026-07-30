@@ -1,0 +1,468 @@
+# Draft codebook v0.1 — machine-readable
+# All positive_example / negative_or_ambiguous_example values are CONSTRUCTED
+# ILLUSTRATIONS for coder calibration. They are NOT quotations from real frameworks.
+codebook_version: "0.1.0"
+status: draft
+examples_disclaimer: >-
+  Every example in this codebook is a constructed illustration for coder
+  calibration. None is a quotation from a real framework document.
+families:
+  A: Framework metadata and scope
+  B: Security measures prescribed
+  C: Procedural demands
+  D: Contextual supports and accommodations
+  E: Protective-action executability
+  F: Threat detectability
+  G: Population and setting differentiation
+  H: Evidence, testing, and validation
+  I: Security–accessibility conflicts and trade-offs
+demand_source_values:
+  - explicit
+  - entailed
+  - ambiguous_memo
+executability_rungs:
+  0: not_addressed
+  1: prescription_only
+  2: support_or_accommodation_specified
+  3: executability_explicitly_assessed
+  4: executability_tested_under_realistic_conditions
+  5: test_findings_used_to_revise_or_adapt_measure
+executability_locus_values:
+  - individual
+  - subgroup
+  - setting
+  - multiple
+  - not_specified
+forbidden_composite_fields:
+  - inclusive_security_score
+  - combined_executability_detectability_score
+  - inclusive_security_index
+codes:
+  # --- Family A ---
+  - code: A1
+    family: A
+    label: authority_type
+    level: L0
+    definition: Category of the issuing body for the framework.
+    inclusion_rule: Code the issuer of the doctrine itself.
+    exclusion_rule: Do not code secondary commentators or press coverage about the framework.
+    value_type: categorical
+    allowed_values: [government, professional_association, peer_reviewed, other]
+    positive_example: "CONSTRUCTED: 'Issued by a national infrastructure-security agency' → government."
+    negative_or_ambiguous_example: "CONSTRUCTED: A university press release about a framework is not the framework."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: A2
+    family: A
+    label: primary_domain
+    level: L0
+    definition: Principal in-scope domain of the framework.
+    inclusion_rule: Choose one primary domain from the allowed list.
+    exclusion_rule: Out-of-scope domains (e.g., cyber-only without school-security content).
+    value_type: categorical
+    allowed_values: [physical_security, btam, eop, active_assailant_response, cpted, accessibility_afn, other]
+    positive_example: "CONSTRUCTED: A layered physical-security guide → physical_security."
+    negative_or_ambiguous_example: "CONSTRUCTED: Mixed BTAM+EOP document → set primary and record secondary domains; memo the mix."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: A3
+    family: A
+    label: intended_setting_scope
+    level: L0
+    definition: Settings the document states it applies to.
+    inclusion_rule: Explicit scope statements only.
+    exclusion_rule: Do not infer 'mainstream-only' from silence; code unspecified.
+    value_type: string
+    allowed_values: null
+    positive_example: "CONSTRUCTED: 'Applies to all K-12 schools.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: Silence on scope → unspecified."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family B ---
+  - code: B1
+    family: B
+    label: measure_present
+    level: L2
+    definition: The PE prescribes a discrete security or protective control or action.
+    inclusion_rule: Actionable controls, required behaviours, or assessment items implying a control.
+    exclusion_rule: Rationale, definitions, or statistics without a prescription.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Install interior door locks operable from inside.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'School violence is a serious concern' → not a measure."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: B2
+    family: B
+    label: measure_type
+    level: L2
+    definition: Class of the prescribed measure.
+    inclusion_rule: Assign a primary type from the allowed list.
+    exclusion_rule: n/a when measure_present=0.
+    value_type: categorical
+    allowed_values: [physical_target_hardening, procedural_response, behavioural_threat_assessment, environmental_cpted, communication_alerting, training_drill, other]
+    positive_example: "CONSTRUCTED: 'Conduct lockdown drills' → training_drill."
+    negative_or_ambiguous_example: "CONSTRUCTED: Spanning two types → assign primary and memo."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: B3
+    family: B
+    label: prescriptive_force
+    level: L2
+    definition: Strength of the prescription.
+    inclusion_rule: Code from modal verbs / obligation language.
+    exclusion_rule: n/a when measure_present=0.
+    value_type: ordinal
+    allowed_values: [required, recommended, optional, unspecified]
+    positive_example: "CONSTRUCTED: 'Schools must…' → required."
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Schools might consider…' → optional."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family C (draft demand taxonomy; not final validated constructs) ---
+  - code: C1
+    family: C
+    label: demand_alert_perception
+    level: L2
+    definition: The measure requires the occupant to perceive an alert or threat cue (auditory/visual/other).
+    inclusion_rule: Code only when the prescribed action logically requires detecting a signal; store demand_source separately.
+    exclusion_rule: Advance briefings with no in-event perception demand.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'On hearing the alarm, evacuate' → demand present; source=explicit or entailed."
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Staff will be briefed in advance' → no in-event perception demand."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C2
+    family: C
+    label: demand_instruction_comprehension
+    level: L2
+    definition: Requires understanding an instruction to act correctly.
+    inclusion_rule: Multi-step or conditional instructions that require decoding.
+    exclusion_rule: Fully assisted actions with no occupant comprehension requirement.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Move to the nearest room without exterior windows and barricade the door.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Staff will guide students' → comprehension may shift to staff; memo."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C3
+    family: C
+    label: demand_decision_making
+    level: L2
+    definition: Requires autonomous contextual choice among protective options under incomplete instruction.
+    inclusion_rule: Dynamic choice language (e.g., choose run vs hide when cut off).
+    exclusion_rule: Single fixed instruction with no branching choice.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'If escape is possible, run; otherwise hide' → decision-making demand."
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Follow the teacher's direction' → no autonomous decision demand for students."
+    confirmatory_or_exploratory: exploratory
+    version_introduced: "0.1.0"
+
+  - code: C4
+    family: C
+    label: demand_emergency_communication
+    level: L2
+    definition: Requires encoding/transmitting information about threat, status, or needs under duress.
+    inclusion_rule: Explicit reporting, calling, or silent signalling requirements.
+    exclusion_rule: Generic 'stay informed' without transmission demand.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Call emergency services and report your location if safe.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Await further announcements' → reception, not transmission."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C5
+    family: C
+    label: demand_inhibitory_acoustic
+    level: L2
+    definition: Requires withholding vocalisation — sustained silence as a protective requirement.
+    inclusion_rule: Explicit silence / no-noise requirements that are threat-critical.
+    exclusion_rule: Momentary quiet or vague 'keep noise down' without sustained threat-critical silence.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Remain silent until an all-clear is given.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Keep noise down' (not clearly sustained/threat-critical) → ambiguous_memo only."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C6
+    family: C
+    label: demand_inhibitory_movement
+    level: L2
+    definition: Requires withholding movement — sustained immobility or staying out of sight.
+    inclusion_rule: Explicit stillness / do-not-move / stay-hidden requirements.
+    exclusion_rule: Brief pause without sustained immobility.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Stay still and out of sight until released.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Move quietly to the corner' → physical execution, not inhibitory movement alone."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C7
+    family: C
+    label: demand_behavioural_sensory_regulation
+    level: L2
+    definition: Requires managing autonomic arousal or sensory load so the protective action can succeed.
+    inclusion_rule: Only where success of the prescribed action depends on regulation the text implies.
+    exclusion_rule: Generic 'stay calm' boilerplate with no action dependency.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Occupants must remain still and quiet in a darkened room for an extended period.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Try to stay calm' alone → memo; default not coded."
+    confirmatory_or_exploratory: exploratory
+    version_introduced: "0.1.0"
+
+  - code: C8
+    family: C
+    label: demand_physical_execution
+    level: L2
+    definition: Requires a physical/motor act (run, lock, move furniture, descend stairs).
+    inclusion_rule: Any prescribed motor action.
+    exclusion_rule: Purely cognitive or verbal actions.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Barricade the door with heavy furniture.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Shelter in place' without movement cue → memo; code only if movement/barricade implied by entailment table."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C9
+    family: C
+    label: demand_temporal_endurance
+    level: L2
+    definition: Requires sustaining a state or action over a prolonged period.
+    inclusion_rule: Explicit or logically necessary prolonged duration.
+    exclusion_rule: Brief actions without duration cue.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Remain secured until released by law enforcement, which may be prolonged.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: No duration cue → memo; default not coded."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: C10
+    family: C
+    label: demand_responder_interaction
+    level: L2
+    definition: Requires correct interaction with armed responders (hands visible, comply, avoid sudden movement).
+    inclusion_rule: Explicit responder-encounter instructions.
+    exclusion_rule: Vague 'cooperate with authorities' without specific interaction demands.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Keep hands visible and empty; do not run toward officers.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Follow police instructions' (unspecified) → weak; default not coded as specific demand."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family D ---
+  - code: D1
+    family: D
+    label: support_present
+    level: L2
+    definition: The PE pairs a measure with a named support or accommodation that lowers a demand.
+    inclusion_rule: Named supports (visual alarms, assistance ratios, refuge areas, devices, communication aids).
+    exclusion_rule: Generic 'provide support' or 'consider individual needs' without a named support.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Provide strobe alarms for occupants who cannot hear audible alerts.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Consider individual needs' → too generic; memo."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: D2
+    family: D
+    label: support_demand_link
+    level: L2
+    definition: The support is explicitly tied to a specific demand it offsets.
+    inclusion_rule: Explicit linkage in the same PE or immediately linked text.
+    exclusion_rule: Support mentioned elsewhere without linkage → unlinked.
+    value_type: categorical
+    allowed_values: ["0", "1", unlinked, not_applicable]
+    positive_example: "CONSTRUCTED: 'Because the alarm is auditory, provide a visual equivalent.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: Alarm and visual aid in separate sections → unlinked."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family E ---
+  - code: E1
+    family: E
+    label: executability_rung
+    level: L2
+    definition: Highest ordinal depth at which the framework engages executability for the measure.
+    inclusion_rule: Use the ladder 0–5; do not collapse with locus.
+    exclusion_rule: Do not treat naming an accommodation (rung 2) as assessing executability (rung 3).
+    value_type: ordinal
+    allowed_values: ["0", "1", "2", "3", "4", "5"]
+    positive_example: "CONSTRUCTED: 'Verify by drill that occupants with mobility limitations can reach the secure area within the target time' → 4."
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Lockdown procedures should be inclusive' → at most 1."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: E2
+    family: E
+    label: executability_locus
+    level: L2
+    definition: Level at which executability is addressed; orthogonal to rung.
+    inclusion_rule: Code independently of rung depth.
+    exclusion_rule: Do not infer setting-level from individual plans alone.
+    value_type: categorical
+    allowed_values: [individual, subgroup, setting, multiple, not_specified]
+    positive_example: "CONSTRUCTED: 'Each student with an individualised education plan should have an emergency plan' → individual."
+    negative_or_ambiguous_example: "CONSTRUCTED: Silence on level → not_specified."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family F ---
+  - code: F1
+    family: F
+    label: detection_mechanism_present
+    level: L2
+    definition: The PE prescribes a detection or prevention intake mechanism.
+    inclusion_rule: Observation, bystander reporting, tip lines, threat-assessment referral.
+    exclusion_rule: Generic climate statements without a detection pathway.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Staff should report concerning behaviour to the threat-assessment team.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Maintain a positive climate' → not a detection mechanism."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: F2
+    family: F
+    label: baseline_interpretation_addressed
+    level: L2
+    definition: Framework addresses interpreting behaviour against an individual's known baseline.
+    inclusion_rule: Explicit baseline / known-behaviour guidance.
+    exclusion_rule: Generic 'use professional judgement' or 'consider context'.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Distinguish threat behaviour from disability-related behaviour known for the student.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Use professional judgement' → default not coded."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: F3
+    family: F
+    label: specialist_participation
+    level: L2
+    definition: Whether disability/special-education expertise is required in detection/assessment.
+    inclusion_rule: Explicit role language.
+    exclusion_rule: Optional mentions coded as optional, not required.
+    value_type: ordinal
+    allowed_values: [absent, optional, required]
+    positive_example: "CONSTRUCTED: 'The team must include a special-education professional familiar with the student' → required."
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Teams may include relevant staff' → optional."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: F4
+    family: F
+    label: false_positive_safeguard
+    level: L2
+    definition: Explicit safeguards against misclassifying disability-related behaviour as threat.
+    inclusion_rule: Named procedural protections.
+    exclusion_rule: Generic fairness or 'avoid bias' statements.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Screen for disability-related explanations before escalation.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Avoid bias' → default not coded. Absence is coded 0; never infer endorsement of over-referral."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family G ---
+  - code: G1
+    family: G
+    label: setting_differentiation
+    level: L0
+    definition: Whether the framework differentiates guidance by setting type.
+    inclusion_rule: Mentions difference vs provides differentiated guidance.
+    exclusion_rule: n/a
+    value_type: ordinal
+    allowed_values: [none, mentions_difference, differentiated_guidance]
+    positive_example: "CONSTRUCTED: 'For special-education centres, the following modified procedures apply…' → differentiated_guidance."
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Schools vary in population' without modified procedures → mentions_difference."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: G2
+    family: G
+    label: population_capability_variance_acknowledged
+    level: L0
+    definition: Framework acknowledges that occupant capability to execute measures varies.
+    inclusion_rule: Explicit acknowledgement only.
+    exclusion_rule: Do not infer assumption of homogeneity from silence (see claims policy).
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Not all occupants can run, hide, or fight.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: Silence → 0 (not-stated), not an inferred assumption."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family H ---
+  - code: H1
+    family: H
+    label: evidence_basis
+    level: L0
+    definition: Stated empirical basis for the framework's recommendations.
+    inclusion_rule: Link citations or validation claims to efficacy of recommendations.
+    exclusion_rule: Unrelated citation lists without efficacy link.
+    value_type: ordinal
+    allowed_values: [none_or_expert_opinion, cites_research, reports_own_validation]
+    positive_example: "CONSTRUCTED: 'Validated in a multi-site study' → reports_own_validation."
+    negative_or_ambiguous_example: "CONSTRUCTED: Reference list with no efficacy link → none_or_expert_opinion."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: H2
+    family: H
+    label: executability_evidence
+    level: L0
+    definition: Whether evidence is offered that prescribed measures are executable by the intended population.
+    inclusion_rule: Drill data, feasibility studies tied to population execution.
+    exclusion_rule: Adoption or compliance statistics alone.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Field testing showed evacuation times for wheelchair users exceeded targets, prompting revision.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Widely adopted' → not executability evidence."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  # --- Family I ---
+  - code: I1
+    family: I
+    label: conflict_acknowledged
+    level: L2
+    definition: Framework acknowledges tension between a security measure and accessibility/inclusion/low-arousal needs.
+    inclusion_rule: Explicit trade-off statements.
+    exclusion_rule: Conflicting measures stated separately without acknowledgement.
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Controlled egress may impede evacuation for occupants needing assistance; plan accordingly.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: Two conflicting measures, no acknowledgement → 0 (optional analyst memo)."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"
+
+  - code: I2
+    family: I
+    label: conflict_resolution_offered
+    level: L2
+    definition: Framework offers concrete guidance to resolve or balance an acknowledged conflict.
+    inclusion_rule: Concrete reconciliation guidance.
+    exclusion_rule: "Vague 'balance the two' language without a concrete mechanism."
+    value_type: binary
+    allowed_values: ["0", "1"]
+    positive_example: "CONSTRUCTED: 'Use areas of refuge with two-way communication to reconcile lockdown with assisted evacuation.'"
+    negative_or_ambiguous_example: "CONSTRUCTED: 'Schools must weigh trade-offs' → default not coded."
+    confirmatory_or_exploratory: confirmatory
+    version_introduced: "0.1.0"

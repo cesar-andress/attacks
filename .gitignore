@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local copyrighted source documents (metadata + URLs only in public repo)
+data/sources/
+data/pdfs/
+*.pdf
+*.PDF
+*.docx
+*.DOCX
+
+# Private notes and adjacent private directories (never track)
+private/
+notes/
+*.local.md
+../paper/
+../../paper/
+
+# Generated / scratch analysis outputs (keep templates; ignore local runs)
+data/derived/**
+!data/derived/.gitkeep
+data/reliability/**/*
+!data/reliability/.gitkeep
+!data/reliability/README.md
+
+# Temporary and OSF/local sync clutter
+tmp/
+temp/
+.cache/
+*.tmp
+*.bak
+~$*

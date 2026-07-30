@@ -1,0 +1,2 @@
+coder_id,coding_round,codebook_version,pe_id,executability_rung,executability_locus,demand_alert_perception,demand_alert_perception_source,demand_alert_perception_trigger
+coder_a,pilot,0.1.0,pe_demo_001,9,not_specified,0,,

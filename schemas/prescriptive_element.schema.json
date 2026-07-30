@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cesar-andress/attacks/schemas/prescriptive_element.schema.json",
+  "title": "Prescriptive element (L2)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pe_id", "document_id", "measure_present"],
+  "properties": {
+    "pe_id": { "type": "string", "minLength": 1 },
+    "document_id": { "type": "string", "minLength": 1 },
+    "source_location": { "type": "string" },
+    "page_number": { "type": "string" },
+    "section_heading": { "type": "string" },
+    "verbatim_trigger_text": {
+      "type": "string",
+      "description": "Short excerpt only; copyright limits apply. May be empty in public templates."
+    },
+    "coder_segmentation_notes": { "type": "string" },
+    "measure_present": { "type": "string", "enum": ["0", "1"] },
+    "measure_type": {
+      "type": "string",
+      "enum": [
+        "physical_target_hardening",
+        "procedural_response",
+        "behavioural_threat_assessment",
+        "environmental_cpted",
+        "communication_alerting",
+        "training_drill",
+        "other",
+        ""
+      ]
+    },
+    "prescriptive_force": {
+      "type": "string",
+      "enum": ["required", "recommended", "optional", "unspecified", ""]
+    }
+  }
+}

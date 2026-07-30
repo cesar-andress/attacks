@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "School-security framework audit — reproducible content-analysis infrastructure"
+authors:
+  - family-names: Andrés
+    given-names: César
+type: software
+license: MIT
+repository-code: "https://github.com/cesar-andress/attacks"
+abstract: >-
+  Public research infrastructure for a structured documentary content analysis
+  of school-security and emergency-preparedness frameworks. Supports L0
+  framework / L1 document / L2 prescriptive-element coding with separate
+  protective-action executability and threat-detectability branches.
+  This repository is not an effectiveness study and does not redistribute
+  copyrighted framework PDFs by default.
+keywords:
+  - school security
+  - content analysis
+  - emergency preparedness
+  - accessibility
+  - special education
+  - open science
+version: 0.1.0
+date-released: "2026-07-30"

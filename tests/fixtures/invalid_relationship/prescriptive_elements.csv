@@ -1,0 +1,2 @@
+pe_id,document_id,source_location,page_number,section_heading,verbatim_trigger_text,coder_segmentation_notes,measure_present,measure_type,prescriptive_force
+pe_bad_001,doc_missing,section-1,1,Demo,CONSTRUCTED,constructed,1,procedural_response,required

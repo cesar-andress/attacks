@@ -1,0 +1,3 @@
+framework_id,framework_name,issuing_body,authority_type,primary_domain,secondary_domains,jurisdiction,geographic_group,intended_setting_scope,comparator_status,current_version,framework_notes,inclusion_status
+fw_demo_phys,Demo Physical Security Guide,Demo Agency,government,physical_security,,DemoLand,other,unspecified,main_corpus,1.0,CONSTRUCTED FIXTURE ONLY,included
+fw_demo_afn,Demo AFN Benchmark Guide,Demo Accessibility Body,professional_association,accessibility_afn,eop,DemoLand,other,unspecified,benchmark_comparator,1.0,CONSTRUCTED FIXTURE ONLY,included

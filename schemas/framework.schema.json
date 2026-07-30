@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cesar-andress/attacks/schemas/framework.schema.json",
+  "title": "Framework (L0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "framework_id",
+    "framework_name",
+    "issuing_body",
+    "authority_type",
+    "primary_domain",
+    "comparator_status",
+    "inclusion_status"
+  ],
+  "properties": {
+    "framework_id": { "type": "string", "minLength": 1 },
+    "framework_name": { "type": "string", "minLength": 1 },
+    "issuing_body": { "type": "string", "minLength": 1 },
+    "authority_type": {
+      "type": "string",
+      "enum": ["government", "professional_association", "peer_reviewed", "other"]
+    },
+    "primary_domain": {
+      "type": "string",
+      "enum": [
+        "physical_security",
+        "btam",
+        "eop",
+        "active_assailant_response",
+        "cpted",
+        "accessibility_afn",
+        "other"
+      ]
+    },
+    "secondary_domains": {
+      "type": "string",
+      "description": "Pipe-separated domain tags"
+    },
+    "jurisdiction": { "type": "string" },
+    "geographic_group": {
+      "type": "string",
+      "enum": ["US", "Europe", "other", "multi", "unspecified"]
+    },
+    "intended_setting_scope": { "type": "string" },
+    "comparator_status": {
+      "type": "string",
+      "enum": ["main_corpus", "benchmark_comparator", "excluded_candidate"]
+    },
+    "current_version": { "type": "string" },
+    "framework_notes": { "type": "string" },
+    "inclusion_status": {
+      "type": "string",
+      "enum": ["included", "excluded", "candidate", "deferred"]
+    }
+  }
+}

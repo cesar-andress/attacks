@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cesar-andress/attacks/schemas/coding_record.schema.json",
+  "title": "Coding record (PE-level)",
+  "type": "object",
+  "description": "Branch E and Branch F remain separate. Combined inclusive-security scores are forbidden.",
+  "required": [
+    "coder_id",
+    "coding_round",
+    "codebook_version",
+    "pe_id",
+    "executability_rung",
+    "executability_locus"
+  ],
+  "properties": {
+    "coder_id": { "type": "string", "minLength": 1 },
+    "coding_round": { "type": "string", "minLength": 1 },
+    "codebook_version": { "type": "string", "minLength": 1 },
+    "pe_id": { "type": "string", "minLength": 1 },
+    "measure_type": { "type": "string" },
+    "prescriptive_force": { "type": "string" },
+    "demand_alert_perception": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_alert_perception_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_alert_perception_trigger": { "type": "string" },
+    "demand_instruction_comprehension": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_instruction_comprehension_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_instruction_comprehension_trigger": { "type": "string" },
+    "demand_decision_making": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_decision_making_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_decision_making_trigger": { "type": "string" },
+    "demand_emergency_communication": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_emergency_communication_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_emergency_communication_trigger": { "type": "string" },
+    "demand_inhibitory_acoustic": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_inhibitory_acoustic_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_inhibitory_acoustic_trigger": { "type": "string" },
+    "demand_inhibitory_movement": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_inhibitory_movement_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_inhibitory_movement_trigger": { "type": "string" },
+    "demand_behavioural_sensory_regulation": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_behavioural_sensory_regulation_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_behavioural_sensory_regulation_trigger": { "type": "string" },
+    "demand_physical_execution": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_physical_execution_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_physical_execution_trigger": { "type": "string" },
+    "demand_temporal_endurance": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_temporal_endurance_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_temporal_endurance_trigger": { "type": "string" },
+    "demand_responder_interaction": { "type": "string", "enum": ["0", "1", ""] },
+    "demand_responder_interaction_source": {
+      "type": "string",
+      "enum": ["explicit", "entailed", "ambiguous_memo", ""]
+    },
+    "demand_responder_interaction_trigger": { "type": "string" },
+    "support_present": { "type": "string", "enum": ["0", "1", ""] },
+    "support_demand_link": {
+      "type": "string",
+      "enum": ["0", "1", "unlinked", "not_applicable", ""]
+    },
+    "executability_rung": {
+      "type": "string",
+      "enum": ["0", "1", "2", "3", "4", "5"]
+    },
+    "executability_locus": {
+      "type": "string",
+      "enum": ["individual", "subgroup", "setting", "multiple", "not_specified"]
+    },
+    "detection_mechanism_present": { "type": "string", "enum": ["0", "1", ""] },
+    "baseline_interpretation_addressed": { "type": "string", "enum": ["0", "1", ""] },
+    "specialist_participation": {
+      "type": "string",
+      "enum": ["absent", "optional", "required", ""]
+    },
+    "false_positive_safeguard": { "type": "string", "enum": ["0", "1", ""] },
+    "conflict_acknowledged": { "type": "string", "enum": ["0", "1", ""] },
+    "conflict_resolution_offered": { "type": "string", "enum": ["0", "1", ""] },
+    "qualitative_memo": { "type": "string" },
+    "adjudication_status": {
+      "type": "string",
+      "enum": ["none", "pending", "resolved", ""]
+    },
+    "adjudicated_value": { "type": "string" }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["inclusive_security_score"] },
+      { "required": ["combined_executability_detectability_score"] },
+      { "required": ["inclusive_security_index"] }
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+document_id,framework_id,title,version,publication_date,retrieval_date,source_url,language,document_type,redistribution_status,local_file_status,checksum_sha256,page_count,word_count,inclusion_status,exclusion_reason
+doc_orphan,fw_does_not_exist,Orphan Doc,1.0,2024-01-01,2026-07-30,https://example.invalid/orphan,en,guideline,unknown,none,,,,included,

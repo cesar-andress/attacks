@@ -1,0 +1,87 @@
+# Demand entailment table v0.1 (DRAFT)
+# All actions and rationales are CONSTRUCTED EXAMPLES for calibration.
+# They are NOT quotations from real frameworks.
+table_version: "0.1.0"
+status: draft
+necessity_threshold: >-
+  A demand is coded as entailed only if a competent adult would agree that the
+  prescribed action cannot be performed without it (logical necessity). Contingent
+  associations that might occur, but are not required, must not be coded as
+  entailed. When entitlement is ambiguous, default to not coding the demand and
+  optionally record an ambiguous_memo — which must not count as confirmatory
+  presence.
+usage_notes:
+  - Coders apply this table; they do not freely invent entailments during main coding.
+  - New action types encountered in coding are queued for adjudication and versioned
+    table updates; they are not improvised ad hoc.
+  - Every entailed demand in a coding record still requires pasted trigger evidence
+    from the PE.
+  - Examples below are constructed illustrations only.
+mappings:
+  - mapping_id: ent_001
+    canonical_action: evacuate after an alarm
+    entailed_demands:
+      - demand_alert_perception
+      - demand_instruction_comprehension
+      - demand_physical_execution
+    rationale: >-
+      CONSTRUCTED: Evacuating after an alarm necessarily requires perceiving the
+      alarm cue, understanding that evacuation is required, and performing locomotion.
+    non_entailed_or_contingent_demands:
+      - demand_inhibitory_acoustic
+      - demand_temporal_endurance
+      - demand_responder_interaction
+    version: "0.1.0"
+    status: draft
+
+  - mapping_id: ent_002
+    canonical_action: barricade a door
+    entailed_demands:
+      - demand_instruction_comprehension
+      - demand_physical_execution
+    rationale: >-
+      CONSTRUCTED: Barricading necessarily requires understanding the instruction
+      and performing a motor act involving objects or the door hardware.
+    non_entailed_or_contingent_demands:
+      - demand_temporal_endurance
+      - demand_inhibitory_acoustic
+      - demand_alert_perception
+    version: "0.1.0"
+    status: draft
+
+  - mapping_id: ent_003
+    canonical_action: remain silent until all-clear
+    entailed_demands:
+      - demand_alert_perception
+      - demand_instruction_comprehension
+      - demand_inhibitory_acoustic
+      - demand_behavioural_sensory_regulation
+      - demand_temporal_endurance
+    rationale: >-
+      CONSTRUCTED: Sustained silence until release necessarily requires perceiving
+      the initiating cue (and/or all-clear), understanding the silence rule,
+      withholding vocalisation, regulating behaviour under stress, and enduring
+      the state over time.
+    non_entailed_or_contingent_demands:
+      - demand_physical_execution
+      - demand_emergency_communication
+      - demand_responder_interaction
+    version: "0.1.0"
+    status: draft
+
+  - mapping_id: ent_004
+    canonical_action: keep hands visible when encountering police
+    entailed_demands:
+      - demand_instruction_comprehension
+      - demand_responder_interaction
+      - demand_inhibitory_movement
+    rationale: >-
+      CONSTRUCTED: Keeping hands visible for responders necessarily requires
+      understanding the instruction, complying with responder-interaction norms,
+      and withholding sudden or concealed movement.
+    non_entailed_or_contingent_demands:
+      - demand_alert_perception
+      - demand_physical_execution
+      - demand_emergency_communication
+    version: "0.1.0"
+    status: draft
