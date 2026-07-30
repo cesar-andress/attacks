@@ -1,8 +1,12 @@
 PILOT_SOURCE_GATE=PILOT_SOURCE_NO_GO
+complete_pilot_source_gate=NO_GO
 AS_OF=2026-07-31
 READY_COUNT=4
 NOT_READY=P5/CF-02
 REASON=Sole benchmark comparator (P5/CF-02) lacks authorized full text; CONDITIONAL_GO forbidden when missing source is the sole benchmark comparator.
 READY=P1,P2,P3,P4
-NOTE=Does not authorize coding or corpus freeze.
+NOTE=Does not authorize complete pilot, benchmark calibration, corpus freeze, or full coding.
+OPERATIONAL_EXCEPTION=See operational_pilot_gate in data/gates/gate_register.csv (Phase A only; amendment PA-2026-07-31-001).
 NOT_FOR_SUBSTANTIVE_INFERENCE=true
+NOT_FOR_BENCHMARK_COMPARISON=true
+PROTOCOL_DEVELOPMENT_ONLY=true
