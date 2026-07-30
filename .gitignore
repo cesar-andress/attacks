@@ -60,3 +60,6 @@ temp/
 *.tmp
 *.bak
 ~$*
+
+# Authorized local full-text (not for public redistribution by default)
+local_sources/

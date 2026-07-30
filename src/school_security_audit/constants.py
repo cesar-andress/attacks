@@ -173,6 +173,41 @@ FREEZE_DISPOSITION_VALUES = {
 RQ2_PRIMARY_MIN_RUNG = 1
 RQ2_COMPLEMENTARY_DENOMINATOR = "all_eligible_pes"
 
+AUTHORIZATION_STATUSES = {
+    "public_official_download",
+    "public_official_web_text",
+    "public_archive_download",
+    "permission_granted",
+    "metadata_only",
+    "access_restricted",
+    "copyright_unclear",
+    "unavailable",
+    "superseded",
+    "identity_unresolved",
+}
+
+PILOT_USABLE_AUTHORIZATION_STATUSES = {
+    "public_official_download",
+    "public_official_web_text",
+    "public_archive_download",
+    "permission_granted",
+}
+
+PILOT_SOURCE_DISPOSITIONS = {
+    "ready_for_pilot",
+    "ready_with_conditions",
+    "hold_identity",
+    "hold_provenance",
+    "hold_authorization",
+    "hold_version",
+    "hold_integrity",
+    "hold_text_unusable",
+    "exclude_wrong_document",
+    "exclude_superseded_out_of_scope",
+}
+
+SHA256_HEX_LENGTH = 64
+
 IDENTITY_STATUSES = {
     "candidate_verified_identity",
     "candidate_partly_verified",

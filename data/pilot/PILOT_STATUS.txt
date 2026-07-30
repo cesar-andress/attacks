@@ -1,5 +1,6 @@
 PILOT_STATUS=EXECUTION_BLOCKED
-REASON=No authorized local source text available (data/sources absent; all local_file_status=none).
+PILOT_SOURCE_GATE=PILOT_SOURCE_NO_GO
+REASON=P5/CF-02 comparator lacks authorized full text (sole benchmark comparator). P1–P4 sources acquired under local_sources/ (gitignored) with tracked checksums.
 NOT_FOR_SUBSTANTIVE_INFERENCE=true
 CODING_PASSES_COMPLETED=0
 INDEPENDENT_HUMAN_CODERS=0

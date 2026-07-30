@@ -1,0 +1,6 @@
+sha256,acquisition_id,candidate_id,pilot_id,local_path,file_size_bytes,media_type,acquisition_date_utc,tracked_in_git
+0d3620ed35f7da8dc48950885f4c01b8daa7e6bcedd127b29ac0054c40d20cdb,ACQ-P1-CF16-01,CF-16,P1,local_sources/pilot/CF16_Protective_security_and_preparedness_guidance.pdf,784755,application/pdf,2026-07-31T00:00:00Z,false
+a8bc28773efcc30ace88328aa4c82c86b1625429e47e6e229e1357a9ee219451,ACQ-P2-CF03-01,CF-03,P2,local_sources/pilot/CF03_k12_school_security_guide_3rd_edition.pdf,3355565,application/pdf,2026-07-31T00:00:00Z,false
+52d12d33398123c1d53f4bf2d44bf84103747a8ac31cf9d49abc53904d62465c,ACQ-P3-CF15-01,CF-15,P3,local_sources/pilot/CF15_RD393_2007_BOE_A12841-12850.pdf,311242,application/pdf,2026-07-31T00:00:00Z,false
+337ffcc5732dffed2d6a83e61a3aa31c6a942f9e65bcf0636882de140ec6dd2d,ACQ-P3-CF15-02,CF-15,P3,local_sources/pilot/CF15_RD393_2007_consolidado.html,139100,text/html,2026-07-31T00:00:00Z,false
+5550c07a7c8b77bed29d3aac1ddfcaa3d3b7ecb4eec5dfa98090b4c5b79dbec2,ACQ-P4-CF13-01,CF-13,P4,local_sources/pilot/CF13_MENE2307453C_wayback.html,86770,text/html,2026-07-31T00:00:00Z,false

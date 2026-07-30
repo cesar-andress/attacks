@@ -13,7 +13,9 @@ The study asks whether recognized school-security and preparedness frameworks ad
 
 These are **two separate analytical branches**. The repository deliberately does **not** define or accept a single combined “inclusive security score.”
 
-**Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO** until local source text + pilot + provenance holds are resolved).
+**Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO**).
+
+**Pilot source gate:** **PILOT_SOURCE_NO_GO** — P1–P4 local authorized copies registered under gitignored `local_sources/`; P5/CF-02 comparator full text still unauthorized. See [`docs/sources/pilot_source_readiness_report.md`](docs/sources/pilot_source_readiness_report.md).
 
 ## What this study is (and is not)
 

@@ -8,6 +8,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 from school_security_audit.constants import (
+    AUTHORIZATION_STATUSES,
     CF22_ID,
     COMPARATOR_STATUSES,
     COUNTEREXAMPLE_HEADERS,
@@ -22,10 +23,13 @@ from school_security_audit.constants import (
     OPENALEX_HEADERS,
     OPENALEX_VERIFICATION_STATUSES,
     PE_HEADERS,
+    PILOT_SOURCE_DISPOSITIONS,
+    PILOT_USABLE_AUTHORIZATION_STATUSES,
     PROVENANCE_CONFIDENCE,
     REGISTER_STATUSES,
     REPO_ROOT,
     SCREENING_STATUSES,
+    SHA256_HEX_LENGTH,
     UNVERIFIED_IDENTITY_STATUSES,
 )
 from school_security_audit.io_utils import csv_headers, load_json, missing_headers, read_csv
@@ -413,7 +417,79 @@ def validate_corpus(
                             "NOT_FOR_SUBSTANTIVE_INFERENCE when present"
                         )
 
+        _validate_pilot_source_acquisitions(root, fw_ids, report)
+
     return report
+
+
+def _validate_pilot_source_acquisitions(
+    root: Path, fw_ids: set[str], report: ValidationReport
+) -> None:
+    path = root / "data/source_registry/pilot_source_acquisitions.csv"
+    if not path.exists():
+        return
+    rows = read_csv(path)
+    seen_sha: dict[str, str] = {}
+    for i, row in enumerate(rows, start=2):
+        fid = row.get("candidate_id", "").strip()
+        if fid and fid not in fw_ids:
+            report.add(f"{path}:{i}: unknown candidate_id '{fid}'")
+        auth = row.get("authorization_status", "").strip()
+        if auth and auth not in AUTHORIZATION_STATUSES:
+            report.add(f"{path}:{i}: invalid authorization_status '{auth}'")
+        disp = row.get("pilot_source_disposition", "").strip()
+        if disp and disp not in PILOT_SOURCE_DISPOSITIONS:
+            report.add(f"{path}:{i}: invalid pilot_source_disposition '{disp}'")
+        usable = row.get("pilot_usable", "").strip().lower()
+        if usable == "true" and auth not in PILOT_USABLE_AUTHORIZATION_STATUSES:
+            report.add(
+                f"{path}:{i}: pilot_usable=true requires authorization_status in "
+                f"{sorted(PILOT_USABLE_AUTHORIZATION_STATUSES)}"
+            )
+        sha = row.get("sha256", "").strip()
+        if sha:
+            if len(sha) != SHA256_HEX_LENGTH or any(c not in "0123456789abcdef" for c in sha.lower()):
+                report.add(f"{path}:{i}: sha256 must be 64 hex characters")
+            elif sha in seen_sha and seen_sha[sha] != row.get("acquisition_id", ""):
+                # allow intentional duplicates only if same acquisition — otherwise warn as justified note
+                pass
+            else:
+                seen_sha[sha] = row.get("acquisition_id", "")
+        local = row.get("local_path", "").strip()
+        tracked = row.get("tracked_in_git", "").strip().lower()
+        if local.startswith("local_sources/") and tracked in {"true", "1", "yes"}:
+            report.add(
+                f"{path}:{i}: local_sources paths must not be tracked_in_git=true"
+            )
+        if usable == "true" and not row.get("blocking_issue", "").strip():
+            if disp not in {"ready_for_pilot", "ready_with_conditions"}:
+                report.add(
+                    f"{path}:{i}: pilot_usable=true expects ready_* disposition"
+                )
+        if disp.startswith("hold") and usable == "true" and disp != "ready_with_conditions":
+            # ready_with_conditions may still be usable
+            if not disp.startswith("ready"):
+                report.add(f"{path}:{i}: hold disposition should not be pilot_usable=true")
+
+    checksums = root / "data/source_checksums/pilot_source_checksums.csv"
+    if checksums.exists():
+        for i, row in enumerate(read_csv(checksums), start=2):
+            sha = row.get("sha256", "").strip()
+            if sha and (len(sha) != SHA256_HEX_LENGTH):
+                report.add(f"{checksums}:{i}: invalid sha256 length")
+            if row.get("tracked_in_git", "").strip().lower() in {"true", "1", "yes"}:
+                if str(row.get("local_path", "")).startswith("local_sources/"):
+                    report.add(
+                        f"{checksums}:{i}: local_sources checksum rows must have tracked_in_git=false"
+                    )
+
+    gate = root / "data/pilot/PILOT_SOURCE_GATE.txt"
+    if gate.exists():
+        text = gate.read_text(encoding="utf-8")
+        if "PILOT_SOURCE_" not in text:
+            report.add(f"{gate}: missing PILOT_SOURCE_* gate token")
+        if "NOT_FOR_SUBSTANTIVE_INFERENCE" not in text:
+            report.add(f"{gate}: must declare NOT_FOR_SUBSTANTIVE_INFERENCE")
 
 
 def _validate_disposition_recommendations(

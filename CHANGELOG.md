@@ -5,6 +5,23 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [0.3.1] — 2026-07-31
+
+### Added
+
+- Pilot source-acquisition manifests, checksums, dossiers, and storage policy.
+- Local full-text under gitignored `local_sources/pilot/` for CF-16, CF-03,
+  CF-15, CF-13 (CF-02 full text not acquired).
+- Validation for authorization statuses, dispositions, SHA-256, and
+  `tracked_in_git` consistency.
+- Gate file: **PILOT_SOURCE_NO_GO** (sole comparator CF-02 unauthorized).
+
+### Notes
+
+- Does not authorize coding or corpus freeze.
+- Live CISA/education.gouv.fr downloads were blocked; Wayback official-URL
+  captures used where recorded.
+
 ## [0.3.0] — 2026-07-31
 
 ### Added

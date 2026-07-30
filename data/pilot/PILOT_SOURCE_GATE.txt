@@ -1,0 +1,8 @@
+PILOT_SOURCE_GATE=PILOT_SOURCE_NO_GO
+AS_OF=2026-07-31
+READY_COUNT=4
+NOT_READY=P5/CF-02
+REASON=Sole benchmark comparator (P5/CF-02) lacks authorized full text; CONDITIONAL_GO forbidden when missing source is the sole benchmark comparator.
+READY=P1,P2,P3,P4
+NOTE=Does not authorize coding or corpus freeze.
+NOT_FOR_SUBSTANTIVE_INFERENCE=true

@@ -97,6 +97,16 @@ Required retained fields: OpenAlex work ID, DOI (if any), title, authors, year, 
 
 Not authoritative for current government guidance versions, official URLs, supersession, legal status, adoption, or copyright.
 
+## Pilot source acquisition (full text gitignored)
+
+| File | Role |
+|---|---|
+| `data/source_registry/pilot_source_acquisitions.csv` | Per-source acquisition/provenance/authorization records |
+| `data/source_checksums/pilot_source_checksums.csv` | SHA-256 for acquired local files |
+| `data/source_registry/pilot_source_readiness.csv` | P1–P5 disposition summary |
+| `data/pilot/PILOT_SOURCE_GATE.txt` | `PILOT_SOURCE_*` gate |
+| `local_sources/` | Local full text (**gitignored**; not redistributed) |
+
 ## Freeze-readiness and dispositions (not inclusion)
 
 | File | Role |
