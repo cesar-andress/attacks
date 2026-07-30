@@ -1,0 +1,16 @@
+case_id,skill_tested,stimulus_text,language,source_status,copyright_status,critical_error_if_missed,experiment_link,PHASE_B_TARGET,NOT_EXECUTED
+Q-01,unitization,"Staff must lock the door and silence personal devices during lockdown.",en,synthetic_constructed,original_for_calibration,false_merge_or_split,EXP-01-related,false,true
+Q-02,rung_support,"Provide a visual alarm equivalent for occupants who cannot hear the auditory alert.",en,synthetic_constructed,original_for_calibration,coding_as_rung_0_or_3_without_assessment,EXP-02-related,false,true
+Q-03,rung_assessment,"Verify by timed walkthrough that wheelchair users can reach the secure area within three minutes.",en,synthetic_constructed,original_for_calibration,coding_as_rung_2_only,EXP-02-related,false,true
+Q-04,rung_testing,"Conduct a full-building lockdown drill under realistic timing and record whether supports were usable.",en,synthetic_constructed,original_for_calibration,coding_familiarisation_as_rung_4,BDD-001,false,true
+Q-05,rung_revision,"Revise the evacuation procedure using findings from the annual accessible-egress drill review.",en,synthetic_constructed,original_for_calibration,optional_language_forced_to_rung_5_without_memo,BDD-002,false,true
+Q-06,locus_subgroup,"Students with personalised emergency plans must have an assigned adult escort for evacuation.",en,synthetic_constructed,original_for_calibration,locus_setting_without_text,EXP-02-related,false,true
+Q-07,demand_source_explicit,"Occupants shall remain silent during lockdown.",en,synthetic_constructed,original_for_calibration,ambiguous_memo_as_presence,demand_source,false,true
+Q-08,demand_source_entailed,"Lock classroom doors from the inside and keep them closed until responders release the room.",en,synthetic_constructed,original_for_calibration,over_entailment_without_trigger,demand_source,false,true
+Q-09,ambiguous_memo_discipline,"Consider sensory needs where appropriate.",en,synthetic_constructed,original_for_calibration,counting_as_positive_demand_or_support,ambiguous_memo,false,true
+Q-10,support_linkage,"Because the primary alert is auditory, provide a visual equivalent in every classroom.",en,synthetic_constructed,original_for_calibration,unlinked_support,support,false,true
+Q-11,setting_vs_support,"Annex lists disability-designated teaching establishments for planning coordination.",en,synthetic_constructed,original_for_calibration,auto_support_from_setting_catalog,BDD-004,false,true
+Q-12,branch_b_exclusion,"Threat-assessment teams shall document disability-related false-positive safeguards.",en,synthetic_constructed,original_for_calibration,coding_branch_b_into_confirmatory_rung,Branch_B,false,true
+Q-13,evidence_location,"Schools must appoint a security lead (Section 2.1).",en,synthetic_constructed,original_for_calibration,missing_source_location,evidence,false,true
+Q-14,named_plan_support,"Maintain a personal emergency evacuation plan (PEEP) for each pupil who requires assisted egress.",en,synthetic_constructed,original_for_calibration,generic_attention_as_support,BDD-003,false,true
+Q-15,benchmark_logic,"Function-based planning should address communication and transportation needs without diagnostic labels.",en,synthetic_constructed,original_for_calibration,treating_as_school_security_effectiveness_claim,claims_boundary,false,true

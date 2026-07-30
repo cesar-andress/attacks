@@ -13,6 +13,7 @@ validate:
 	$(PYTHON) -m school_security_audit.validate_pilot_phase
 	$(PYTHON) -m school_security_audit.validate_research_program
 	$(PYTHON) -m school_security_audit.validate_todos
+	$(PYTHON) -m school_security_audit.validate_phase_b
 	$(PYTHON) -m school_security_audit.experiments
 
 test:

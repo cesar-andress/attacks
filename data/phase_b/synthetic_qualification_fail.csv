@@ -1,0 +1,16 @@
+case_id,coder_id,is_pe,pe_count,executability_rung,executability_locus,demand_source_primary,support_present,branch_b_coded,source_location,notes
+Q-01,CODER_SYNTH_FAIL,true,1,1,not_specified,explicit,0,false,synth:Q-01,Failed unitization merge
+Q-02,CODER_SYNTH_FAIL,true,1,3,subgroup,explicit,1,false,synth:Q-02,Support mis-coded as assessment
+Q-03,CODER_SYNTH_FAIL,true,1,2,subgroup,explicit,0,false,synth:Q-03,Assessment under-coded
+Q-04,CODER_SYNTH_FAIL,true,1,1,setting,explicit,0,false,synth:Q-04,Drill treated as prescription only
+Q-05,CODER_SYNTH_FAIL,true,1,2,not_specified,explicit,0,false,synth:Q-05,Revision missed
+Q-06,CODER_SYNTH_FAIL,true,1,2,setting,explicit,1,false,synth:Q-06,Wrong locus
+Q-07,CODER_SYNTH_FAIL,true,1,1,not_specified,ambiguous_memo,0,false,synth:Q-07,Explicit treated as memo
+Q-08,CODER_SYNTH_FAIL,true,1,1,not_specified,explicit,0,false,synth:Q-08,
+Q-09,CODER_SYNTH_FAIL,true,1,2,not_specified,explicit,1,false,synth:Q-09,Memo as positive evidence CRITICAL
+Q-10,CODER_SYNTH_FAIL,true,1,2,setting,explicit,1,false,synth:Q-10,
+Q-11,CODER_SYNTH_FAIL,true,1,2,setting,explicit,1,false,synth:Q-11,Auto-support from catalog CRITICAL
+Q-12,CODER_SYNTH_FAIL,true,1,3,individual,explicit,1,true,synth:Q-12,Branch B coded CRITICAL
+Q-13,CODER_SYNTH_FAIL,true,1,1,not_specified,explicit,0,false,,Missing evidence location CRITICAL
+Q-14,CODER_SYNTH_FAIL,true,1,1,not_specified,explicit,0,false,synth:Q-14,Named plan ignored
+Q-15,CODER_SYNTH_FAIL,true,1,4,setting,explicit,1,false,synth:Q-15,Over-claim effectiveness

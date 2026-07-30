@@ -21,14 +21,19 @@ entries:
   - todo_id: TODO-SRC-001
     paths:
       - docs/sources/unresolved_blockers.md
+      - docs/sources/cf02_access_track.md
+      - docs/phase_b/
       - data/pilot/PILOT_STATUS.txt
       - data/gates/gate_register.csv
+      - data/phase_b/
     markers:
       - PILOT_SOURCE_NO_GO
       - NO_GO
       - INCOMPLETE
+      - CF02_ACCESS_NO_GO
+      - DRAFT_NOT_ADOPTED
     status: blocked
-    resolution_condition: Authorized full text for P5/CF-02 (or formal CMIST L1 amendment) with checksum
+    resolution_condition: Authorized full text for P5/CF-02 (or formal adopted operational L1 amendment) with checksum
 
   - todo_id: TODO-SRC-002
     paths:

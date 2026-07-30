@@ -1,0 +1,16 @@
+case_id,coder_id,is_pe,pe_count,executability_rung,executability_locus,demand_source_primary,support_present,branch_b_coded,source_location,notes
+Q-01,CODER_SYNTH_PASS,true,2,1,not_specified,explicit,0,false,synth:Q-01,Split lock and silence
+Q-02,CODER_SYNTH_PASS,true,1,2,subgroup,explicit,1,false,synth:Q-02,Visual equivalent = support
+Q-03,CODER_SYNTH_PASS,true,1,3,subgroup,explicit,0,false,synth:Q-03,Timed verify = assessment
+Q-04,CODER_SYNTH_PASS,true,1,4,setting,explicit,0,false,synth:Q-04,Realistic drill = testing
+Q-05,CODER_SYNTH_PASS,true,1,5,not_specified,explicit,0,false,synth:Q-05,Findings revise = rung 5
+Q-06,CODER_SYNTH_PASS,true,1,2,subgroup,explicit,1,false,synth:Q-06,
+Q-07,CODER_SYNTH_PASS,true,1,1,not_specified,explicit,0,false,synth:Q-07,
+Q-08,CODER_SYNTH_PASS,true,1,1,not_specified,explicit,0,false,synth:Q-08,No over-entailment
+Q-09,CODER_SYNTH_PASS,false,0,0,not_specified,ambiguous_memo,0,false,synth:Q-09,Memo only
+Q-10,CODER_SYNTH_PASS,true,1,2,setting,explicit,1,false,synth:Q-10,Linked support
+Q-11,CODER_SYNTH_PASS,true,1,0,setting,ambiguous_memo,0,false,synth:Q-11,No auto-support
+Q-12,CODER_SYNTH_PASS,false,0,0,not_specified,ambiguous_memo,0,false,synth:Q-12,Branch B excluded
+Q-13,CODER_SYNTH_PASS,true,1,1,not_specified,explicit,0,false,Section 2.1,
+Q-14,CODER_SYNTH_PASS,true,1,2,individual,explicit,1,false,synth:Q-14,PEEP support
+Q-15,CODER_SYNTH_PASS,false,0,0,not_specified,ambiguous_memo,0,false,synth:Q-15,No effectiveness claim
