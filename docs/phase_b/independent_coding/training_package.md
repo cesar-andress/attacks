@@ -1,28 +1,30 @@
-# Coder training package (synthetic / public materials only)
+# Training package index
 
-**Do not use Phase-B target full texts as training cases.**
+**Version:** `TRAIN-v1`  
+**See:** [`training/training_guide.md`](training/training_guide.md) · [`training/training_exercises.md`](training/training_exercises.md)
 
-## Modules
+## Modules (rules-focused)
 
-1. Study overview — documentary audit; executability engagement ≠ real-world performance.  
-2. Claims boundaries — `docs/protocol/claims_policy.md`.  
-3. Units L0 / L1 / L2 — PE definition; narrative ≠ PE.  
+1. Documentary focus — engagement ≠ real-world performance.  
+2. Claims boundaries — public `docs/protocol/claims_policy.md`.  
+3. Units L0 / L1 / L2 — PE definition.  
 4. Unitization practice — EXP-01 synthetic cases.  
-5. Ladder 0–5 — codebook E1; highest ordinal depth; support ≠ assessment ≠ testing ≠ revision.  
-6. Locus — individual / subgroup / setting / multiple / not_specified.  
-7. Demand source — explicit / entailed / ambiguous_memo (never presence).  
+5. Ladder 0–5 — highest ordinal depth.  
+6. Locus categories.  
+7. Demand source — explicit / entailed / ambiguous_memo.  
 8. Support specification and linkage.  
-9. Setting differentiation vs support (BDD-004).  
+9. Setting differentiation vs support.  
 10. Inhibitory and responder-interaction demands.  
-11. Branch B exclusion — Family F inactive for Paper 1.  
-12. Benchmark logic — comparators are not gold standards.  
-13. Copyright-safe handling — local_sources; no pirate PDFs.  
+11. Branch B exclusion for Paper 1.  
+12. Comparator logic — contrastive; not a gold standard.  
+13. Copyright-safe handling — authorized local sources only.  
 14. Independence — raw coding before adjudication.  
-15. Qualification test — `qualification/`.
+15. Qualification — `qualification/`.
 
-## References (public repo)
+## Hard exclusions from training
 
-- `docs/codebook/codebook_human_readable.md`  
-- `docs/protocol/reliability_policy_v0.1.md`  
-- `experiments/EXP-01_unitization/`  
-- `experiments/EXP-02_coding_decisions/`
+- Phase-B target full text / identifiers as training cases.  
+- Directional statements about RQ4 outcomes.  
+- BDD adjudication outcomes.  
+- Qualification answer keys.  
+- Gate dashboards and manuscript Results.

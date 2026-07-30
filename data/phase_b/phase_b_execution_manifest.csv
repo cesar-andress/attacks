@@ -1,23 +1,42 @@
 field,value,notes
 amendment_id,PA-2026-07-31-002,adopted
+comparator_design,OPT_B,CF-02 conceptual; FNSS operational
 comparator_source_id,ALT-FNSS-001 / DOC-ALT-FNSS-001,operational L1
+source_readiness,READY,
 source_version,November 2010 FEMA FNSS,
 checksum_sha256,ab21f61b8ee451adb5cb6ca79dabf3305cdaea4a742ed7478b42ef6becf464a7,must match at execution
 eligible_scope,complete_document_under_PE_definition,no outcome-selected chapters
+target_package_version,TARGET-PACK-v1,
+target_package_seal_status,SEALED,open only after READY
+coder_pseudonymous_id,,unfilled
 coder_A_id,,unfilled — assign after qualification
 coder_B_id,,unfilled — independent coder required
+independence_status,NOT_COMPLETED,
+coi_status,NOT_COMPLETED,
+confidentiality_status,NOT_COMPLETED,
 coder_independence_verified,false,must be true to execute
+training_package_version,TRAIN-v1,
+training_completion,false,
+qualification_set_version,QUAL-SET-v1,
+scorer_version,QUAL-SCORER-v1,
+qualification_result,NOT_STARTED,no real submission
 qualification_complete,false,synthetic fixtures only so far
-training_files,docs/phase_b/independent_coding/; data/phase_b/qualification_*.csv,
-target_files,local_sources/benchmark_candidates/FEMA_2010_FNSS_guidance.pdf (gitignored),
-unitization_status,not_started,
+human_review,NOT_STARTED,
+coder_readiness,NOT_READY,
+attempt_policy_status,DRAFT_PENDING_HUMAN_ADOPTION,UCW-001
+qualification_freeze_status,INCOMPLETE,UCW-002
+target_access,SEALED,
+unitization_status,not_started_blank_template_only,
 coding_status,not_started,
 raw_files_locked,false,
 reliability_status,not_computed,
-adjudication_status,not_started,
-codebook_revision_status,pending_BDD_after_coding,
+bdd_adjudication_status,open_blank,
 Phase-A_recoding_status,pending_BDD,
+Phase-A_recoding_decision,,template only
+phase_b_completion_status,NOT_STARTED,
 final_gate,BENCHMARK_CALIBRATION=NO_GO,
 cf02_role,conceptual_bibliographic,RULE-LATE-CF02 applies
 gold_standard_forbidden,true,
 positive_control_forbidden,true,
+training_files,docs/phase_b/independent_coding/; data/phase_b/qualification_cases.csv,answer key withheld
+target_files,local_sources/benchmark_candidates/ (gitignored),

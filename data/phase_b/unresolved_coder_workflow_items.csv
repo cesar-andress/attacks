@@ -1,0 +1,5 @@
+item_id,topic,status,resolution_condition,blocks_coder_ready,blocks_qualification_attempt,notes
+UCW-001,qualification_attempt_policy,open_blocks_ready,Human adopts attempt_policy_DRAFT or revised policy; record version+checksum in freeze,true,true,Conservative draft exists; not silently invented as adopted
+UCW-002,qualification_freeze_human_authorization,open_blocks_ready,PI sets human_authorized=true on freeze components after review,true,true,Content ready; auth pending
+UCW-003,compensation_and_recruitment_channel,open_human,TO_BE_SET_BY_HUMAN,true,false,Does not block infrastructure tests
+UCW-004,OV-05_semantic_topic_review,open_review,PI confirms synthetic BDD-tagged qual cases acceptable,false,false,Warning only; not target excerpts

@@ -12,7 +12,7 @@
 
 ## Immediate next operational action
 
-1. Recruit/qualify independent coder; execute Phase B on `DOC-ALT-FNSS-001` (OPT-B / `PA-2026-07-31-002`).  
+1. Adopt attempt policy + authorize qualification freeze (UCW-001/002); recruit/qualify independent coder; then open sealed target package and execute Phase B on `DOC-ALT-FNSS-001` (OPT-B / `PA-2026-07-31-002`). 
 2. Optional: continue CF-02 ILL/library for supplementary/dual path under RULE-LATE-CF02.  
 3. Complete Phase B calibration (still **NO_GO** until execution criteria met); then freeze readiness.  
 3. Close complete pilot → unlock freeze path.  

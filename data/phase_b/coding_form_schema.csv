@@ -1,0 +1,17 @@
+field,required,allowed_values,coder_visible,notes
+coder_id,true,CODER_* opaque,true,
+document_id,true,DOC-ALT-FNSS-001,true,
+unit_id,true,PE-…,true,
+source_locator,true,page/section,true,
+is_pe,true,true|false,true,
+level,false,L0|L1|L2,true,usually L2
+demand_source,false,explicit|entailed|ambiguous_memo,true,
+executability_rung,false,0-5,true,
+executability_locus,false,individual|subgroup|setting|multiple|not_specified,true,
+support_present,false,0|1,true,
+uncertainty_note,false,free text short,true,approved mechanism
+procedural_note,false,free text short,true,
+uncodeable,false,true|false,true,
+submission_metadata,true,attempt/timestamp/hash admin,false,admin
+expected_answer,forbidden,,false,must not exist
+adjudicated_answer,forbidden,,false,must not exist

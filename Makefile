@@ -14,6 +14,8 @@ validate:
 	$(PYTHON) -m school_security_audit.validate_research_program
 	$(PYTHON) -m school_security_audit.validate_todos
 	$(PYTHON) -m school_security_audit.validate_phase_b
+	$(PYTHON) -m school_security_audit.validate_coder_workflow
+	$(PYTHON) -m school_security_audit.check_training_overlap
 	$(PYTHON) -m school_security_audit.experiments
 
 test:

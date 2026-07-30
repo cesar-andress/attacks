@@ -1,0 +1,7 @@
+info_item,trainee,qualifying,target_coder,notes
+qualification_answer_key,deny,deny,deny,WITHHOLD
+phase_a_codes,deny,deny,deny,
+bdd_adjudications,deny,deny,deny,
+fnss_full_text,deny,deny,allow_after_open,SEALED until READY
+directional_rq4,deny,deny,deny,
+public_codebook,allow,allow,allow,

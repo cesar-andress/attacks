@@ -7,7 +7,7 @@
 |---|---|
 | `benchmark_design_gate` | **GO** |
 | `benchmark_source_gate` | **READY** (DOC-ALT-FNSS-001) |
-| `independent_coder_gate` | **NOT_READY** |
+| `independent_coder_gate` | **NOT_READY** (workflow infrastructure ready; no real coder) |
 | `benchmark_calibration_gate` | **NO_GO** |
 | `COMPLETE_PILOT` | **INCOMPLETE** |
 | `CORPUS_FREEZE` | **NO_GO** |

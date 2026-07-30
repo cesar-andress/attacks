@@ -1,0 +1,4 @@
+item_id,target_document,target_file_path,document_role,hash_sha256,authorized_source_status,unitization_status,coding_template_status,prefilled_codes_exist,hidden_notes_exist,adjudication_material_visible,coder_access_state
+TP-01,DOC-ALT-FNSS-001,local_sources/benchmark_candidates/ (gitignored FEMA FNSS PDF),operational_benchmark_L1,ab21f61b8ee451adb5cb6ca79dabf3305cdaea4a742ed7478b42ef6becf464a7,authorized_local_gitignored,not_started_blank_template_only,schema_ready_empty,false,false,false,SEALED
+TP-02,phase_b_target_codes,data/phase_b/phase_b_target_codes.csv,code_store,079ccea8fb2d5bb9191e47315c65678607d873c08a746b50f4f6d7fce1752012,n/a,n/a,header_only,false,false,false,SEALED
+TP-03,unitization_template,data/phase_b/unitization_template.csv,blank_unitization,,n/a,template_only,blank,false,false,false,SEALED

@@ -1,0 +1,16 @@
+file_path,purpose,intended_user,required_inputs,outputs,contains_target_info,safe_before_qual,safe_after_qual,hidden_answers,adjudicated_answers,target_identifiers,project_internal_language,requires_revision,access_class
+docs/phase_b/independent_coding/coder_role.md,Public-safe role,candidate,none,informed consent to role,false,true,true,false,false,false,low,false,RECRUITMENT_SAFE
+docs/phase_b/independent_coding/admin/coder_role_admin.md,Admin compensation/contact placeholders,PI,human decisions,admin notes,false,false,false,false,false,false,medium,false,ADMIN_ONLY
+docs/phase_b/independent_coding/forms/independence_coi_form.md,Independence/COI form,candidate+PI,human attestation,COI status,false,true,true,false,false,false,low,false,PRE_QUALIFICATION_SAFE
+docs/phase_b/independent_coding/forms/confidentiality_agreement.md,Confidentiality agreement,candidate,human attestation,CONF status,false,true,true,false,false,false,low,false,PRE_QUALIFICATION_SAFE
+docs/phase_b/independent_coding/training/training_guide.md,Rules training,trainee,codebook,trained coder,false,true,true,false,false,false,low,false,PRE_QUALIFICATION_SAFE
+docs/phase_b/independent_coding/training/training_exercises.md,Ungraded exercises,trainee,training guide,practice,false,true,true,false,false,false,low,false,PRE_QUALIFICATION_SAFE
+docs/phase_b/independent_coding/qualification/coder_facing_instructions.md,Qual instructions,qualifying coder,training,submission,false,false,false,false,false,false,low,false,QUALIFICATION_ONLY
+data/phase_b/qualification_cases.csv,Qual stimuli,qualifying coder,none,responses,false,false,false,false,false,false,low,false,QUALIFICATION_ONLY
+data/phase_b/qualification_reference.csv,Answer key,PI/scorer,submission,scores,false,false,false,true,true,false,medium,false,WITHHOLD_FROM_CODER
+data/phase_b/synthetic_qualification_pass.csv,Synthetic pass fixture,CI/admin,none,scorer test,false,false,false,true,true,false,low,false,ADMIN_ONLY
+data/phase_b/synthetic_qualification_fail.csv,Synthetic fail fixture,CI/admin,none,scorer test,false,false,false,true,true,false,low,false,ADMIN_ONLY
+data/phase_b/phase_b_target_codes.csv,Target code store,coders at execution,READY+open,codes,true,false,false,false,false,true,low,false,TARGET_CODING_ONLY
+docs/phase_b/independent_coding/recruitment/checklist.md,Recruitment checklist,PI,human,process,false,false,false,false,false,false,medium,false,ADMIN_ONLY
+docs/phase_b/independent_coding/operator_runbook.md,Operator runbook,PI,human,execution,false,false,false,false,false,false,high,false,ADMIN_ONLY
+local_sources/benchmark_candidates/ (gitignored PDF),FNSS authorized full text,target coder after open,checksum verify,coding,true,false,false,false,false,true,low,false,TARGET_CODING_ONLY

@@ -1,0 +1,16 @@
+case_id,source_type,synthetic_status,dimensions_tested,difficulty,expected_answer_key_location,coder_facing_file,scorer_input_field,overlap_status,stimulus_hash16,PHASE_B_TARGET
+Q-01,synthetic_constructed,true,unitization,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,0822bed135855da6,false
+Q-02,synthetic_constructed,true,rung_support,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,5ab8016a10482412,false
+Q-03,synthetic_constructed,true,rung_assessment,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,5c4c89466e970df6,false
+Q-04,synthetic_constructed,true,rung_testing,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,fb608ebe55baa9e0,false
+Q-05,synthetic_constructed,true,rung_revision,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,cac639423c8b7f21,false
+Q-06,synthetic_constructed,true,locus_subgroup,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,33ed7ae53b4491ab,false
+Q-07,synthetic_constructed,true,demand_source_explicit,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,c5790056d43debae,false
+Q-08,synthetic_constructed,true,demand_source_entailed,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,b66d6be4ada5bc1f,false
+Q-09,synthetic_constructed,true,ambiguous_memo_discipline,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,0a81a0cfc6c169b7,false
+Q-10,synthetic_constructed,true,support_linkage,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,0a22863245cc0de6,false
+Q-11,synthetic_constructed,true,setting_vs_support,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,663ba154a780d83d,false
+Q-12,synthetic_constructed,true,branch_b_exclusion,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,cf99b5bcbb369a78,false
+Q-13,synthetic_constructed,true,evidence_location,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,52dd45b12983facd,false
+Q-14,synthetic_constructed,true,named_plan_support,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,97f908007363a522,false
+Q-15,synthetic_constructed,true,benchmark_logic,mixed,data/phase_b/qualification_reference.csv,data/phase_b/qualification_cases.csv,case_id matched response row,clear_synthetic,53c5e97e6b21cbce,false

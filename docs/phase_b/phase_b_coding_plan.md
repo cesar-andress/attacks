@@ -2,9 +2,9 @@
 
 ## Sources required
 
-**Primary path (current recommendation):** ALT-FNSS-001 after adoption of PA-DRAFT-002.  
-**Alternate/dual:** DOC-CF02-01 if `CF02_ACCESS_GO`.  
-**Forbidden:** silent DSIL/CMIST training PDFs; pirate copies.
+**Primary path (adopted):** ALT-FNSS-001 / `DOC-ALT-FNSS-001` under `PA-2026-07-31-002` (OPT-B).  
+**Conceptual only:** CF-02 (late-access rule `RULE-LATE-CF02`).  
+**Forbidden:** silent DSIL/CMIST training PDFs; pirate copies; gold-standard framing.
 
 ## Procedure
 

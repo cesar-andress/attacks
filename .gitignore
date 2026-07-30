@@ -41,6 +41,7 @@ data/pdfs/
 
 # Private notes and adjacent private directories (never track)
 private/
+private_admin/
 notes/
 *.local.md
 ../paper/
@@ -64,3 +65,10 @@ temp/
 
 # Authorized local full-text (not for public redistribution by default)
 local_sources/
+
+# Generated coder packages and live submissions (regenerate; do not commit contents)
+data/phase_b/generated_packages/**
+!data/phase_b/generated_packages/.gitkeep
+data/phase_b/coder_submissions/**
+!data/phase_b/coder_submissions/.gitkeep
+!data/phase_b/coder_submissions/README.md

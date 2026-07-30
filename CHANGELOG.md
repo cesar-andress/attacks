@@ -13,6 +13,9 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
   FEMA FNSS 2010 operational Phase-B L1 (`DOC-ALT-FNSS-001`).
 - OPT-B decision record, red-team review, criteria evaluation, execution
   manifest, BDD adjudication plan, next-human-action checklist.
+- Independent-coder qualification workflow: role/COI/confidentiality forms,
+  training guide, qualification freeze records, package generator, overlap
+  checks, operator runbook, coder-workflow validators and tests.
 - Validators/tests for adopted design while keeping Phase-B calibration NO_GO.
 
 ### Changed
@@ -20,11 +23,14 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 - Pilot source gate: operational comparator READY; CF-02 conceptual (access
   still NO_GO). Complete-pilot source gate CONDITIONAL_GO.
 - Benchmark design GO / source READY; independent coder NOT_READY;
-  calibration, freeze, and full coding remain NO_GO.
+  qualification infrastructure ready; calibration, freeze, and full coding
+  remain NO_GO.
 
 ### Notes
 
 - Does **not** execute Phase-B coding or compute empirical α.
+- Does **not** recruit or qualify a real coder.
+- Target package remains SEALED; attempt policy remains draft pending human adoption.
 - Does **not** open corpus freeze or full coding.
 - RP-P2 remains planned; SLAPA remains planned_unvalidated.
 

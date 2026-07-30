@@ -1,0 +1,2 @@
+workflow_id,description,real_gates_affected,coder_id,state,notes
+SYN-WF-01,Fixture-only state traversal for CI,false,CODER_SYNTHETIC_FIXTURE,NOT_STARTED,Must not alter PILOT_STATUS or READY gates
