@@ -19,6 +19,10 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 - Adopted attempt policy `QUAL-ATTEMPT-v1`; authorized qualification freeze
   `QUAL-FREEZE-v1`; closed UCW-001/002/004 (OV-05 PASS).
 - Validators/tests for adopted design while keeping Phase-B calibration NO_GO.
+- Adopted protocol amendment **PA-2026-07-31-003** (reliability sparsity /
+  estimability states); `reliability_estimability` classifier and tests.
+- Exact-agreement and non-estimable-α reporting policy; optional secondary
+  collapsed-rung sensitivity (primary ladder unchanged).
 
 ### Changed
 
@@ -27,6 +31,8 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 - Benchmark design GO / source READY; independent coder NOT_READY;
   qualification infrastructure ready; calibration, freeze, and full coding
   remain NO_GO.
+- Reliability policy distinguishes `NOT_ESTIMABLE_*` from below-threshold
+  estimable α; confirmatory core protected when sparse high rungs appear.
 
 ### Notes
 

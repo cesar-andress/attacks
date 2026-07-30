@@ -6,12 +6,14 @@
 ## Highlights
 
 - Adopted **PA-2026-07-31-002** (OPT-B): CF-02 = conceptual AFN source; FEMA FNSS 2010 = operational Phase-B L1 (`DOC-ALT-FNSS-001`).  
+- Adopted **PA-2026-07-31-003**: reliability estimability states; exact agreement + marginals; no post-hoc ladder collapse; optional secondary collapsed sensitivity.  
 - Benchmark **design GO** / source **READY**; Phase B **calibration remains NO_GO** until independent coding.  
 - Independent-coder workflow complete; qualification freeze **AUTHORIZED**; attempt policy **ADOPTED**.  
 - Execution pending recruitment and qualification of a real independent coder.  
 - Target package remains **SEALED**; no real coder recruited or qualified.  
 - Corpus freeze and full coding remain **NO_GO**.  
-- RP-P2 remains planned; SLAPA remains `planned_unvalidated`.
+- RP-P2 remains planned; SLAPA remains `planned_unvalidated`.  
+- Editorial manuscript consolidation is tracked in the private paper tree (not tagged here).
 
 ## Not in this release
 
@@ -19,4 +21,5 @@
 - No empirical intercoder α.  
 - No real qualification pass/fail.  
 - No corpus freeze.  
-- No manuscript Results.
+- No manuscript Results.  
+- No release git tag (candidate only).

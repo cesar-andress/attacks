@@ -15,7 +15,9 @@ These are **two separate analytical branches**. The repository deliberately does
 
 **Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO**).
 
-**Benchmark design (PA-2026-07-31-002 / OPT-B):** **GO** — CF-02 remains conceptual (access still NO_GO); FEMA FNSS 2010 is the operational Phase-B L1 (`DOC-ALT-FNSS-001`, checksum verified).
+**Benchmark design (PA-2026-07-31-002 / OPT-B):** **GO** — CF-02 remains conceptual (access still NO_GO); FEMA FNSS 2010 is the single operational Phase-B L1 (`DOC-ALT-FNSS-001`, checksum verified).
+
+**Reliability estimability (PA-2026-07-31-003):** adopted — distinguish non-estimable α from coder failure; exact agreement + marginals required; no post-hoc primary-ladder collapse.
 
 **Phase B execution:** **NO_GO** until an independent coder is qualified and coding/adjudication complete. Source readiness ≠ calibration complete. Corpus freeze and full coding remain **NO_GO**.
 

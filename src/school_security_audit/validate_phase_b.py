@@ -92,6 +92,19 @@ def validate_phase_b(root: Path | None = None) -> ValidationReport:
     else:
         report.add(f"missing {adopted}")
 
+    sparsity = root / "docs/protocol/amendments/PA-2026-07-31-003_reliability_sparsity.md"
+    if not sparsity.exists():
+        report.add(f"missing {sparsity}")
+    else:
+        stext = sparsity.read_text(encoding="utf-8").lower()
+        if "adopted" not in stext:
+            report.add(f"{sparsity}: must record adopted status")
+        if "not_estimable" not in stext:
+            report.add(f"{sparsity}: must define NOT_ESTIMABLE states")
+        log = root / "data/pilot/amendment_log.csv"
+        if log.exists() and "PA-2026-07-31-003" not in log.read_text(encoding="utf-8"):
+            report.add(f"{log}: must record PA-2026-07-31-003")
+
     # Gates
     gate_path = root / "data/phase_b/benchmark_design_gate.csv"
     if gate_path.exists():

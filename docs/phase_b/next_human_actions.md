@@ -15,6 +15,8 @@ Remaining open item that is genuinely human/administrative:
 
 - `UCW-003` — compensation and recruitment channel (`TO_BE_SET_BY_HUMAN`)
 
+Editorial/reliability work (`PA-2026-07-31-003`) does **not** block recruitment: qualification materials remain frozen; coder instructions unchanged; target remains SEALED.
+
 ## NEXT HUMAN ACTIONS
 
 1. **Choose compensation and recruitment route** — `docs/phase_b/independent_coding/admin/coder_role_admin.md` (`TO_BE_SET_BY_HUMAN`)  
