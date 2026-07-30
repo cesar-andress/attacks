@@ -1,7 +1,8 @@
 # CF-02 access track (active)
 
-**Status:** OPEN — blocks `benchmark_calibration_gate` and complete pilot  
-**Design recommendation (not enactment):** see `docs/phase_b/` — `OPERATIONAL_L1_AMENDMENT_RECOMMENDED` (OPT-B)  
+**Status:** OPEN for optional late access — **not** primary operational L1 after OPT-B  
+**Adopted design:** `PA-2026-07-31-002` — CF-02 = conceptual; FNSS = operational Phase-B L1  
+**Late-access rule:** RULE-LATE-CF02 in `docs/phase_b/opt_b_decision_record.md`  
 **Do not replace silently**  
 **Do not use pirated repositories**
 

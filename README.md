@@ -15,9 +15,11 @@ These are **two separate analytical branches**. The repository deliberately does
 
 **Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO**).
 
-**Pilot source gate (complete pilot):** **PILOT_SOURCE_NO_GO** — P5/CF-02 comparator full text still unauthorized (closed OA confirmed 2026-07-31).
+**Benchmark design (PA-2026-07-31-002 / OPT-B):** **GO** — CF-02 remains conceptual (access still NO_GO); FEMA FNSS 2010 is the operational Phase-B L1 (`DOC-ALT-FNSS-001`, checksum verified).
 
-**Two-phase pilot (PA-2026-07-31-001):** Phase A operational codebook pilot on P1–P4 = **COMPLETED** (`PROTOCOL_DEVELOPMENT_ONLY`); Phase B benchmark calibration = **NO_GO**. Phase-B prep package: [`docs/phase_b/`](docs/phase_b/) (`PHASE_B_PREP=READY_PENDING_SOURCE_OR_AMENDMENT`; draft OPT-B amendment **not adopted**). See [`data/gates/gate_register.csv`](data/gates/gate_register.csv) and [`docs/pilot/phase_a_completion_report.md`](docs/pilot/phase_a_completion_report.md).
+**Phase B execution:** **NO_GO** until an independent coder is qualified and coding/adjudication complete. Source readiness ≠ calibration complete. Corpus freeze and full coding remain **NO_GO**.
+
+**Two-phase pilot (PA-2026-07-31-001):** Phase A on P1–P4 = **COMPLETED** (`PROTOCOL_DEVELOPMENT_ONLY`). Package: [`docs/phase_b/`](docs/phase_b/). Gates: [`data/gates/gate_register.csv`](data/gates/gate_register.csv).
 
 **Broader research programme:** Paper 1 (this documentary audit) is the empirical foundation of a four-paper programme on inclusive organisational preparedness (SLAPA architecture planned/unvalidated). Programme docs: [`docs/research_program/`](docs/research_program/). Operational Priority 1 remains completing RP-P1.
 

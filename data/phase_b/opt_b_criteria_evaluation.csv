@@ -1,0 +1,11 @@
+criterion_id,criterion,result,evidence,unresolved_concern
+A,Construct-role alignment,pass,CF-02 is peer-reviewed function-based conceptual source; FNSS is operational FNSS planning doctrine with PE density,School applicability of FNSS must be disclosed
+B,Authority,pass,FEMA Nov 2010 federal guidance; versioned PDF; issuer identifiable,Primary fema.gov CDN flaky in agent; SEMA redistribution used with checksum
+C,Prescriptive content,pass,166-page operational guidance with planning requirements site evaluation FNSS delivery,None material
+D,Instrument compatibility,pass,Same PE ladder locus demand-source architecture applicable; supports and assessment abundant,Rung4 realistic testing and rung5 revision may be sparse relative to school drills — calibrate not invent
+E,Comparator logic,pass,Preserves contrastive function-based/AFN falsification route in corpus_selection and RQ4,Setting mismatch shelter vs school
+F,Falsification logic,pass,High engagement not definitional; main sample can still match or exceed FNSS; RQ4 remains empirical,Analysts must not treat FNSS supports as automatic validation of school doctrine
+G,Claims discipline,pass,Amendment forbids gold-standard positive-control and effectiveness claims,Must appear in prereg and manuscript Methods later
+H,Transparency,pass,PA-2026-07-31-002 adopted before target coding; draft history retained,None
+I,Non-outcome-dependent amendment,pass,No Phase-B target codes exist; decision pre-coding,None
+J,Reproducibility,pass,Checksum sha256 ab21f61b…; retrieval URL; scope rule; late-access rule documented,Local PDF gitignored — metadata public

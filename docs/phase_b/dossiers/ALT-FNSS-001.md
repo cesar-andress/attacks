@@ -32,7 +32,7 @@
 | relationship to CF-02 | Operational complement to conceptual CF-02 lineage |
 | supplements or replaces | **Supplement / potential operational L1** — does not auto-replace |
 | risks to comparator logic | Setting mismatch; reviewer may question school applicability |
-| classification | **potential_operational_L1** |
-| recommendation | Adopt only via OPT-B or OPT-C amendment; keep CF-02 access track open |
+| classification | **preferred_operational_L1** (adopted) |
+| recommendation | **ADOPTED** as operational Phase-B L1 under `PA-2026-07-31-002`; code only after independent coder qualification |
 
-**Do not code as Phase-B comparator until amendment enacted.**
+**Amendment enacted.** Target coding still requires independent qualified coders (`BENCHMARK_CALIBRATION=NO_GO`).

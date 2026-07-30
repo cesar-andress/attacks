@@ -47,23 +47,24 @@ def validate_gate_register(root: Path, report: ValidationReport) -> None:
     by_id = {r.get("gate_id", "").strip(): r for r in rows}
 
     complete = by_id.get("complete_pilot_source_gate", {})
-    if complete.get("status", "").strip() != "NO_GO":
-        # While P5 blocked, complete gate must remain NO_GO
-        p5_ready = _p5_ready(root)
-        if not p5_ready and complete.get("status", "").strip() != "NO_GO":
-            report.add(
-                f"{path}: complete_pilot_source_gate must be NO_GO while P5 unauthorized"
-            )
+    complete_status = complete.get("status", "").strip()
+    p5_ready = _p5_ready(root)
+    if not p5_ready and complete_status != "NO_GO":
+        report.add(
+            f"{path}: complete_pilot_source_gate must be NO_GO while operational P5 unauthorized"
+        )
+    if p5_ready and complete_status not in {"GO", "CONDITIONAL_GO"}:
+        report.add(
+            f"{path}: complete_pilot_source_gate should be GO or CONDITIONAL_GO when "
+            "operational Phase-B source is ready (OPT-B)"
+        )
 
+    # Calibration / freeze / full coding remain NO_GO until execution + freeze criteria
     for gid in ("benchmark_calibration_gate", "corpus_freeze_gate", "full_coding_gate"):
         status = by_id.get(gid, {}).get("status", "").strip()
-        if status in {"GO", "COMPLETED"} and not _p5_ready(root) and gid != "operational_pilot_gate":
-            if gid == "benchmark_calibration_gate" and status != "NO_GO":
-                report.add(f"{path}: {gid} must be NO_GO while P5 unauthorized")
-            if gid in {"corpus_freeze_gate", "full_coding_gate"} and status != "NO_GO":
-                report.add(f"{path}: {gid} must remain NO_GO until freeze prerequisites met")
+        if status != "NO_GO":
+            report.add(f"{path}: {gid} must remain NO_GO until Phase B execution / freeze criteria met")
 
-    # Operational may be GO or COMPLETED; must not silently flip complete pilot
     op = by_id.get("operational_pilot_gate", {}).get("status", "").strip()
     if op not in {"GO", "CONDITIONAL_GO", "COMPLETED", "NO_GO"}:
         report.add(f"{path}: operational_pilot_gate has unexpected status '{op}'")
@@ -173,8 +174,16 @@ def validate_status_files(root: Path, report: ValidationReport) -> None:
     source_gate = root / "data/pilot/PILOT_SOURCE_GATE.txt"
     if source_gate.exists():
         text = source_gate.read_text(encoding="utf-8")
-        if "PILOT_SOURCE_NO_GO" not in text and not _p5_ready(root):
+        if not _p5_ready(root) and "PILOT_SOURCE_NO_GO" not in text:
             report.add(f"{source_gate}: must retain PILOT_SOURCE_NO_GO while P5 blocked")
+        if _p5_ready(root) and "OPERATIONAL_COMPARATOR_READY" not in text:
+            report.add(
+                f"{source_gate}: expected OPERATIONAL_COMPARATOR_READY when OPT-B source ready"
+            )
+        if _p5_ready(root) and "DO_NOT_EQUATE_SOURCE_READY_WITH_PHASE_B_COMPLETE=true" not in text:
+            report.add(
+                f"{source_gate}: must warn that source readiness ≠ Phase B completion"
+            )
         if "NOT_FOR_SUBSTANTIVE_INFERENCE" not in text:
             report.add(f"{source_gate}: missing NOT_FOR_SUBSTANTIVE_INFERENCE")
 
@@ -183,9 +192,10 @@ def validate_status_files(root: Path, report: ValidationReport) -> None:
         text = status.read_text(encoding="utf-8")
         if "NOT_FOR_SUBSTANTIVE_INFERENCE" not in text:
             report.add(f"{status}: missing NOT_FOR_SUBSTANTIVE_INFERENCE")
-        if "COMPLETE_PILOT=" in text and "COMPLETE_PILOT=INCOMPLETE" not in text:
-            if not _p5_ready(root):
-                report.add(f"{status}: COMPLETE_PILOT must remain INCOMPLETE while P5 blocked")
+        if "COMPLETE_PILOT=INCOMPLETE" not in text:
+            report.add(f"{status}: COMPLETE_PILOT must remain INCOMPLETE until Phase B executed")
+        if "BENCHMARK_CALIBRATION=NO_GO" not in text:
+            report.add(f"{status}: BENCHMARK_CALIBRATION must remain NO_GO until execution")
         if "CORPUS_FREEZE=" in text and "CORPUS_FREEZE=NO_GO" not in text:
             report.add(f"{status}: CORPUS_FREEZE must be NO_GO")
         if "FULL_CODING=" in text and "FULL_CODING=NO_GO" not in text:

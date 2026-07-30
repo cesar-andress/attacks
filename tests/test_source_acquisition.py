@@ -34,10 +34,12 @@ def test_acquisition_artefacts_exist() -> None:
     assert (root / "data/pilot/PILOT_SOURCE_GATE.txt").exists()
 
 
-def test_gate_is_no_go_while_comparator_blocked() -> None:
+def test_gate_records_operational_ready_without_phase_b_complete() -> None:
     text = Path(REPO_ROOT / "data/pilot/PILOT_SOURCE_GATE.txt").read_text(encoding="utf-8")
-    assert "PILOT_SOURCE_NO_GO" in text
+    assert "OPERATIONAL_COMPARATOR_READY" in text
+    assert "BENCHMARK_CALIBRATION=NO_GO" in text
     assert "NOT_FOR_SUBSTANTIVE_INFERENCE" in text
+    assert "DO_NOT_EQUATE_SOURCE_READY_WITH_PHASE_B_COMPLETE=true" in text
 
 
 def test_local_sources_not_tracked_rows() -> None:

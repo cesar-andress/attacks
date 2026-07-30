@@ -5,6 +5,29 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [0.5.0] — 2026-07-31
+
+### Added
+
+- Adopted protocol amendment **PA-2026-07-31-002** (OPT-B): CF-02 conceptual;
+  FEMA FNSS 2010 operational Phase-B L1 (`DOC-ALT-FNSS-001`).
+- OPT-B decision record, red-team review, criteria evaluation, execution
+  manifest, BDD adjudication plan, next-human-action checklist.
+- Validators/tests for adopted design while keeping Phase-B calibration NO_GO.
+
+### Changed
+
+- Pilot source gate: operational comparator READY; CF-02 conceptual (access
+  still NO_GO). Complete-pilot source gate CONDITIONAL_GO.
+- Benchmark design GO / source READY; independent coder NOT_READY;
+  calibration, freeze, and full coding remain NO_GO.
+
+### Notes
+
+- Does **not** execute Phase-B coding or compute empirical α.
+- Does **not** open corpus freeze or full coding.
+- RP-P2 remains planned; SLAPA remains planned_unvalidated.
+
 ## [0.4.0] — 2026-07-31
 
 ### Added

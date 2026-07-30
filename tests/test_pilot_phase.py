@@ -11,7 +11,7 @@ from school_security_audit.validate_pilot_phase import validate_pilot_phase
 
 def test_gate_register_blocks_later_stages() -> None:
     rows = {r["gate_id"]: r for r in read_csv(REPO_ROOT / "data/gates/gate_register.csv")}
-    assert rows["complete_pilot_source_gate"]["status"] == "NO_GO"
+    assert rows["complete_pilot_source_gate"]["status"] in {"CONDITIONAL_GO", "GO"}
     assert rows["benchmark_calibration_gate"]["status"] == "NO_GO"
     assert rows["corpus_freeze_gate"]["status"] == "NO_GO"
     assert rows["full_coding_gate"]["status"] == "NO_GO"
@@ -38,18 +38,32 @@ def test_no_phase_a_in_final_coding_template() -> None:
         assert not str(row.get("pe_id", "")).startswith("PE-OPA-")
 
 
-def test_source_gate_still_no_go() -> None:
+def test_source_gate_operational_ready_not_phase_b_complete() -> None:
     text = Path(REPO_ROOT / "data/pilot/PILOT_SOURCE_GATE.txt").read_text(encoding="utf-8")
-    assert "PILOT_SOURCE_NO_GO" in text
+    assert "OPERATIONAL_COMPARATOR_READY" in text
+    assert "BENCHMARK_CALIBRATION=NO_GO" in text
+    assert "DO_NOT_EQUATE_SOURCE_READY_WITH_PHASE_B_COMPLETE=true" in text
 
 
-def test_pilot_status_complete_incomplete() -> None:
+def test_pilot_status_opt_b_adopted_calibration_nogo() -> None:
     text = Path(REPO_ROOT / "data/pilot/PILOT_STATUS.txt").read_text(encoding="utf-8")
     assert "OPERATIONAL_PILOT=COMPLETED" in text
+    assert "OPT_B=ADOPTED" in text
+    assert "BENCHMARK_SOURCE=READY" in text
+    assert "BENCHMARK_CALIBRATION=NO_GO" in text
     assert "COMPLETE_PILOT=INCOMPLETE" in text
     assert "CORPUS_FREEZE=NO_GO" in text
     assert "FULL_CODING=NO_GO" in text
+    assert "INDEPENDENT_CODER=NOT_READY" in text
     assert "NOT_FOR_SUBSTANTIVE_INFERENCE" in text
+
+
+def test_p5_operational_is_fnss_not_cf02_coding() -> None:
+    rows = {r["pilot_id"]: r for r in read_csv(REPO_ROOT / "data/source_registry/pilot_source_readiness.csv")}
+    assert rows["P5"]["document_id"] == "DOC-ALT-FNSS-001"
+    assert rows["P5"]["pilot_usable"] == "true"
+    assert rows["P5-CONCEPT"]["candidate_id"] == "CF-02"
+    assert rows["P5-CONCEPT"]["pilot_usable"] == "false"
 
 
 def test_validate_pilot_phase_ok() -> None:

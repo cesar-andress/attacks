@@ -1,0 +1,6 @@
+decision_id,fnss_can_adjudicate,evidence_type_needed,requires_independent_coding,phase_a_recode_possible,remains_unresolved_until_coding,cf02_still_required
+BDD-001,partial,Text distinguishing realistic usability/capability tests vs familiarisation or general drills,true,yes_if_rule_changes,true,no_for_primary_optional_supplement
+BDD-002,partial,Mandatory vs optional use of exercise/test findings to revise plans,true,yes_if_rule_changes,true,no_for_primary_optional_supplement
+BDD-003,yes,Function-based support prescriptions vs recognition-only language; named plans if present,true,yes_if_rule_changes,true,helpful_for_concept_not_required
+BDD-004,yes,Setting/facility catalogs vs operational supports,true,maybe,true,no
+BDD-005,yes,Treatment of examples/illustrations vs binding revision requirements,true,maybe,true,no

@@ -3,4 +3,5 @@ P1,CF-16,DOC-CF16-01,ready_for_pilot,public_official_download,true,,ACQ-P1-CF16-
 P2,CF-03,DOC-CF03-01,ready_for_pilot,public_archive_download,true,,ACQ-P2-CF03-01
 P3,CF-15,DOC-CF15-01,ready_for_pilot,public_official_download,true,,ACQ-P3-CF15-01
 P4,CF-13,DOC-CF13-01,ready_with_conditions,public_archive_download,true,live_url_cloudflare_403_archive_used,ACQ-P4-CF13-01
-P5,CF-02,DOC-CF02-01,hold_authorization,access_restricted,false,no_authorized_fulltext_and_ops_L1_unpinned,ACQ-P5-CF02-01
+P5,CF-11,DOC-ALT-FNSS-001,ready_for_pilot,public_official_download,true,independent_coder_not_qualified,ACQ-P5-FNSS-01
+P5-CONCEPT,CF-02,DOC-CF02-01,hold_authorization,access_restricted,false,conceptual_only_OPT_B_fulltext_no_go,ACQ-P5-CF02-01
