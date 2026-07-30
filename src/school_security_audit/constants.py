@@ -146,6 +146,33 @@ FORBIDDEN_COMPOSITE_FIELDS = {
     "inclusive_security_index",
 }
 
+# Branch B / Family F is retained in schemas but inactive for current-paper aggregates.
+BRANCH_B_FAMILY_F_FIELDS = {
+    "detection_mechanism_present",
+    "baseline_interpretation_addressed",
+    "specialist_participation",
+    "false_positive_safeguard",
+}
+BRANCH_B_STATUS = "inactive_for_current_study"
+
+# Pilot records must carry these markers and must not silently enter final analysis.
+PILOT_REQUIRED_FLAGS = {
+    "pilot_flag": "PILOT",
+    "inference_flag": "NOT_FOR_SUBSTANTIVE_INFERENCE",
+}
+
+FREEZE_DISPOSITION_VALUES = {
+    "include",
+    "exclude",
+    "hold",
+    "comparator",
+    "background_only",
+}
+
+# RQ2 primary denominator: locus among PEs with executability_rung >= 1
+RQ2_PRIMARY_MIN_RUNG = 1
+RQ2_COMPLEMENTARY_DENOMINATOR = "all_eligible_pes"
+
 IDENTITY_STATUSES = {
     "candidate_verified_identity",
     "candidate_partly_verified",

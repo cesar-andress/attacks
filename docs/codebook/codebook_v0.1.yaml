@@ -16,6 +16,14 @@ families:
   G: Population and setting differentiation
   H: Evidence, testing, and validation
   I: Security–accessibility conflicts and trade-offs
+# Current-paper analysis scope (2026-07-31): Branch A only.
+# Family F is inactive_for_current_study / reserved_for_secondary_module.
+# See docs/protocol/branch_b_scope_decision.md.
+analysis_scope:
+  current_paper: branch_a_executability
+  inactive_families_for_current_paper:
+    - F
+  family_F_status: inactive_for_current_study
 demand_source_values:
   - explicit
   - entailed

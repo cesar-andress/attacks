@@ -5,6 +5,26 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] — 2026-07-31
+
+### Added
+
+- Freeze-readiness register and candidate disposition recommendations
+  (recommendations only; corpus **not** frozen).
+- RQ2 denominator decision (primary: rung ≥ 1; complementary: all PEs).
+- Reliability policy v0.1 with α bands and contingencies.
+- Formal Branch B / Family F `inactive_for_current_study` decision.
+- Pilot sampling plan and empty pilot data schemas marked
+  `NOT_FOR_SUBSTANTIVE_INFERENCE`; execution blocked (no local source text).
+- Preregistration-readiness checklist and NO-GO report.
+- Verified official landing URLs for CF-03 (CISA) and CF-16 (GOV.UK).
+- Validation coverage for disposition/freeze/pilot artefacts.
+
+### Notes
+
+- Decision for corpus freeze / full coding: **NO-GO** until local text +
+  pilot + provenance holds are resolved.
+
 ## [0.2.1] — 2026-07-30
 
 ### Added

@@ -17,6 +17,7 @@ from school_security_audit.constants import (
     FORBIDDEN_REGISTER_STATUSES,
     FORBIDDEN_SCREENING_OR_INCLUSION_VALUES,
     FRAMEWORK_HEADERS,
+    FREEZE_DISPOSITION_VALUES,
     IDENTITY_STATUSES,
     OPENALEX_HEADERS,
     OPENALEX_VERIFICATION_STATUSES,
@@ -374,7 +375,63 @@ def validate_corpus(
     validate_openalex_rows(
         openalex_rows, fw_ids, oa_schema, report, path_label=str(openalex_path)
     )
+
+    # Freeze/pilot artefacts are validated only when checking the live corpus paths,
+    # not when unit tests pass fixture CSVs via explicit path arguments.
+    default_fw = root / "data/corpus/candidate_frameworks.csv"
+    if frameworks_path.resolve() == default_fw.resolve():
+        disposition_path = root / "data/corpus/candidate_disposition_recommendations.csv"
+        if disposition_path.exists():
+            _validate_disposition_recommendations(disposition_path, fw_ids, report)
+
+        freeze_reg = root / "data/corpus/freeze_readiness_register.csv"
+        if freeze_reg.exists():
+            headers = set(csv_headers(freeze_reg))
+            for required in ("issue_id", "blocking_status", "final_status"):
+                if required not in headers:
+                    report.add(f"{freeze_reg}: missing header '{required}'")
+
+        pilot_status = root / "data/pilot/PILOT_STATUS.txt"
+        if pilot_status.exists():
+            text = pilot_status.read_text(encoding="utf-8")
+            if "NOT_FOR_SUBSTANTIVE_INFERENCE" not in text:
+                report.add(f"{pilot_status}: must declare NOT_FOR_SUBSTANTIVE_INFERENCE")
+            for coding_name in (
+                "coding_coder_A.csv",
+                "coding_coder_B_procedural.csv",
+                "coding_adjudicated.csv",
+                "prescriptive_elements.csv",
+            ):
+                coding_file = root / "data/pilot" / coding_name
+                if not coding_file.exists():
+                    continue
+                for i, row in enumerate(read_csv(coding_file), start=2):
+                    flag = row.get("inference_flag", "").strip()
+                    if flag and flag != "NOT_FOR_SUBSTANTIVE_INFERENCE":
+                        report.add(
+                            f"{coding_file}:{i}: inference_flag must be "
+                            "NOT_FOR_SUBSTANTIVE_INFERENCE when present"
+                        )
+
     return report
+
+
+def _validate_disposition_recommendations(
+    path: Path, fw_ids: set[str], report: ValidationReport
+) -> None:
+    rows = read_csv(path)
+    for i, row in enumerate(rows, start=2):
+        fid = row.get("framework_id", "").strip()
+        if fid and fid not in fw_ids:
+            report.add(f"{path}:{i}: unknown framework_id '{fid}'")
+        disp = row.get("recommended_freeze_disposition", "").strip()
+        if disp and disp not in FREEZE_DISPOSITION_VALUES:
+            report.add(f"{path}:{i}: invalid recommended_freeze_disposition '{disp}'")
+        if row.get("NOT_A_FROZEN_INCLUSION", "").strip().lower() not in {"true", "1", "yes"}:
+            report.add(f"{path}:{i}: NOT_A_FROZEN_INCLUSION must be true")
+        # Disposition file must not use forbidden screening inclusion tokens as disposition
+        if disp in FORBIDDEN_SCREENING_OR_INCLUSION_VALUES:
+            report.add(f"{path}:{i}: disposition must not use frozen/final inclusion tokens")
 
 
 def main(argv: list[str] | None = None) -> int:

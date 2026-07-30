@@ -97,6 +97,16 @@ Required retained fields: OpenAlex work ID, DOI (if any), title, authors, year, 
 
 Not authoritative for current government guidance versions, official URLs, supersession, legal status, adoption, or copyright.
 
+## Freeze-readiness and dispositions (not inclusion)
+
+| File | Role |
+|---|---|
+| `data/corpus/freeze_readiness_register.csv` | Blocking/status register for freeze |
+| `data/corpus/candidate_disposition_recommendations.csv` | Recommended `include`/`exclude`/`hold`/`comparator`/`background_only` — **not** frozen inclusion |
+| `data/pilot/*` | Pilot schemas; `NOT_FOR_SUBSTANTIVE_INFERENCE`; may be `EXECUTION_BLOCKED` |
+
+Disposition values must not be written into `screening_status` or `register_status`.
+
 ## Inclusion log (`data/corpus/inclusion_log.csv`)
 
 Tracks later screening decisions (still empty for v0.1).

@@ -1,0 +1,7 @@
+PILOT_STATUS=EXECUTION_BLOCKED
+REASON=No authorized local source text available (data/sources absent; all local_file_status=none).
+NOT_FOR_SUBSTANTIVE_INFERENCE=true
+CODING_PASSES_COMPLETED=0
+INDEPENDENT_HUMAN_CODERS=0
+PROCEDURAL_SECOND_PASS=not_run
+AS_OF=2026-07-31

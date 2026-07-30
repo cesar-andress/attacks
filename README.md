@@ -8,10 +8,12 @@ This repository supports **methods, schemas, codebook drafts, empty data templat
 
 The study asks whether recognized school-security and preparedness frameworks address, in their own prescriptive text:
 
-1. **Protective-action executability** — whether measures are assessed/tested as executable by intended occupants under realistic conditions (Branch E).
-2. **Threat detectability** — whether detection/assessment processes address high capability-variance populations and false-positive safeguards (Branch F).
+1. **Protective-action executability** — documentary engagement with whether measures are assessed/tested as executable by intended occupants under realistic conditions (Branch E / current-paper spine).
+2. **Threat detectability** — detection/assessment process codes and false-positive safeguards (Branch F) — **inactive for the current paper**; reserved for a secondary module or separate study ([`docs/protocol/branch_b_scope_decision.md`](docs/protocol/branch_b_scope_decision.md)).
 
 These are **two separate analytical branches**. The repository deliberately does **not** define or accept a single combined “inclusive security score.”
+
+**Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO** until local source text + pilot + provenance holds are resolved).
 
 ## What this study is (and is not)
 
