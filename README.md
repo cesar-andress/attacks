@@ -23,6 +23,8 @@ These are **two separate analytical branches**. The repository deliberately does
 
 **Experimental Development Pack:** Synthetic methodological experiments EXP-01–EXP-06 under [`experiments/`](experiments/) — designed for future coder/expert studies; **not** a validated SLAPA survey; human experiments **not** executed. Run `make release-check`.
 
+**Unresolved-item register:** Every open scientific/editorial blocker is tracked in [`docs/todo/`](docs/todo/) (`unresolved_item_register.csv` + allowlist). `make validate` includes `validate_todos` (rejects unregistered open editorial markers; does not ban legitimate scientific uses of “pending”).
+
 ## What this study is (and is not)
 
 | This study **is** | This study **is not** |
@@ -110,7 +112,7 @@ attacks/
 ├── LICENSE
 ├── CITATION.cff
 ├── pyproject.toml
-├── docs/                 # protocol, codebook, research_program, release
+├── docs/                 # protocol, codebook, research_program, todo/, release
 ├── experiments/          # Experimental Development Pack (EXP-01…06)
 ├── schemas/              # JSON Schemas for L0/L1/L2/coding/experiments
 ├── data/                 # CSV templates (empty / constructed only)

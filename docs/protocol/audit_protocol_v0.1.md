@@ -67,9 +67,11 @@ Word-count density is optional sensitivity analysis only.
 
 ## Reliability (planned)
 
-- ≥2 coders; training + pilot; freeze codebook; double-coding (100% for small corpora).
-- Report Krippendorff’s α per variable, unitizing reliability, and pre-consensus agreement.
-- Pre-commit floors; demote below-floor variables to exploratory-only.
+- ≥2 independent coders; training + pilot; freeze codebook; double-coding.
+- **Small corpus:** ≤15 included L1 and ≤250 eligible PEs → 100% double-coding; else preregister subsample before coding (see `reliability_policy_v0.1.md`).
+- Report Krippendorff’s α per variable, unitizing reliability, and pre-consensus agreement (Krippendorff 2018).
+- Pre-commit floors (α≥0.80 / 0.67); demote below-floor variables to exploratory-only.
+- Simulated procedural second passes ≠ empirical intercoder α.
 
 ## Claims
 

@@ -18,7 +18,7 @@
 | Benchmark comparator logic | Partial | Logic ready; P5 text missing |
 | Counterexample commitments | Ready | Pre-coding only |
 | Confirmatory vs exploratory | Ready | Reliability contingencies |
-| Reliability policy | Ready | reliability_policy_v0.1.md; empirical test after complete pilot |
+| Reliability policy | Ready | reliability_policy_v0.1.md (Krippendorff 2018; small-corpus ≤15 L1 / ≤250 PE); empirical α after independent coding |
 | Fallback rules | Ready | Manifest carries paper if entailed fails |
 | Denominators | Ready | RQ2 primary B + complementary A |
 | Exclusions | Partial | Disposition recommendations; not final |
