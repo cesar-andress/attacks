@@ -8,6 +8,10 @@ __pycache__/
 venv/
 env/
 .env
+.env.*
+!*env*.example
+*api_key*
+*OPEN_ALEX_KEY*
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

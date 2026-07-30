@@ -18,6 +18,8 @@ from school_security_audit.constants import (
     FORBIDDEN_SCREENING_OR_INCLUSION_VALUES,
     FRAMEWORK_HEADERS,
     IDENTITY_STATUSES,
+    OPENALEX_HEADERS,
+    OPENALEX_VERIFICATION_STATUSES,
     PE_HEADERS,
     PROVENANCE_CONFIDENCE,
     REGISTER_STATUSES,
@@ -209,6 +211,53 @@ def validate_pe_rows(
     return ids
 
 
+def validate_openalex_rows(
+    rows: list[dict[str, str]],
+    framework_ids: set[str],
+    schema: dict,
+    report: ValidationReport,
+    *,
+    path_label: str = "openalex",
+) -> None:
+    validator = Draft202012Validator(schema)
+    for i, row in enumerate(rows, start=2):
+        for key in ("OPEN_ALEX_KEY", "api_key", "apikey"):
+            blob = " ".join(row.values())
+            if key in blob:
+                report.add(f"{path_label}:{i}: possible API key material detected in field values")
+
+        cid = row.get("candidate_id", "").strip()
+        if framework_ids and cid and cid not in framework_ids:
+            report.add(f"{path_label}:{i}: orphan candidate_id '{cid}'")
+
+        status = row.get("verification_status", "").strip()
+        if status and status not in OPENALEX_VERIFICATION_STATUSES:
+            report.add(f"{path_label}:{i}: invalid verification_status '{status}'")
+
+        if row.get("does_not_authorize_corpus_inclusion", "").strip() != "true":
+            report.add(
+                f"{path_label}:{i}: does_not_authorize_corpus_inclusion must be 'true' "
+                "(OpenAlex hits do not authorize corpus inclusion)"
+            )
+
+        required_retained = [
+            "openalex_work_id",
+            "title",
+            "authors",
+            "publication_year",
+            "source_or_journal",
+            "retrieval_date",
+            "verification_status",
+        ]
+        for field_name in required_retained:
+            if not row.get(field_name, "").strip():
+                report.add(f"{path_label}:{i}: missing required OpenAlex field '{field_name}'")
+
+        payload = {k: v for k, v in row.items() if v != ""}
+        for err in sorted(validator.iter_errors(payload), key=lambda e: list(e.path)):
+            report.add(f"{path_label}:{i}: schema: {err.message}")
+
+
 def validate_counterexample_rows(
     rows: list[dict[str, str]],
     framework_ids: set[str],
@@ -253,6 +302,7 @@ def validate_corpus(
     documents_path: Path | None = None,
     pe_path: Path | None = None,
     counterexamples_path: Path | None = None,
+    openalex_path: Path | None = None,
 ) -> ValidationReport:
     root = root or REPO_ROOT
     frameworks_path = frameworks_path or root / "data/corpus/candidate_frameworks.csv"
@@ -261,6 +311,7 @@ def validate_corpus(
     counterexamples_path = (
         counterexamples_path or root / "data/corpus/counterexample_commitments.csv"
     )
+    openalex_path = openalex_path or root / "data/corpus/openalex_literature_verifications.csv"
 
     report = ValidationReport()
     for path, headers in (
@@ -278,6 +329,11 @@ def validate_corpus(
     else:
         _validate_headers(counterexamples_path, COUNTEREXAMPLE_HEADERS, report)
 
+    if not openalex_path.exists():
+        report.add(f"missing file: {openalex_path}")
+    else:
+        _validate_headers(openalex_path, OPENALEX_HEADERS, report)
+
     if report.errors:
         return report
 
@@ -285,11 +341,13 @@ def validate_corpus(
     doc_schema = load_json(root / "schemas/document.schema.json")
     pe_schema = load_json(root / "schemas/prescriptive_element.schema.json")
     cx_schema = load_json(root / "schemas/counterexample_commitment.schema.json")
+    oa_schema = load_json(root / "schemas/openalex_literature_verification.schema.json")
 
     frameworks = read_csv(frameworks_path)
     documents = read_csv(documents_path)
     pes = read_csv(pe_path)
     counterexamples = read_csv(counterexamples_path) if counterexamples_path.exists() else []
+    openalex_rows = read_csv(openalex_path) if openalex_path.exists() else []
 
     # Reject affirmative claims that the corpus has been frozen (allow "not frozen")
     for path_label, rows in (
@@ -312,6 +370,9 @@ def validate_corpus(
     validate_pe_rows(pes, doc_ids, pe_schema, report, path_label=str(pe_path))
     validate_counterexample_rows(
         counterexamples, fw_ids, cx_schema, report, path_label=str(counterexamples_path)
+    )
+    validate_openalex_rows(
+        openalex_rows, fw_ids, oa_schema, report, path_label=str(openalex_path)
     )
     return report
 

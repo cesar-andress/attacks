@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cesar-andress/attacks/schemas/openalex_literature_verification.schema.json",
+  "title": "OpenAlex literature verification record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verification_id",
+    "candidate_id",
+    "openalex_work_id",
+    "title",
+    "authors",
+    "publication_year",
+    "source_or_journal",
+    "retrieval_date",
+    "verification_status",
+    "relation_to_candidate"
+  ],
+  "properties": {
+    "verification_id": { "type": "string", "minLength": 1 },
+    "candidate_id": { "type": "string", "minLength": 1 },
+    "document_id": { "type": "string" },
+    "openalex_work_id": {
+      "type": "string",
+      "pattern": "^https://openalex\\.org/W[0-9]+$"
+    },
+    "doi": { "type": "string" },
+    "title": { "type": "string", "minLength": 1 },
+    "authors": { "type": "string", "minLength": 1 },
+    "publication_year": { "type": "string", "minLength": 1 },
+    "source_or_journal": { "type": "string" },
+    "openalex_type": { "type": "string" },
+    "retrieval_date": { "type": "string", "minLength": 1 },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "confirmed_via_openalex",
+        "ambiguous_match",
+        "not_found",
+        "related_literature_only",
+        "not_applicable_non_indexed_guidance"
+      ]
+    },
+    "relation_to_candidate": {
+      "type": "string",
+      "enum": [
+        "candidate_primary_literature",
+        "related_peer_reviewed_literature",
+        "conceptual_background",
+        "does_not_establish_operational_l1"
+      ]
+    },
+    "peer_reviewed_indication": {
+      "type": "string",
+      "enum": ["yes", "no", "unclear", ""]
+    },
+    "prescriptive_or_assessment_bearing": {
+      "type": "string",
+      "enum": ["unknown", "likely_conceptual", "possibly_prescriptive", ""]
+    },
+    "notes": { "type": "string" },
+    "does_not_authorize_corpus_inclusion": {
+      "type": "string",
+      "const": "true"
+    }
+  }
+}

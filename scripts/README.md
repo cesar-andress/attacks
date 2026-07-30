@@ -13,6 +13,16 @@ ssa-validate-metadata
 ssa-validate-coding
 ```
 
+OpenAlex literature verification (optional; requires `OPEN_ALEX_KEY` in env):
+
+```bash
+source ~/.bashrc   # loads OPEN_ALEX_KEY; do not echo it
+PYTHONPATH=src python3 scripts/verify_openalex.py --dry-run
+PYTHONPATH=src python3 scripts/verify_openalex.py
+```
+
+See `docs/protocol/openalex_verification.md`.
+
 Validation rules (selected):
 
 - Required CSV headers for frameworks, documents, PEs, and coding records

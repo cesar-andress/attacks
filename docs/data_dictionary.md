@@ -87,6 +87,16 @@ Must not contain codebook tokens such as `executability_rung` or claim audit fin
 
 Unchanged templates under `data/coding/`. Do not populate with real framework text in this task.
 
+## OpenAlex literature verifications (`data/corpus/openalex_literature_verifications.csv`)
+
+Optional scholarly-identity checks via OpenAlex. See [`docs/protocol/openalex_verification.md`](protocol/openalex_verification.md).
+
+Required retained fields: OpenAlex work ID, DOI (if any), title, authors, year, source/journal, retrieval date, verification status.
+
+`does_not_authorize_corpus_inclusion` must be `true`. OpenAlex hits never auto-add candidates to the corpus.
+
+Not authoritative for current government guidance versions, official URLs, supersession, legal status, adoption, or copyright.
+
 ## Inclusion log (`data/corpus/inclusion_log.csv`)
 
 Tracks later screening decisions (still empty for v0.1).

@@ -79,6 +79,34 @@ COUNTEREXAMPLE_HEADERS = [
     "warning_not_coded_finding",
 ]
 
+OPENALEX_HEADERS = [
+    "verification_id",
+    "candidate_id",
+    "document_id",
+    "openalex_work_id",
+    "doi",
+    "title",
+    "authors",
+    "publication_year",
+    "source_or_journal",
+    "openalex_type",
+    "retrieval_date",
+    "verification_status",
+    "relation_to_candidate",
+    "peer_reviewed_indication",
+    "prescriptive_or_assessment_bearing",
+    "notes",
+    "does_not_authorize_corpus_inclusion",
+]
+
+OPENALEX_VERIFICATION_STATUSES = {
+    "confirmed_via_openalex",
+    "ambiguous_match",
+    "not_found",
+    "related_literature_only",
+    "not_applicable_non_indexed_guidance",
+}
+
 DEMAND_FIELDS = [
     "demand_alert_perception",
     "demand_instruction_comprehension",

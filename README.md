@@ -57,6 +57,13 @@ For Family C, every coded demand stores a separate `demand_source`:
 - `entailed` — necessarily entailed by a prescribed action (entailment table)
 - `ambiguous_memo` — uncertain; **must not** count as demand presence in confirmatory analyses
 
+## OpenAlex literature checks
+
+Scholarly identity for selected literature-linked candidates may be verified with the OpenAlex API (`scripts/verify_openalex.py`). Policy and limits: [`docs/protocol/openalex_verification.md`](docs/protocol/openalex_verification.md).
+
+- Load `OPEN_ALEX_KEY` from the environment; never commit or print it.
+- OpenAlex does **not** authorize corpus inclusion and is not authoritative for current government guidance versions or official URLs.
+
 ## Candidate frame v0.1 (current data status)
 
 `data/corpus/candidate_frameworks.csv` holds a **provisional candidate register** assembled for later screening.
