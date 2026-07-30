@@ -52,6 +52,7 @@ data/derived/**
 data/reliability/**/*
 !data/reliability/.gitkeep
 !data/reliability/README.md
+experiments/_generated/
 
 # Temporary and OSF/local sync clutter
 tmp/

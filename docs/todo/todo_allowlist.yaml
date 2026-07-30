@@ -1,0 +1,167 @@
+# Allowlisted unresolved markers for release-critical public files.
+# Markers not listed here (matching scan patterns) fail validate_todos.
+# status: intentional | blocked | resolved_documented
+# resolution_condition: required for blocked items
+
+version: 1
+updated: 2026-07-31
+
+# Patterns that are NEVER allowlisted in release-critical prose (fake IDs / dummy URLs)
+forbidden_patterns:
+  - 'preregistration.?id.?=.?(TBD|TODO|XXX|0000)'
+  - 'https?://example\.(com|org)'
+  - 'doi\.org/10\.0000/'
+  - 'INSERT_PREREG'
+  - 'FAKE_OSF'
+
+# Legitimate scientific uses of "pending"/"provisional" are not banned globally.
+# Only explicit TODO/FIXME/CITATION-NEEDED/XXX markers and registered stubs are scanned.
+
+entries:
+  - todo_id: TODO-SRC-001
+    paths:
+      - docs/sources/unresolved_blockers.md
+      - data/pilot/PILOT_STATUS.txt
+      - data/gates/gate_register.csv
+    markers:
+      - PILOT_SOURCE_NO_GO
+      - NO_GO
+      - INCOMPLETE
+    status: blocked
+    resolution_condition: Authorized full text for P5/CF-02 (or formal CMIST L1 amendment) with checksum
+
+  - todo_id: TODO-SRC-002
+    paths:
+      - data/corpus/document_registry.csv
+    markers:
+      - uncertain_pending_full_text
+      - TBD
+    status: blocked
+    resolution_condition: Pin operative CF-02 / CMIST L1 after authorized text or amendment
+
+  - todo_id: TODO-SRC-003
+    paths:
+      - docs/sources/version_supersession_log.md
+      - data/corpus/freeze_readiness_register.csv
+    markers:
+      - freeze_blocker
+      - PA-SRC-001
+    status: blocked
+    resolution_condition: CF-15 supersession/derogation decision before corpus freeze
+
+  - todo_id: TODO-SRC-004
+    paths:
+      - docs/sources/dossiers/P4_CF13.md
+    markers:
+      - ready_with_conditions
+    status: blocked
+    resolution_condition: Acquire or formally exclude PPMS fascicule companions
+
+  - todo_id: TODO-SRC-005
+    paths:
+      - data/corpus/document_registry.csv
+      - data/corpus/candidate_disposition_recommendations.csv
+      - data/corpus/freeze_readiness_register.csv
+    markers:
+      - TBD
+      - placeholder_unverified
+      - provisional_to_locate
+      - uncertain_pending_full_text
+    status: intentional
+    resolution_condition: Resolve each L1 identity before freeze (CSTAG, REMS annex, PEEP, CPTED tool, etc.)
+
+  - todo_id: TODO-FRZ-001
+    paths:
+      - docs/protocol/go_nogo_report.md
+      - data/corpus/freeze_readiness_register.csv
+      - data/gates/gate_register.csv
+    markers:
+      - NO-GO
+      - NO_GO
+      - freeze_blocker
+    status: blocked
+    resolution_condition: Clear freeze register; complete pilot A+B; declare freeze
+
+  - todo_id: TODO-PIL-001
+    paths:
+      - data/pilot/PILOT_STATUS.txt
+      - docs/pilot/
+    markers:
+      - INCOMPLETE
+      - NO_GO
+      - PROTOCOL_DEVELOPMENT_ONLY
+    status: blocked
+    resolution_condition: Phase B benchmark coding after CF-02 access
+
+  - todo_id: TODO-PIL-002
+    paths:
+      - data/pilot/PILOT_STATUS.txt
+      - docs/protocol/reliability_policy_v0.1.md
+    markers:
+      - not_computed
+      - EMPIRICAL_INTERCODER
+    status: blocked
+    resolution_condition: Independent human double-coding yielding pre-consensus α
+
+  - todo_id: TODO-COD-001
+    paths:
+      - data/gates/gate_register.csv
+    markers:
+      - NO_GO
+    status: blocked
+    resolution_condition: Corpus freeze + preregistration before full coding
+
+  - todo_id: TODO-PRE-001
+    paths:
+      - docs/protocol/preregistration_readiness_checklist.md
+      - docs/todo/preregistration_readiness_matrix.md
+    markers:
+      - not issued
+      - Not ready
+    status: blocked
+    resolution_condition: Real registry identifier after freeze package ready (never invent)
+
+  - todo_id: TODO-EXP-001
+    paths:
+      - experiments/
+    markers:
+      - human_execution_not_started
+      - internally_tested_synthetic
+      - ethics
+    status: intentional
+    resolution_condition: Ethics approval then human EXP-01/02 execution
+
+  - todo_id: TODO-PRO-001
+    paths:
+      - docs/protocol/reliability_policy_v0.1.md
+    markers: []
+    status: resolved_documented
+    resolution_condition: n/a — Krippendorff 2018 cited; bands confirmed
+
+  - todo_id: TODO-PRO-002
+    paths:
+      - docs/protocol/reliability_policy_v0.1.md
+    markers: []
+    status: resolved_documented
+    resolution_condition: n/a — small-corpus threshold defined
+
+# Files where registered intentional scientific language is expected
+release_critical_globs:
+  - docs/**/*.md
+  - data/**/*.csv
+  - data/**/*.txt
+  - experiments/**/*.md
+  - experiments/**/*.csv
+  - CITATION.cff
+  - README.md
+  - src/**/*.py
+  - tests/**/*.py
+
+# Exclude from TODO marker failure (generated, local, binary)
+exclude_globs:
+  - docs/todo/**
+  - '**/__pycache__/**'
+  - experiments/_generated/**
+  - local_sources/**
+  - data/sources/**
+  - .venv/**
