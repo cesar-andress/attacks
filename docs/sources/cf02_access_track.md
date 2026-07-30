@@ -1,6 +1,7 @@
 # CF-02 access track (active)
 
 **Status:** OPEN — blocks `benchmark_calibration_gate` and complete pilot  
+**Design recommendation (not enactment):** see `docs/phase_b/` — `OPERATIONAL_L1_AMENDMENT_RECOMMENDED` (OPT-B)  
 **Do not replace silently**  
 **Do not use pirated repositories**
 
@@ -8,18 +9,32 @@
 
 - **Candidate:** CF-02  
 - **Document:** DOC-CF02-01 — Kailes & Enders (2007), *Moving Beyond “Special Needs”*  
-- **Role:** sole pilot **benchmark comparator** (`benchmark_calibration_sample`)
+- **Role:** original sole pilot **benchmark comparator** (`benchmark_calibration_sample`)  
+- **DOI:** 10.1177/10442073070170040601
 
-## Legitimate access routes (checklist)
+## Legitimate access routes (checked 2026-07-31)
 
-| Route | Status | Notes |
+Full machine log: `data/phase_b/access_routes.csv`.
+
+| Route ID | Route | Status |
 |---|---|---|
-| Institutional library subscription | pending | Check SAGE / Journal of Disability Policy Studies access |
-| Interlibrary loan | pending | |
-| Author manuscript (lawful share) | pending | Only if author-authorized |
-| Direct author permission | pending | Template in permission queue — not auto-sent |
-| Publisher-authorized access / permissions portal | pending | `PERM-CF02-001` |
-| Official repository copy | not identified | |
+| AR-CF02-001 | Unpaywall | closed (`is_oa=false`) |
+| AR-CF02-002 | OpenAlex | closed; no repository fulltext |
+| AR-CF02-003 | SAGE PDF via DOI | not opened (403 / no institutional session) |
+| AR-CF02-004 | CiteSeerX location | rejected — uncertain rights |
+| AR-CF02-005 | UCJC library discovery | **pending human** |
+| AR-CF02-006 | Interlibrary loan | template ready — **not sent** |
+| AR-CF02-007 | Author manuscript | not identified; request template ready |
+| AR-CF02-008 | Publisher permissions | `PERM-CF02-001` ready — **not sent** |
+| AR-CF02-009 | Pirate mirrors | **forbidden** |
+
+## Parallel operational L1 (not a silent substitute)
+
+| Route ID | Source | Status |
+|---|---|---|
+| AR-FNSS-001 | FEMA FNSS Nov 2010 via Missouri SEMA public PDF | **Authorized full text verified locally**; sha256 in `authorized_source_status.csv` |
+
+Coding FNSS as Phase-B comparator requires adoption of `PA-DRAFT-002` (OPT-B/C). Until then calibration remains **NO_GO**.
 
 ## Forbidden
 
@@ -27,17 +42,8 @@
 - Unauthorized PDFs  
 - Silent substitution with DSIL/CMIST training PDFs without protocol amendment
 
-## If a distinct operational CMIST L1 is identified
+## Ready-to-send requests
 
-Do **not** auto-substitute. Open a formal candidate amendment covering:
-
-1. exact source identity  
-2. authority  
-3. version  
-4. operational content  
-5. relationship to CF-02  
-6. justification for L1 use  
-7. effect on comparator logic  
-8. required preregistration amendment  
-
-Record approval in the protocol decision log before any Phase B coding.
+- `docs/phase_b/access_requests/PERM-CF02-001_publisher.md`  
+- `docs/phase_b/access_requests/ILL-CF02-001_library.md`  
+- `docs/phase_b/access_requests/AUTH-CF02-001_author.md`  

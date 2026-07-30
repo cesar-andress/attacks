@@ -1,0 +1,9 @@
+role_id,role_label,requires_fulltext_coding,bibliographic_citation_sufficient,satisfied_by_cf02_article,satisfied_by_operational_fnss,notes
+CR-01,theoretical_citation,false,true,yes_when_cited,partial,Function-based AFN lineage; manuscript already cites Kailes2007
+CR-02,function_based_access_benchmark_concept,false,true,yes,yes,Conceptual anti-deficit / function-based framing
+CR-03,cmist_or_afn_concept_source,false,true,yes,partial_fnss_not_cmist_label,CMIST acronym originates in AFN literature; FNSS implements functional supports without requiring CMIST label
+CR-04,operational_coding_comparator,true,false,yes_if_authorized_fulltext,yes_if_amendment_adopts,PE unitization requires authorized full text
+CR-05,anti_deficit_framing_support,false,true,yes,yes,Claim-boundary support; not a PE code
+CR-06,supports_and_assessment_benchmark,true,false,yes_if_authorized_fulltext,yes_high_prescriptive_density,Primary Phase-B calibration target for BDD-001…005
+CR-07,setting_or_subgroup_differentiation_benchmark,true,false,uncertain_without_fulltext,partial_shelter_not_school,FNSS is shelter-focused; school applicability is a limitation to declare
+CR-08,rq4_falsification_anchor,true,false,yes_if_authorized_fulltext,yes_if_amendment_adopts,RQ4 needs at least one coded AFN/function-based comparator L1

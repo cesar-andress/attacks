@@ -1,0 +1,19 @@
+item_id,item,status,blocker,notes
+CFZ-01,Final eligibility rules,conditionally_ready,freeze_tag,Operative corpus_selection.md; freeze tag pending
+CFZ-02,Inclusion/exclusion decisions,blocked,holds_and_comparator,Disposition recommendations only
+CFZ-03,Hold resolution,blocked,CSTAG_REMS_PEEP_CF15_CF02,See freeze_readiness_register
+CFZ-04,Comparator decision,blocked,benchmark_design_amendment_or_cf02_access,OPT-B recommended not enacted
+CFZ-05,Authoritative versions,conditionally_ready,per_document,Phase A sources pinned; comparator pending
+CFZ-06,Archive locators,conditionally_ready,url_gaps,Some L1 URLs still blank
+CFZ-07,Checksums,conditionally_ready,comparator_and_some_L1,FNSS checksum recorded; CF-02 none
+CFZ-08,Source authorization,blocked,CF-02_and_holds,PILOT_SOURCE_NO_GO
+CFZ-09,Codebook version,conditionally_ready,benchmark_amendments,v0.1 draft; freeze after Phase B
+CFZ-10,Ladder rule,conditionally_ready,BDD-001_002,E1 highest ordinal depth ready; drill/revision BDD open
+CFZ-11,Locus rule,ready,none,Tokens fixed
+CFZ-12,Demand-source rule,ready,none,explicit/entailed/ambiguous_memo
+CFZ-13,Reliability plan,ready,empirical_alpha_pending,Policy + small-corpus threshold ready
+CFZ-14,RQ denominators,ready,none,RQ2 primary rung≥1
+CFZ-15,Planned sensitivity analyses,conditionally_ready,prereg,Listed in methods draft
+CFZ-16,Pilot exclusion,ready,none,Triple labels; no silent merge
+CFZ-17,Preregistration package,blocked,phase_b_and_freeze,Draft prepared; not submitted
+CFZ-18,Repository release identifier,conditionally_ready,tag_at_freeze,v0.4.0 lineage exists

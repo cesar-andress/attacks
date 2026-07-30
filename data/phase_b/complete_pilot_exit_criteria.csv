@@ -1,0 +1,17 @@
+criterion_id,criterion,required_for_benchmark_calibration,required_for_complete_pilot,current_status,evidence_field
+CPX-01,Authorized comparator source available locally,true,true,blocked_cf02_or_pending_amendment_fnss,authorized_source_status.csv
+CPX-02,Version and provenance verified,true,true,fnss_verified_cf02_unverified_fulltext,dossiers + access_routes
+CPX-03,Source checksum recorded,true,true,fnss_yes_cf02_no,authorized_source_status.csv
+CPX-04,Independent coders qualified (≥2 humans),true,true,blocked_no_recruited_coder,qualification package ready
+CPX-05,Independent unitization completed on Phase-B source,true,true,not_started,phase_b coding plan
+CPX-06,Independent coding completed (raw files preserved),true,true,not_started,phase_b coding plan
+CPX-07,Pre-consensus reliability calculated where appropriate,true,true,not_started,reliability_operationalization.md
+CPX-08,Disagreements adjudicated; raw retained,true,true,not_started,disagreement_log
+CPX-09,Benchmark-dependent decisions BDD-001…005 resolved,true,true,open_pending_p5,benchmark_dependent_decision_register.csv
+CPX-10,Codebook amended and versioned if needed,true,true,pending,amendment_log
+CPX-11,Phase-A recoding performed if BDD rules require,false,true,n/a_until_bdd_resolved,phase_b coding plan
+CPX-12,Validators pass including phase_b validator,true,true,pending_this_sprint,make validate
+CPX-13,Pilot completion report updated,true,true,not_started,docs/pilot/
+CPX-14,No pilot records enter final analysis,true,true,policy_ready,triple labels
+CPX-15,Preregistration-readiness review completed,false,true,blocked,prereg draft package
+CPX-16,No silent comparator substitution,true,true,enforced_by_validator,validate_phase_b

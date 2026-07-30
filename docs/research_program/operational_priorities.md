@@ -12,8 +12,9 @@
 
 ## Immediate next operational action
 
-1. Advance **CF-02 / benchmark access** (or a formal comparator amendment).  
-2. Complete Phase B benchmark calibration.  
+1. Advance **CF-02 access** (library/ILL/author/publisher — templates in `docs/phase_b/access_requests/`) **and/or** decide on **PA-DRAFT-002** (OPT-B: FNSS operational L1).  
+2. Recruit/qualify independent coder; execute Phase B only after authorized source + amendment state clear.  
+3. Complete Phase B benchmark calibration (still **NO_GO** until execution criteria met).  
 3. Close complete pilot → unlock freeze path.  
 4. Preregister and run full RP-P1 coding.
 
