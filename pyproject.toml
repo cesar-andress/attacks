@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "school-security-audit"
-version = "0.3.2"
+version = "0.3.3"
 description = "Reproducible infrastructure for a documentary content analysis of school-security frameworks."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -28,6 +28,7 @@ dev = ["pytest>=7.0"]
 ssa-validate-metadata = "school_security_audit.cli:validate_metadata_main"
 ssa-validate-coding = "school_security_audit.cli:validate_coding_main"
 ssa-validate-pilot-phase = "school_security_audit.cli:validate_pilot_phase_main"
+ssa-validate-research-program = "school_security_audit.cli:validate_research_program_main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -9,7 +9,8 @@
 |---|---|
 | Threat detectability (Family F) | `inactive_for_current_study` |
 | Future short module | `reserved_for_secondary_module` (option open) |
-| Separate paper | `reserved_for_separate_study` (option open) |
+| Separate paper | `reserved_for_separate_study` → programme ID **RP-P4** (planned) |
+| SLAPA domain | Domain **B** (`planned_unvalidated`) — see `docs/research_program/branch_b_detectability.md` |
 | Demand–capability characterization of detectability | **Forbidden** — detectability is not demand–capability fit |
 
 ## Operationalization

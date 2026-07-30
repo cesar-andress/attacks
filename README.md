@@ -19,6 +19,8 @@ These are **two separate analytical branches**. The repository deliberately does
 
 **Two-phase pilot (PA-2026-07-31-001):** Phase A operational codebook pilot on P1–P4 = **COMPLETED** (`PROTOCOL_DEVELOPMENT_ONLY`); Phase B benchmark calibration = **NO_GO**. See [`data/gates/gate_register.csv`](data/gates/gate_register.csv) and [`docs/pilot/phase_a_completion_report.md`](docs/pilot/phase_a_completion_report.md).
 
+**Broader research programme:** Paper 1 (this documentary audit) is the empirical foundation of a four-paper programme on inclusive organisational preparedness (SLAPA architecture planned/unvalidated). Programme docs: [`docs/research_program/`](docs/research_program/). Operational Priority 1 remains completing RP-P1.
+
 ## What this study is (and is not)
 
 | This study **is** | This study **is not** |
@@ -105,7 +107,7 @@ attacks/
 ├── LICENSE
 ├── CITATION.cff
 ├── pyproject.toml
-├── docs/                 # protocol, codebook, data dictionary
+├── docs/                 # protocol, codebook, research_program, data dictionary
 ├── schemas/              # JSON Schemas for L0/L1/L2/coding
 ├── data/                 # CSV templates (empty / constructed only)
 ├── src/school_security_audit/   # validation library (importable)

@@ -108,6 +108,14 @@ Not authoritative for current government guidance versions, official URLs, super
 | `data/gates/gate_register.csv` | Separate gates (complete / operational / benchmark / freeze / full coding) |
 | `local_sources/` | Local full text + Phase A excerpts (**gitignored**; not redistributed) |
 
+## Research programme (planned multi-paper; not completed studies)
+
+| Path | Role |
+|---|---|
+| `docs/research_program/` | Charter, RP-P1–P4 register, SLAPA architecture (unvalidated), traceability, roadmaps |
+| Paper statuses | `active` (RP-P1 only) or `planned` |
+| SLAPA `validation_status` | `planned_unvalidated` only |
+
 ## Freeze-readiness and dispositions (not inclusion)
 
 | File | Role |

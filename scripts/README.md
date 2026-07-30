@@ -7,12 +7,14 @@ Thin CLI wrappers around the importable package `school_security_audit`.
 PYTHONPATH=src python3 scripts/validate_metadata.py
 PYTHONPATH=src python3 scripts/validate_coding.py
 PYTHONPATH=src python3 -m school_security_audit.validate_pilot_phase
+PYTHONPATH=src python3 -m school_security_audit.validate_research_program
 
 # Or after editable install
 pip install -e ".[dev]"
 ssa-validate-metadata
 ssa-validate-coding
 ssa-validate-pilot-phase
+ssa-validate-research-program
 ```
 
 Phase A record regeneration (dev only; does not authorize Phase B):

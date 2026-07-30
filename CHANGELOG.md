@@ -5,6 +5,22 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [0.3.3] — 2026-07-31
+
+### Added
+
+- Research-programme charter and four-paper dependency register (RP-P1–P4).
+- SLAPA architecture (planned/unvalidated), domain register, Paper 1→SLAPA
+  traceability, evidence-layer model, Branch B programme record, validation
+  roadmap, comparison safeguards, future claims policy, five-year roadmap,
+  operational priority register.
+- Lightweight `validate_research_program` checks and tests.
+
+### Notes
+
+- Does not redesign Paper 1; SLAPA is not validated; Priority 1 remains RP-P1
+  execution (complete pilot still blocked on CF-02).
+
 ## [0.3.2] — 2026-07-31
 
 ### Added

@@ -38,6 +38,9 @@ The following are **out of scope** for this repository’s audit design and must
 - No combined “inclusive security score” is defined or validated here.
 - `ambiguous_memo` demand sources never contribute to confirmatory demand-presence rates.
 
+Programme-level language for *planned* instruments and later papers is governed by
+`docs/research_program/future_claims_policy.md` and must not be read back into Paper 1 findings.
+
 ## Reporting ceiling
 
 There is no clean population denominator for “all school-security frameworks.”  
