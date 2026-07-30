@@ -419,6 +419,13 @@ def validate_corpus(
 
         _validate_pilot_source_acquisitions(root, fw_ids, report)
 
+        # Two-phase pilot constraints (Phase A labels; later gates remain blocked)
+        from school_security_audit.validate_pilot_phase import validate_pilot_phase
+
+        pilot_report = validate_pilot_phase(root)
+        for err in pilot_report.errors:
+            report.add(err)
+
     return report
 
 

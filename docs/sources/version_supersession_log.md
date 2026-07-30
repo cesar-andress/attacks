@@ -7,3 +7,4 @@
 | CF-15 | RD 393/2007 original BOE PDF + consolidado HTML | RD 1468/2008 amendment | Prefer consolidado for operative text; keep original PDF |
 | CF-13 | Circulaire 8-6-2023 NOR MENE2307453C (BO Hebdo26) | Pre-2023 separate PPMS circulars (abrogated in part) | Unified circular matches register; fascicules not acquired |
 | CF-02 | 2007 JDPS article identity only | DSIL CMIST training PDF; ASPR TRACIE pages | **No silent substitution**; fulltext unauthorized |
+| CF-15 | Original BOE PDF A12841–12850 (2007) used for Phase A | Consolidado HTML notes derogation effective **11 Jul 2023** via RD 524/2023 | Freeze must revisit identity/supersession (`PA-SRC-001`); Phase A procedural only |

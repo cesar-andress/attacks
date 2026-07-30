@@ -15,7 +15,9 @@ These are **two separate analytical branches**. The repository deliberately does
 
 **Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO**).
 
-**Pilot source gate:** **PILOT_SOURCE_NO_GO** — P1–P4 local authorized copies registered under gitignored `local_sources/`; P5/CF-02 comparator full text still unauthorized. See [`docs/sources/pilot_source_readiness_report.md`](docs/sources/pilot_source_readiness_report.md).
+**Pilot source gate (complete pilot):** **PILOT_SOURCE_NO_GO** — P5/CF-02 comparator full text still unauthorized.
+
+**Two-phase pilot (PA-2026-07-31-001):** Phase A operational codebook pilot on P1–P4 = **COMPLETED** (`PROTOCOL_DEVELOPMENT_ONLY`); Phase B benchmark calibration = **NO_GO**. See [`data/gates/gate_register.csv`](data/gates/gate_register.csv) and [`docs/pilot/phase_a_completion_report.md`](docs/pilot/phase_a_completion_report.md).
 
 ## What this study is (and is not)
 

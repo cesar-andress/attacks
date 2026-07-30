@@ -5,6 +5,26 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [0.3.2] — 2026-07-31
+
+### Added
+
+- Protocol amendment PA-2026-07-31-001: two-phase pilot (Phase A operational /
+  Phase B benchmark calibration).
+- Separate gate register (`data/gates/gate_register.csv`).
+- Phase A operational codebook pilot on P1–P4 (29 PEs): unitization, primary
+  coding, simulated procedural second pass, adjudication, disagreement and
+  amendment logs, benchmark-dependent decision register.
+- Pilot-phase validator and tests; copyright-safe gitignored excerpts.
+- CF-02 access track kept active; no silent comparator substitution.
+
+### Notes
+
+- Complete-pilot source gate remains **PILOT_SOURCE_NO_GO**.
+- Phase A data: `NOT_FOR_SUBSTANTIVE_INFERENCE` /
+  `NOT_FOR_BENCHMARK_COMPARISON` / `PROTOCOL_DEVELOPMENT_ONLY`.
+- Corpus freeze and full coding remain **NO_GO**.
+
 ## [0.3.1] — 2026-07-31
 
 ### Added
@@ -18,7 +38,7 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
 ### Notes
 
-- Does not authorize coding or corpus freeze.
+- Did not authorize complete-pilot coding or corpus freeze at 0.3.1.
 - Live CISA/education.gouv.fr downloads were blocked; Wayback official-URL
   captures used where recorded.
 

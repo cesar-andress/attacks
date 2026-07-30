@@ -104,8 +104,9 @@ Not authoritative for current government guidance versions, official URLs, super
 | `data/source_registry/pilot_source_acquisitions.csv` | Per-source acquisition/provenance/authorization records |
 | `data/source_checksums/pilot_source_checksums.csv` | SHA-256 for acquired local files |
 | `data/source_registry/pilot_source_readiness.csv` | P1–P5 disposition summary |
-| `data/pilot/PILOT_SOURCE_GATE.txt` | `PILOT_SOURCE_*` gate |
-| `local_sources/` | Local full text (**gitignored**; not redistributed) |
+| `data/pilot/PILOT_SOURCE_GATE.txt` | Complete-pilot `PILOT_SOURCE_*` gate |
+| `data/gates/gate_register.csv` | Separate gates (complete / operational / benchmark / freeze / full coding) |
+| `local_sources/` | Local full text + Phase A excerpts (**gitignored**; not redistributed) |
 
 ## Freeze-readiness and dispositions (not inclusion)
 
@@ -113,7 +114,7 @@ Not authoritative for current government guidance versions, official URLs, super
 |---|---|
 | `data/corpus/freeze_readiness_register.csv` | Blocking/status register for freeze |
 | `data/corpus/candidate_disposition_recommendations.csv` | Recommended `include`/`exclude`/`hold`/`comparator`/`background_only` — **not** frozen inclusion |
-| `data/pilot/*` | Pilot schemas; `NOT_FOR_SUBSTANTIVE_INFERENCE`; may be `EXECUTION_BLOCKED` |
+| `data/pilot/*` | Pilot artefacts; triple labels (`NOT_FOR_SUBSTANTIVE_INFERENCE`, `NOT_FOR_BENCHMARK_COMPARISON`, `PROTOCOL_DEVELOPMENT_ONLY`); Phase A may be completed while complete pilot remains incomplete |
 
 Disposition values must not be written into `screening_status` or `register_status`.
 

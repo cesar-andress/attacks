@@ -9,4 +9,5 @@
 - Acquired CF-13 official BO HTML via Internet Archive after live Cloudflare 403.
 - CF-02 left without full text; permission-request template queued.
 - Gate set to **PILOT_SOURCE_NO_GO** (comparator blocked).
-- No coding performed; no corpus freeze.
+- Later same day: PA-2026-07-31-001 authorized Phase A operational coding on
+  P1–P4 only; Phase B/complete pilot still blocked; no corpus freeze.

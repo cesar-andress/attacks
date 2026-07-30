@@ -40,7 +40,11 @@ def test_validate_corpus_with_disposition() -> None:
     assert report.ok, report.errors
 
 
-def test_pilot_status_blocked() -> None:
+def test_pilot_status_keeps_later_gates_blocked() -> None:
     text = Path(REPO_ROOT / "data/pilot/PILOT_STATUS.txt").read_text(encoding="utf-8")
-    assert "EXECUTION_BLOCKED" in text
     assert "NOT_FOR_SUBSTANTIVE_INFERENCE" in text
+    assert "COMPLETE_PILOT=INCOMPLETE" in text
+    assert "CORPUS_FREEZE=NO_GO" in text
+    assert "FULL_CODING=NO_GO" in text
+    # Phase A may be completed under PA-2026-07-31-001 without opening later gates
+    assert "OPERATIONAL_PILOT=" in text
