@@ -4,35 +4,37 @@
 
 **No independent coder has been recruited and qualified.**
 
-Infrastructure is ready; human decisions and attestations are not.
+Methodological governance is complete:
 
-Also open:
+- Attempt policy **ADOPTED** (`QUAL-ATTEMPT-v1`)  
+- Qualification freeze **AUTHORIZED** (`QUAL-FREEZE-v1`)  
+- OV-05 **PASS** (UCW-004 closed)  
+- Target package **SEALED**
 
-- `UCW-001` — adopt qualification attempt policy (`docs/phase_b/independent_coding/attempt_policy_DRAFT.md`)  
-- `UCW-002` — authorize qualification freeze (`data/phase_b/qualification_freeze_record.csv`)  
-- `UCW-003` — set compensation and recruitment channel (`TO_BE_SET_BY_HUMAN`)
+Remaining open item that is genuinely human/administrative:
+
+- `UCW-003` — compensation and recruitment channel (`TO_BE_SET_BY_HUMAN`)
 
 ## NEXT HUMAN ACTIONS
 
-1. **Choose compensation and recruitment route** — edit admin notes only: `docs/phase_b/independent_coding/admin/coder_role_admin.md`  
-2. **Identify candidate** — store identity only in gitignored `private/coder_admin/`  
+1. **Choose compensation and recruitment route** — `docs/phase_b/independent_coding/admin/coder_role_admin.md` (`TO_BE_SET_BY_HUMAN`)  
+2. **Identify candidate** — identity only in gitignored `private/coder_admin/`  
 3. **Assign provisional opaque coder ID** — do not invent a pass result  
-4. **Complete eligibility screening** — `docs/phase_b/independent_coding/forms/independence_coi_form.md`  
+4. **Complete eligibility screening** — `forms/independence_coi_form.md`  
 5. **Complete COI** — signed copy → `private/coder_admin/` only  
-6. **Complete confidentiality agreement** — `docs/phase_b/independent_coding/forms/confidentiality_agreement.md`  
-7. **Approve or reject candidate** — human review fields; keep public manifest honest  
-8. **Adopt attempt policy + authorize freeze** — close UCW-001/UCW-002; set `human_authorized=true` only when true  
-9. **Deliver training** — `python -m school_security_audit.generate_coder_package --type pre_qualification`  
-10. **Record training completion** — admin manifest (private or controlled)  
-11. **Deliver qualification** — `--type qualification` (blocked until freeze auth + adopted policy)  
-12. **Receive and lock submission** — hash; set attempt number; store outside public git if PII  
-13. **Run scorer** — `python -m school_security_audit.phase_b_qualification SUBMISSION.csv --json --coder-id CODER_X --attempt 1`  
-14. **Review result** — scorer pass ≠ READY  
-15. **Mark coder READY only if all controls pass** — see `qualification_decision_rules.md`  
-16. **Open target package** — set seal OPEN in execution manifest only after READY  
-17. **Begin independent unitization/coding** — blank templates in `data/phase_b/unitization_template.csv` / coding schema; no prefilled codes  
+6. **Complete confidentiality agreement** — `forms/confidentiality_agreement.md`  
+7. **Approve or reject candidate** — human review; keep public manifest honest  
+8. **Deliver training** — `python -m school_security_audit.generate_coder_package --type pre_qualification`  
+9. **Record training completion**  
+10. **Deliver qualification** — `--type qualification` (freeze authorized; policy adopted)  
+11. **Receive and lock submission** — hash; attempt number  
+12. **Run scorer** — `python -m school_security_audit.phase_b_qualification SUBMISSION.csv --json --coder-id CODER_X --attempt 1`  
+13. **Review result** — scorer pass ≠ READY  
+14. **Mark coder READY only if all controls pass** — `qualification_decision_rules.md`  
+15. **Open target package** — seal → OPEN only after READY  
+16. **Begin independent unitization/coding**
 
-## Commands (infrastructure)
+## Commands
 
 ```bash
 python -m school_security_audit.validate_coder_workflow
@@ -44,6 +46,7 @@ make release-check
 
 - Fabricate coder names, scores, or READY  
 - Prefill `phase_b_target_codes.csv`  
+- Change frozen qualification artifacts without a formal amendment  
 - Open corpus freeze or full coding  
-- Treat FNSS as gold-standard validation
+- Treat FNSS as gold-standard validation  
 - Use CF-02 as operational L1  

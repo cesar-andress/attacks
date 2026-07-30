@@ -16,6 +16,8 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 - Independent-coder qualification workflow: role/COI/confidentiality forms,
   training guide, qualification freeze records, package generator, overlap
   checks, operator runbook, coder-workflow validators and tests.
+- Adopted attempt policy `QUAL-ATTEMPT-v1`; authorized qualification freeze
+  `QUAL-FREEZE-v1`; closed UCW-001/002/004 (OV-05 PASS).
 - Validators/tests for adopted design while keeping Phase-B calibration NO_GO.
 
 ### Changed
@@ -30,7 +32,9 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
 - Does **not** execute Phase-B coding or compute empirical α.
 - Does **not** recruit or qualify a real coder.
-- Target package remains SEALED; attempt policy remains draft pending human adoption.
+- Target package remains SEALED.
+- Attempt policy **ADOPTED** (`QUAL-ATTEMPT-v1`); qualification freeze **AUTHORIZED** (`QUAL-FREEZE-v1`).
+- Sole remaining operational blocker: real independent coder (plus UCW-003 human admin fields).
 - Does **not** open corpus freeze or full coding.
 - RP-P2 remains planned; SLAPA remains planned_unvalidated.
 

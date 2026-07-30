@@ -15,7 +15,7 @@
 - Claims boundaries  
 - Pilot-data treatment (triple labels)  
 - Branch B inactive  
-- Amendment history (PA-2026-07-31-001; PA-DRAFT-002 pending)
+- Amendment history (PA-2026-07-31-001; PA-2026-07-31-002 / OPT-B; PA-DRAFT-002 superseded)
 
 ## Comparator design (adopted before target coding)
 

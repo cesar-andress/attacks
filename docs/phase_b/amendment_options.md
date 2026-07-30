@@ -1,7 +1,8 @@
 # Protocol-amendment options (NOT ENACTED)
 
 Machine table: `data/phase_b/amendment_options.csv`  
-Draft text: `docs/protocol/amendments/PA-DRAFT-002_operational_fnss_comparator.md`
+Operative amendment: `docs/protocol/amendments/PA-2026-07-31-002_operational_fnss_comparator.md`  
+Superseded draft (history): `docs/protocol/amendments/PA-DRAFT-002_operational_fnss_comparator.md`
 
 ## OPT-A — Retain CF-02 as sole comparator
 

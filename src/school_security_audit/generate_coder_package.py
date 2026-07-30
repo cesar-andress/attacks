@@ -45,7 +45,7 @@ PACKAGE_FILES = {
         "docs/phase_b/independent_coding/operator_runbook.md",
         "docs/phase_b/independent_coding/admin/coder_role_admin.md",
         "data/phase_b/qualification_reference.csv",
-        "docs/phase_b/independent_coding/attempt_policy_DRAFT.md",
+        "docs/phase_b/independent_coding/attempt_policy.md",
     ],
 }
 

@@ -24,11 +24,12 @@
 5. Qualification submission valid and locked  
 6. Scorer `passed=true` on frozen set/key/scorer versions  
 7. No overlap/leakage incident open  
-8. Attempt policy **adopted** (not draft)  
-9. Qualification freeze **authorized** by human  
-10. Human review completed  
+8. Attempt policy **ADOPTED** (`QUAL-ATTEMPT-v1`, frozen)  
+9. Qualification freeze **AUTHORIZED** (`QUAL-FREEZE-v1`)  
+10. Human review completed (COI/confidentiality/training attestations)  
 11. Manifest fields updated honestly  
 12. Target package still **SEALED** until explicit open step after READY  
+13. Compensation/recruitment channel set (`UCW-003` / `TO_BE_SET_BY_HUMAN`) as required for engagement  
 
 **Scorer pass alone is never sufficient.**
 

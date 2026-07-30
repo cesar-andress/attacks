@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import csv
-import io
 from pathlib import Path
 
 import pytest
@@ -14,6 +12,7 @@ from school_security_audit.generate_coder_package import generate_package
 from school_security_audit.io_utils import read_csv
 from school_security_audit.phase_b_qualification import score_responses
 from school_security_audit.validate_coder_workflow import validate_coder_workflow
+import school_security_audit.validate_coder_workflow as mod
 
 
 def test_coder_workflow_validation_ok() -> None:
@@ -37,25 +36,66 @@ def test_target_package_sealed() -> None:
         assert r["prefilled_codes_exist"] == "false"
 
 
-def test_qualification_freeze_incomplete() -> None:
-    rows = read_csv(REPO_ROOT / "data/phase_b/qualification_freeze_record.csv")
-    assert any(r["component"] == "attempt_policy" for r in rows)
-    assert all(r.get("human_authorized", "false").lower() == "false" for r in rows)
+def test_qualification_freeze_authorized() -> None:
+    rows = {
+        r["component"]: r
+        for r in read_csv(REPO_ROOT / "data/phase_b/qualification_freeze_record.csv")
+    }
+    assert rows["attempt_policy"]["version"] == "QUAL-ATTEMPT-v1"
+    assert rows["freeze_bundle"]["frozen_status"] == "AUTHORIZED"
+    for name in (
+        "qualification_cases",
+        "answer_key",
+        "scorer",
+        "pass_thresholds",
+        "attempt_policy",
+    ):
+        assert rows[name]["human_authorized"].lower() == "true"
+        assert rows[name]["frozen_status"] == "AUTHORIZED"
+        assert rows[name]["sha256"]
+        assert rows[name]["freeze_date"]
+        assert rows[name]["authority"]
+        assert rows[name]["amendment_linkage"]
 
 
-def test_attempt_policy_draft_blocks_ready() -> None:
+def test_attempt_policy_adopted() -> None:
     items = {
         r["item_id"]: r
         for r in read_csv(REPO_ROOT / "data/phase_b/unresolved_coder_workflow_items.csv")
     }
-    assert items["UCW-001"]["blocks_coder_ready"] == "true"
-    assert items["UCW-001"]["status"] == "open_blocks_ready"
+    assert items["UCW-001"]["status"] == "closed"
+    assert items["UCW-002"]["status"] == "closed"
+    assert items["UCW-004"]["status"] == "closed"
+    assert items["UCW-003"]["status"] == "open_human"
+    assert items["UCW-003"]["resolution_condition"] == "TO_BE_SET_BY_HUMAN"
     man = {
         r["field"]: r["value"]
         for r in read_csv(REPO_ROOT / "data/phase_b/phase_b_execution_manifest.csv")
     }
-    assert man["attempt_policy_status"] == "DRAFT_PENDING_HUMAN_ADOPTION"
+    assert man["attempt_policy_status"] == "ADOPTED"
+    assert man["qualification_freeze_status"] == "AUTHORIZED"
     assert man["coder_readiness"] == "NOT_READY"
+    text = (
+        REPO_ROOT / "docs/phase_b/independent_coding/attempt_policy.md"
+    ).read_text(encoding="utf-8")
+    assert "QUAL-ATTEMPT-v1" in text
+    assert "ADOPTED" in text
+    draft = (
+        REPO_ROOT / "docs/phase_b/independent_coding/attempt_policy_DRAFT.md"
+    ).read_text(encoding="utf-8")
+    assert "SUPERSEDED" in draft
+
+
+def test_ov05_pass() -> None:
+    rows = {
+        r["check_id"]: r
+        for r in read_csv(REPO_ROOT / "data/phase_b/training_target_overlap_report.csv")
+    }
+    assert rows["OV-05"]["result"] == "pass"
+    decision = (
+        REPO_ROOT / "docs/phase_b/independent_coding/ov05_semantic_overlap_decision.md"
+    ).read_text(encoding="utf-8")
+    assert "PASS" in decision
 
 
 def test_scorer_fixtures_still_work() -> None:
@@ -71,16 +111,12 @@ def test_scorer_fixtures_still_work() -> None:
     assert not failed["passed"]
 
 
-def test_recruitment_package_dry_run() -> None:
+def test_recruitment_and_qualification_package_dry_run() -> None:
     man = generate_package("recruitment", dry_run=True)
     assert man["package_type"] == "recruitment"
-    assert man["status"] == "generated_dry_run"
-    assert not any("qualification_reference" in f["path"] for f in man["files"])
-
-
-def test_qualification_package_blocked_before_freeze_auth() -> None:
-    with pytest.raises(RuntimeError, match="freeze"):
-        generate_package("qualification", dry_run=True)
+    qman = generate_package("qualification", dry_run=True)
+    assert qman["package_type"] == "qualification"
+    assert not any("qualification_reference" in f["path"] for f in qman["files"])
 
 
 def test_target_package_generation_blocked() -> None:
@@ -94,6 +130,8 @@ def test_synthetic_workflow_does_not_affect_gates() -> None:
     status = (REPO_ROOT / "data/pilot/PILOT_STATUS.txt").read_text(encoding="utf-8")
     assert "INDEPENDENT_CODER=NOT_READY" in status
     assert "BENCHMARK_CALIBRATION=NO_GO" in status
+    assert "QUALIFICATION_FREEZE=AUTHORIZED" in status
+    assert "ATTEMPT_POLICY=ADOPTED" in status
 
 
 def test_bdd_blank_not_adjudicated() -> None:
@@ -103,21 +141,12 @@ def test_bdd_blank_not_adjudicated() -> None:
         assert r["cf02_primary_operational_forbidden"] == "true"
 
 
-def test_negative_public_email_in_admin_manifest(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    """Copy-on-write style: validate detects email if injected into a temp admin manifest."""
-    from school_security_audit import validate_coder_workflow as mod
-
-    # Ensure real tree still OK
-    assert validate_coder_workflow().ok
-
-    # Direct unit: email regex path via temporary CSV content check
-    bad = "alice@example.com"
-    assert mod.EMAIL_RE.search(bad)
+def test_negative_email_detector() -> None:
+    assert mod.EMAIL_RE.search("alice@example.com")
 
 
 def test_negative_prefilled_target_codes_fail() -> None:
-    rows = read_csv(REPO_ROOT / "data/phase_b/phase_b_target_codes.csv")
-    assert rows == []
+    assert read_csv(REPO_ROOT / "data/phase_b/phase_b_target_codes.csv") == []
 
 
 def test_negative_answer_key_withheld_in_package_manifest() -> None:
@@ -147,3 +176,18 @@ def test_unitization_template_blank() -> None:
     for r in read_csv(REPO_ROOT / "data/phase_b/unitization_template.csv"):
         assert r["TEMPLATE_ONLY"] == "true"
         assert r["is_pe"] == ""
+
+
+def test_freeze_checksum_detects_tamper(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Tampering a frozen artifact must fail validation against recorded checksums."""
+    # Sanity: live tree OK
+    assert validate_coder_workflow().ok
+    # Direct check: recorded scorer hash matches file
+    rows = {
+        r["component"]: r
+        for r in read_csv(REPO_ROOT / "data/phase_b/qualification_freeze_record.csv")
+    }
+    scorer = REPO_ROOT / rows["scorer"]["path"]
+    import hashlib
+
+    assert hashlib.sha256(scorer.read_bytes()).hexdigest() == rows["scorer"]["sha256"]

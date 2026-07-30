@@ -1,13 +1,17 @@
 # Phase-B benchmark calibration package
 
-**Status:** OPT-B **adopted** (`PA-2026-07-31-002`); execution still blocked  
+**Status:** OPT-B **adopted**; qualification freeze **AUTHORIZED**; execution blocked on real coder  
 **As of:** 2026-07-31
 
 | Gate | Status |
 |---|---|
 | `benchmark_design_gate` | **GO** |
 | `benchmark_source_gate` | **READY** (DOC-ALT-FNSS-001) |
-| `independent_coder_gate` | **NOT_READY** (workflow infrastructure ready; no real coder) |
+| Coder workflow infrastructure | **READY** |
+| Qualification freeze | **AUTHORIZED** (`QUAL-FREEZE-v1`) |
+| Attempt policy | **ADOPTED** (`QUAL-ATTEMPT-v1`) |
+| `independent_coder_gate` | **NOT_READY** (no real coder) |
+| Target package | **SEALED** |
 | `benchmark_calibration_gate` | **NO_GO** |
 | `COMPLETE_PILOT` | **INCOMPLETE** |
 | `CORPUS_FREEZE` | **NO_GO** |
@@ -20,21 +24,20 @@
 - **Not** a gold standard, positive control, or validation source.  
 - Late CF-02 access: RULE-LATE-CF02 in `opt_b_decision_record.md`.
 
+## Only remaining operational prerequisite for calibration
+
+Successful recruitment and qualification of a **real** independent coder (plus human admin fields in UCW-003).
+
 ## Next human actions
 
-1. Recruit independent coder; complete COI/confidentiality.  
-2. Training + qualification (`independent_coding/`; scorer on synthetic fixtures already green).  
-3. Assign `CODER_*` IDs; set manifest `coder_independence_verified=true` only after real pass.  
-4. Independent unitization + coding of FNSS; lock raw files.  
-5. Reliability + adjudication; resolve BDD-001…005; amend codebook if needed.  
-6. Update pilot completion report; only then consider `BENCHMARK_CALIBRATION=COMPLETED`.
+See [`next_human_actions.md`](next_human_actions.md).
 
 ## Key files
 
 | Path | Purpose |
 |---|---|
 | [`opt_b_decision_record.md`](opt_b_decision_record.md) | Adoption decision |
-| [`opt_b_red_team_review.md`](opt_b_red_team_review.md) | Objections / mitigations |
-| [`../protocol/amendments/PA-2026-07-31-002_operational_fnss_comparator.md`](../protocol/amendments/PA-2026-07-31-002_operational_fnss_comparator.md) | Operative amendment |
 | [`independent_coding/`](independent_coding/) | Recruitment / training / qualification |
+| [`independent_coding/attempt_policy.md`](independent_coding/attempt_policy.md) | Adopted attempt policy |
+| `data/phase_b/qualification_freeze_record.csv` | Frozen checksums |
 | `data/phase_b/phase_b_execution_manifest.csv` | Execution readiness (machine) |

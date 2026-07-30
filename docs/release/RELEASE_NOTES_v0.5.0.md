@@ -7,7 +7,8 @@
 
 - Adopted **PA-2026-07-31-002** (OPT-B): CF-02 = conceptual AFN source; FEMA FNSS 2010 = operational Phase-B L1 (`DOC-ALT-FNSS-001`).  
 - Benchmark **design GO** / source **READY**; Phase B **calibration remains NO_GO** until independent coding.  
-- Independent-coder workflow implemented; qualification infrastructure ready; execution pending human recruitment.  
+- Independent-coder workflow complete; qualification freeze **AUTHORIZED**; attempt policy **ADOPTED**.  
+- Execution pending recruitment and qualification of a real independent coder.  
 - Target package remains **SEALED**; no real coder recruited or qualified.  
 - Corpus freeze and full coding remain **NO_GO**.  
 - RP-P2 remains planned; SLAPA remains `planned_unvalidated`.

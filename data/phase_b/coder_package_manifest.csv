@@ -14,3 +14,4 @@ data/phase_b/phase_b_target_codes.csv,Target code store,coders at execution,READ
 docs/phase_b/independent_coding/recruitment/checklist.md,Recruitment checklist,PI,human,process,false,false,false,false,false,false,medium,false,ADMIN_ONLY
 docs/phase_b/independent_coding/operator_runbook.md,Operator runbook,PI,human,execution,false,false,false,false,false,false,high,false,ADMIN_ONLY
 local_sources/benchmark_candidates/ (gitignored PDF),FNSS authorized full text,target coder after open,checksum verify,coding,true,false,false,false,false,true,low,false,TARGET_CODING_ONLY
+docs/phase_b/independent_coding/attempt_policy.md,Adopted attempt policy QUAL-ATTEMPT-v1,PI,none,attempt rules,false,false,false,false,false,false,medium,false,ADMIN_ONLY

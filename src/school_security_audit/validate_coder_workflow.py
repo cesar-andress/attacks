@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import re
 from pathlib import Path
 
@@ -12,7 +13,6 @@ from school_security_audit.validate_metadata import ValidationReport
 from school_security_audit.validate_phase_b import FNSS_CHECKSUM, validate_phase_b
 
 EMAIL_RE = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
-PHONE_RE = re.compile(r"\b(?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}\b")
 
 REQUIRED = [
     "data/phase_b/coder_package_manifest.csv",
@@ -28,10 +28,24 @@ REQUIRED = [
     "data/phase_b/phase_a_recoding_decision_template.csv",
     "docs/phase_b/independent_coding/forms/independence_coi_form.md",
     "docs/phase_b/independent_coding/forms/confidentiality_agreement.md",
-    "docs/phase_b/independent_coding/attempt_policy_DRAFT.md",
+    "docs/phase_b/independent_coding/attempt_policy.md",
+    "docs/phase_b/independent_coding/ov05_semantic_overlap_decision.md",
     "docs/phase_b/independent_coding/operator_runbook.md",
     "docs/phase_b/independent_coding/qualification_decision_rules.md",
 ]
+
+FROZEN_COMPONENTS = {
+    "qualification_cases",
+    "answer_key",
+    "scorer",
+    "pass_thresholds",
+    "dimension_thresholds",
+    "attempt_policy",
+}
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _manifest(root: Path) -> dict[str, str]:
@@ -43,7 +57,6 @@ def validate_coder_workflow(root: Path | None = None) -> ValidationReport:
     root = root or REPO_ROOT
     report = ValidationReport()
 
-    # Keep Phase-B scientific validators
     base = validate_phase_b(root)
     for e in base.errors:
         report.add(e)
@@ -52,7 +65,6 @@ def validate_coder_workflow(root: Path | None = None) -> ValidationReport:
         if not (root / rel).exists():
             report.add(f"missing {rel}")
 
-    # Overlap
     for e in check_training_overlap(root).errors:
         report.add(e)
 
@@ -66,102 +78,135 @@ def validate_coder_workflow(root: Path | None = None) -> ValidationReport:
         report.add("manifest: qualification_complete must remain false without real pass")
     if man.get("coder_independence_verified", "").lower() == "true":
         report.add("manifest: independence must remain false without real attestation")
-    if man.get("coi_status") not in {"NOT_COMPLETED", ""}:
-        if man.get("coi_status") in {"COMPLETED_NO_CONFLICT", "COMPLETED"} and man.get(
-            "human_review"
-        ) == "NOT_STARTED":
-            report.add("manifest: COI completed without human review is invalid for READY")
-    if man.get("attempt_policy_status") != "DRAFT_PENDING_HUMAN_ADOPTION":
-        # Allow future adopted status only if unresolved item closed — for now expect draft
-        if man.get("attempt_policy_status") == "ADOPTED" and man.get("coder_readiness") == "READY":
-            pass
-        elif man.get("attempt_policy_status") not in {
-            "DRAFT_PENDING_HUMAN_ADOPTION",
-            "ADOPTED",
-        }:
-            report.add("manifest: attempt_policy_status unrecognized")
+    if man.get("attempt_policy_status") != "ADOPTED":
+        report.add("manifest: attempt_policy_status must be ADOPTED after governance freeze")
+    if man.get("qualification_freeze_status") != "AUTHORIZED":
+        report.add("manifest: qualification_freeze_status must be AUTHORIZED")
+    if man.get("attempt_policy_version") != "QUAL-ATTEMPT-v1":
+        report.add("manifest: attempt_policy_version must be QUAL-ATTEMPT-v1")
     if man.get("checksum_sha256") != FNSS_CHECKSUM:
         report.add("manifest: FNSS checksum mismatch")
     if man.get("final_gate") != "BENCHMARK_CALIBRATION=NO_GO":
         report.add("manifest: calibration must remain NO_GO")
 
-    # Admin manifest must be template-only / no real PII
+    # Adopted policy content
+    pol = root / "docs/phase_b/independent_coding/attempt_policy.md"
+    if pol.exists():
+        text = pol.read_text(encoding="utf-8")
+        if "**ADOPTED**" not in text and "Status:** **ADOPTED**" not in text:
+            if "ADOPTED" not in text:
+                report.add(f"{pol.relative_to(root)}: must record ADOPTED status")
+        if "QUAL-ATTEMPT-v1" not in text:
+            report.add(f"{pol.relative_to(root)}: must use QUAL-ATTEMPT-v1")
+        if "QUALIFICATION_FAIL_FINAL" not in text:
+            report.add(f"{pol.relative_to(root)}: must define QUALIFICATION_FAIL_FINAL")
+    draft = root / "docs/phase_b/independent_coding/attempt_policy_DRAFT.md"
+    if draft.exists() and "SUPERSEDED" not in draft.read_text(encoding="utf-8"):
+        report.add(f"{draft.relative_to(root)}: draft must be marked SUPERSEDED")
+
+    # Freeze authorization + checksum immutability
+    freeze_path = root / "data/phase_b/qualification_freeze_record.csv"
+    if freeze_path.exists():
+        freeze = read_csv(freeze_path)
+        by_c = {r["component"]: r for r in freeze}
+        for name in FROZEN_COMPONENTS:
+            row = by_c.get(name)
+            if not row:
+                report.add(f"freeze record missing component {name}")
+                continue
+            if row.get("frozen_status") != "AUTHORIZED":
+                report.add(f"freeze {name}: frozen_status must be AUTHORIZED")
+            if row.get("human_authorized", "").lower() != "true":
+                report.add(f"freeze {name}: human_authorized must be true")
+            for req in ("freeze_date", "authority", "amendment_linkage", "version", "sha256"):
+                if not (row.get(req) or "").strip():
+                    report.add(f"freeze {name}: missing {req}")
+            rel = row.get("path", "")
+            if rel and (root / rel).exists():
+                actual = _sha256(root / rel)
+                if actual != row.get("sha256"):
+                    report.add(
+                        f"freeze {name}: checksum mismatch (artifact changed after freeze)"
+                    )
+        bundle = by_c.get("freeze_bundle")
+        if not bundle or bundle.get("frozen_status") != "AUTHORIZED":
+            report.add("freeze_bundle must be AUTHORIZED")
+
+    # UCW statuses
+    items = {
+        r["item_id"]: r
+        for r in read_csv(root / "data/phase_b/unresolved_coder_workflow_items.csv")
+    }
+    for cid in ("UCW-001", "UCW-002", "UCW-004"):
+        if items.get(cid, {}).get("status") != "closed":
+            report.add(f"{cid} must be closed after governance freeze")
+    if items.get("UCW-003", {}).get("status") != "open_human":
+        report.add("UCW-003 must remain open_human (TO_BE_SET_BY_HUMAN)")
+    if items.get("UCW-003", {}).get("resolution_condition") != "TO_BE_SET_BY_HUMAN":
+        report.add("UCW-003 must remain TO_BE_SET_BY_HUMAN")
+
+    # OV-05 pass
+    ov = {
+        r["check_id"]: r
+        for r in read_csv(root / "data/phase_b/training_target_overlap_report.csv")
+    }
+    if ov.get("OV-05", {}).get("result") != "pass":
+        report.add("OV-05 must be pass after UCW-004 closure")
+
     for r in read_csv(root / "data/phase_b/coder_admin_manifest.csv"):
         if r.get("row_type") != "TEMPLATE_ONLY":
-            # Real rows forbidden in public repo for now
             report.add("coder_admin_manifest: public repo may contain TEMPLATE_ONLY rows only")
         blob = " ".join(r.values())
         if EMAIL_RE.search(blob):
             report.add("coder_admin_manifest: email-like personal data forbidden in public repo")
-        for key in ("coder_pseudonymous_id",):
-            if r.get(key, "").strip() and r.get("row_type") == "TEMPLATE_ONLY":
-                # empty ok
-                pass
 
-    # Target codes empty
     if read_csv(root / "data/phase_b/phase_b_target_codes.csv"):
         report.add("phase_b_target_codes must be empty")
 
-    # Target seal
     for r in read_csv(root / "data/phase_b/target_package_manifest.csv"):
         if r.get("coder_access_state") != "SEALED":
             report.add(f"target package {r.get('item_id')} must be SEALED")
         if r.get("prefilled_codes_exist", "").lower() == "true":
             report.add(f"target package {r.get('item_id')} prefilled codes forbidden")
 
-    # BDD blank — no adjudicated values
     for r in read_csv(root / "data/phase_b/bdd_adjudication_blank.csv"):
         if (r.get("adjudicated_value") or "").strip():
             report.add(f"{r.get('decision_id')}: adjudicated_value must be blank before coding")
         if r.get("status") != "open_blank":
             report.add(f"{r.get('decision_id')}: status must remain open_blank")
 
-    # Freeze incomplete
-    freeze = read_csv(root / "data/phase_b/qualification_freeze_record.csv")
-    if any(r.get("human_authorized", "").lower() == "true" for r in freeze):
-        # If somehow authorized, attempt policy must be adopted — currently should all be false
-        pass
-    if not any(r.get("component") == "attempt_policy" for r in freeze):
-        report.add("freeze record missing attempt_policy component")
-    draft_pol = (root / "docs/phase_b/independent_coding/attempt_policy_DRAFT.md").read_text(
-        encoding="utf-8"
-    )
-    if "DRAFT_PENDING_HUMAN_ADOPTION" not in draft_pol:
-        report.add("attempt policy must remain draft until human adoption")
-
-    # Unresolved blockers present
-    items = {r["item_id"]: r for r in read_csv(root / "data/phase_b/unresolved_coder_workflow_items.csv")}
-    if items.get("UCW-001", {}).get("status") != "open_blocks_ready":
-        report.add("UCW-001 must remain open until attempt policy adopted")
-
-    # Forbidden gold / CF02 operational drift already in validate_phase_b
-
-    # Personal data scan on phase_b docs (coarse)
-    for path in (root / "docs/phase_b/independent_coding").rglob("*.md"):
-        text = path.read_text(encoding="utf-8", errors="replace")
-        # Allow TO_BE_SET_BY_HUMAN and blank underscores; flag obvious emails not in examples
-        for m in EMAIL_RE.finditer(text):
-            if m.group(0) in {"cesar.andress@ucjc.edu"}:
-                # should not appear in coder package docs
-                report.add(f"{path.relative_to(root)}: personal email in coder package docs")
-
-    # Coding form schema forbids expected/adjudicated answers
     for r in read_csv(root / "data/phase_b/coding_form_schema.csv"):
         if r.get("field") in {"expected_answer", "adjudicated_answer"}:
             if r.get("required") != "forbidden":
                 report.add(f"coding form field {r.get('field')} must be forbidden")
 
-    # Synthetic workflow must not claim real gate changes
     for r in read_csv(root / "data/phase_b/synthetic_workflow_state.csv"):
         if r.get("real_gates_affected", "").lower() == "true":
             report.add("synthetic workflow must not affect real gates")
 
-    # Unitization template not prefilled with judgments
     for r in read_csv(root / "data/phase_b/unitization_template.csv"):
         if r.get("is_pe", "").strip():
             report.add("unitization template must not contain PE judgments")
         if r.get("TEMPLATE_ONLY", "").lower() != "true":
             report.add("unitization template rows must be TEMPLATE_ONLY")
+
+    # Pilot status governance keys
+    pilot = root / "data/pilot/PILOT_STATUS.txt"
+    if pilot.exists():
+        text = pilot.read_text(encoding="utf-8")
+        for req in (
+            "QUALIFICATION_FREEZE=AUTHORIZED",
+            "ATTEMPT_POLICY=ADOPTED",
+            "INDEPENDENT_CODER=NOT_READY",
+            "TARGET_PACKAGE=SEALED",
+        ):
+            if req not in text:
+                report.add(f"{pilot}: missing {req}")
+
+    for path in (root / "docs/phase_b/independent_coding").rglob("*.md"):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for m in EMAIL_RE.finditer(text):
+            report.add(f"{path.relative_to(root)}: personal email in coder package docs")
 
     return report
 

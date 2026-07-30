@@ -35,7 +35,7 @@ Full machine log: `data/phase_b/access_routes.csv`.
 |---|---|---|
 | AR-FNSS-001 | FEMA FNSS Nov 2010 via Missouri SEMA public PDF | **Authorized full text verified locally**; sha256 in `authorized_source_status.csv` |
 
-Coding FNSS as Phase-B comparator requires adoption of `PA-DRAFT-002` (OPT-B/C). Until then calibration remains **NO_GO**.
+FNSS is the adopted operational Phase-B L1 under `PA-2026-07-31-002` (OPT-B). Calibration remains **NO_GO** until a real independent coder is qualified and target coding is executed (qualification freeze AUTHORIZED; target package SEALED).
 
 ## Forbidden
 

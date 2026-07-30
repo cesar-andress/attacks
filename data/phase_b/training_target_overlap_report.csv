@@ -3,5 +3,5 @@ OV-01,identifier,PHASE_B_TARGET column all false in qualification_cases,pass,fal
 OV-02,filename,No DOC-ALT-FNSS or FNSS filenames in training/qual coder-facing docs,pass,false,
 OV-03,hash,Qualification stimuli hashes recorded; no target PDF hash in public repo,pass,false,Target PDF gitignored
 OV-04,text,No verbatim FNSS title block in qualification stimuli,pass,false,
-OV-05,semantic,BDD topical keywords appear as synthetic teaching cases (BDD-001..004 tags),warning_synthetic_topic_overlap,true,Intentional synthetic boundary cases; not target excerpts — human review confirms acceptable
+OV-05,semantic,BDD topical keywords appear as synthetic teaching cases (BDD-001..004 tags),pass,false,UCW-004 closed; decision PASS in ov05_semantic_overlap_decision.md — no target inference realistically possible
 OV-06,answer_key_separation,qualification_reference classified WITHHOLD_FROM_CODER,pass,false,

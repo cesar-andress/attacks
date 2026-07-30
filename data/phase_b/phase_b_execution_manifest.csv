@@ -17,14 +17,14 @@ confidentiality_status,NOT_COMPLETED,
 coder_independence_verified,false,must be true to execute
 training_package_version,TRAIN-v1,
 training_completion,false,
-qualification_set_version,QUAL-SET-v1,
-scorer_version,QUAL-SCORER-v1,
+qualification_set_version,QUAL-SET-v1,frozen
+scorer_version,QUAL-SCORER-v1,frozen
 qualification_result,NOT_STARTED,no real submission
 qualification_complete,false,synthetic fixtures only so far
 human_review,NOT_STARTED,
 coder_readiness,NOT_READY,
-attempt_policy_status,DRAFT_PENDING_HUMAN_ADOPTION,UCW-001
-qualification_freeze_status,INCOMPLETE,UCW-002
+attempt_policy_status,ADOPTED,QUAL-ATTEMPT-v1 frozen
+qualification_freeze_status,AUTHORIZED,QUAL-FREEZE-v1
 target_access,SEALED,
 unitization_status,not_started_blank_template_only,
 coding_status,not_started,
@@ -40,3 +40,6 @@ gold_standard_forbidden,true,
 positive_control_forbidden,true,
 training_files,docs/phase_b/independent_coding/; data/phase_b/qualification_cases.csv,answer key withheld
 target_files,local_sources/benchmark_candidates/ (gitignored),
+qualification_freeze_id,QUAL-FREEZE-v1,authorized 2026-07-31
+attempt_policy_version,QUAL-ATTEMPT-v1,adopted
+ov05_status,PASS,UCW-004 closed

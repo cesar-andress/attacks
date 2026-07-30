@@ -1,7 +1,8 @@
 # Independent-coder package (infrastructure)
 
-**Status:** workflow implemented — **no real coder recruited or qualified**  
+**Status:** workflow complete; qualification freeze **AUTHORIZED** — **no real coder recruited or qualified**  
 **Amendment:** `PA-2026-07-31-002` (OPT-B)  
+**Freeze:** `QUAL-FREEZE-v1` · attempt policy `QUAL-ATTEMPT-v1` **adopted**  
 **Gates:** `INDEPENDENT_CODER=NOT_READY` · `BENCHMARK_CALIBRATION=NO_GO` · target package **SEALED**
 
 ## Directory map
@@ -19,7 +20,9 @@
 | [`information_access_matrix.md`](information_access_matrix.md) | ADMIN_ONLY | Blinding matrix |
 | [`procedural_query_protocol.md`](procedural_query_protocol.md) | POST_QUALIFICATION_SAFE | Neutral Q&A rules during coding |
 | [`qualification_decision_rules.md`](qualification_decision_rules.md) | ADMIN_ONLY | State machine + READY criteria |
-| [`attempt_policy_DRAFT.md`](attempt_policy_DRAFT.md) | ADMIN_ONLY | **Draft** — readiness blocked until human adopts |
+| [`attempt_policy.md`](attempt_policy.md) | ADMIN_ONLY | **Adopted** `QUAL-ATTEMPT-v1` (frozen) |
+| [`attempt_policy_DRAFT.md`](attempt_policy_DRAFT.md) | ADMIN_ONLY | SUPERSEDED history only |
+| [`ov05_semantic_overlap_decision.md`](ov05_semantic_overlap_decision.md) | ADMIN_ONLY | OV-05 PASS; UCW-004 closed |
 | [`phase_a_recoding_rule.md`](phase_a_recoding_rule.md) | ADMIN_ONLY | Recode decision rule (not executed) |
 | [`integrity_red_team.md`](integrity_red_team.md) | ADMIN_ONLY | Integrity risks / mitigations |
 | [`coi_confidentiality.md`](coi_confidentiality.md) | SUPERSEDED_POINTER | Points to new forms |
