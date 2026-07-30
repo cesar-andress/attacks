@@ -1,7 +1,14 @@
 # Corpus selection (draft procedure)
 
-**Status:** draft. Freeze the inclusion list before main coding.  
-**This file does not list a final corpus.** Empty CSV templates live under `data/corpus/`.
+**Status:** draft — **candidate-frame version 0.1 (not frozen).**  
+A provisional register of CF-01–CF-22 lives in `data/corpus/candidate_frameworks.csv`.
+
+Important distinctions:
+
+- Identity verification ≠ eligibility screening ≠ audit coding.
+- Surface indications / counterexample commitments are **not** findings.
+- Final sampling decisions require provenance checks and full-text screening.
+- Do not describe this register as an 8-framework final corpus.
 
 ## Inclusion criteria (all required)
 

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cesar-andress/attacks/schemas/counterexample_commitment.schema.json",
+  "title": "Pre-coding counterexample commitment (not an audit finding)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "reason_selected_as_possible_disconfirming_case",
+    "date_committed",
+    "status",
+    "surface_indication",
+    "warning_not_coded_finding"
+  ],
+  "properties": {
+    "candidate_id": { "type": "string", "minLength": 1 },
+    "reason_selected_as_possible_disconfirming_case": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date_committed": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": [
+        "committed_pre_coding",
+        "withdrawn",
+        "superseded"
+      ]
+    },
+    "surface_indication": { "type": "string", "minLength": 1 },
+    "warning_not_coded_finding": {
+      "type": "string",
+      "const": "NOT_A_CODED_FINDING — surface indication only; audit coding required"
+    }
+  }
+}

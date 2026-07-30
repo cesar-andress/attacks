@@ -1,86 +1,92 @@
 # Data dictionary
 
-Stable identifiers use opaque string IDs (`fw_…`, `doc_…`, `pe_…`).  
+Stable identifiers use opaque string IDs (`CF-…`, `DOC-…`, `pe_…`).  
 Dates use ISO-8601 (`YYYY-MM-DD`) when known.
+
+## Candidate-frame status (v0.1 — not frozen)
+
+This repository currently holds a **provisional candidate framework register (v0.1)**.
+
+- It is **not** a frozen corpus.
+- **Identity verification** is distinct from **eligibility screening**.
+- **Surface indications** in sampling/counterexample fields are **not** audit findings.
+- Final sampling decisions require provenance checks and full-text screening.
+
+Forbidden in this provisional register: `included`, `excluded`, `frozen`, `final`, `corpus_frozen`, and the geography label `EU/UK`.
 
 ## L0 — Framework (`data/corpus/candidate_frameworks.csv`)
 
 | Field | Type | Description |
 |---|---|---|
-| framework_id | string | Stable ID |
-| framework_name | string | Short display name |
-| issuing_body | string | Author / agency |
-| authority_type | enum | `government`, `professional_association`, `peer_reviewed`, `other` |
-| primary_domain | enum | See domain list below |
+| framework_id | string | Provisional ID (e.g. `CF-01`) |
+| framework_name | string | Provisional official name |
+| issuing_body | string | Issuer if known; may be `unresolved` |
+| authority_type | enum | `government`, `professional_association`, `peer_reviewed`, `research_centre`, `non_profit`, `standards_organisation`, `supranational`, `other`, `unresolved` |
+| primary_domain | enum | See domain list |
 | secondary_domains | string | Pipe-separated domain tags |
 | jurisdiction | string | Country / region as stated |
-| geographic_group | enum | `US`, `Europe`, `other`, `multi`, `unspecified` |
-| intended_setting_scope | string | As stated by document; `unspecified` if silent |
-| comparator_status | enum | `main_corpus`, `benchmark_comparator`, `excluded_candidate` |
-| current_version | string | Version label |
+| geographic_region | enum | `US`, `Europe`, `other`, `multi`, `unspecified` |
+| eu_member_state | enum | `yes`, `no`, `not_applicable` (England/UK → `no`) |
+| intended_setting_scope | string | Document’s own terminology |
+| comparator_status | enum | `frame_candidate`, `benchmark_comparator_candidate`, `not_comparator` |
+| version_date_text | string | Free-text version/date claims (may be unresolved) |
+| source_domain_text | string | Domain/host text; exact URLs optional |
+| identity_status | enum | `candidate_verified_identity`, `candidate_partly_verified`, `candidate_unverified`, `excluded_before_full_text` |
+| screening_status | enum | `not_screened`, `uncertain_pending_full_text`, `likely_eligible`, `likely_ineligible` |
+| provenance_confidence | enum | `verified_official_source`, `partly_verified`, `known_not_reverified`, `provisional_to_locate` |
+| sampling_relevance_note | string | Why the candidate is in the frame |
+| potential_counterexample_surface_indication | string | Pre-coding surface note only — **not** a coded finding |
+| exclusion_or_uncertainty_concern | string | Eligibility/provenance concern |
+| unresolved_verification_action | string | Required for unverified identity statuses |
 | framework_notes | string | Free text |
+| register_status | enum | Only `provisional_v0.1` |
 
-**Domains:** `physical_security`, `btam`, `eop`, `active_assailant_response`, `cpted`, `accessibility_afn`, `other`.
+**Domains:** `physical_security`, `btam`, `eop`, `active_assailant_response`, `cpted`, `accessibility_afn`, `comprehensive_school_safety`, `prevention_radicalisation`, `other`.
 
 ## L1 — Document (`data/corpus/document_registry.csv`)
 
 | Field | Type | Description |
 |---|---|---|
-| document_id | string | Stable ID |
-| framework_id | string | FK → framework |
-| title | string | Document title |
-| version | string | Edition / version |
-| publication_date | date | Publication date if known |
-| retrieval_date | date | When metadata/URL was recorded |
-| source_url | string | Canonical URL (no local path required) |
-| language | string | BCP-47 preferred (`en`, `es`, …) |
-| document_type | enum | `guideline`, `assessment_tool`, `standard`, `other` |
+| document_id | string | Provisional document ID |
+| framework_id | string | FK → L0 |
+| title | string | Provisional title (or placeholder) |
+| version | string | Edition/version text |
+| publication_date | string | If known |
+| retrieval_date | string | Optional |
+| source_url | string | Only if known; do not invent |
+| source_domain_text | string | Host/domain text |
+| language | string | BCP-47 preferred |
+| document_type | enum | `guideline`, `assessment_tool`, `standard`, `regulatory_instrument`, `annex`, `other`, `placeholder` |
+| relationship_type | enum | `primary_document`, `companion_assessment_tool`, `implementation_guide`, `appendix_or_annex`, `regulatory_instrument`, `related_but_independent_framework`, `placeholder_unverified` |
+| is_primary_document | enum | `yes` / `no` |
 | redistribution_status | enum | `unknown`, `prohibited`, `permitted`, `public_domain`, `fair_use_excerpts_only` |
 | local_file_status | enum | `none`, `local_ignored`, `tracked_open` |
-| checksum_sha256 | string | Optional; empty if no local file |
-| page_count | integer | Optional |
-| word_count | integer | Optional (sensitivity analyses only) |
-| inclusion_status | enum | `included`, `excluded`, `candidate`, `deferred` |
-| exclusion_reason | string | Required when excluded |
+| identity_status / screening_status / provenance_confidence | enums | Same as framework |
+| unresolved_verification_action | string | Required when unverified |
+| exclusion_or_uncertainty_concern | string | |
+| document_notes | string | |
 
-Local PDFs are **not required**. Public repo may store metadata + URL only.
+Local PDFs are **not required**. Public repo may store metadata without URLs.
 
-## L2 — Prescriptive element (`data/coding/prescriptive_elements.csv`)
+## Counterexample commitments (`data/corpus/counterexample_commitments.csv`)
 
-| Field | Type | Description |
-|---|---|---|
-| pe_id | string | Stable ID |
-| document_id | string | FK → document |
-| source_location | string | Locator string (section/PDF page range) |
-| page_number | string | Page if applicable |
-| section_heading | string | Nearest heading |
-| verbatim_trigger_text | string | Short excerpt; copyright limits apply — leave empty until reviewed |
-| coder_segmentation_notes | string | Unitizing notes |
-| measure_present | enum | `0`, `1` |
-| measure_type | enum | See codebook B2 |
-| prescriptive_force | enum | `required`, `recommended`, `optional`, `unspecified` |
+Pre-coding commitments only. **Not** findings.
 
-## Coding records (`data/coding/coding_template.csv`)
-
-Key fields:
-
-| Field | Notes |
+| Field | Description |
 |---|---|
-| coder_id | Coder identifier (non-personal preferred) |
-| coding_round | e.g. `pilot`, `main`, `adjudication` |
-| codebook_version | Must match a published codebook version |
-| pe_id | FK → PE |
-| Family B–I codes | See codebook |
-| `demand_*_source` | `explicit` / `entailed` / `ambiguous_memo` / empty |
-| `demand_*_trigger` | Required for `entailed` |
-| executability_rung | 0–5 |
-| executability_locus | `individual` / `subgroup` / `setting` / `multiple` / `not_specified` |
-| qualitative_memo | Free text |
-| adjudication_status | `none` / `pending` / `resolved` |
-| adjudicated_value | Optional resolved JSON/string |
+| candidate_id | FK → framework |
+| reason_selected_as_possible_disconfirming_case | Sampling reason |
+| date_committed | ISO date |
+| status | `committed_pre_coding` / `withdrawn` / `superseded` |
+| surface_indication | Surface note only |
+| warning_not_coded_finding | Must state `NOT_A_CODED_FINDING` |
 
-**Forbidden:** any field named like `inclusive_security_score` or combined E+F composites.
+Must not contain codebook tokens such as `executability_rung` or claim audit findings.
+
+## L2 — Prescriptive element / coding
+
+Unchanged templates under `data/coding/`. Do not populate with real framework text in this task.
 
 ## Inclusion log (`data/corpus/inclusion_log.csv`)
 
-Tracks screening decisions for auditability (PRISMA-style documentation flow adapted for frameworks).
+Tracks later screening decisions (still empty for v0.1).

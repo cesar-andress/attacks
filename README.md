@@ -57,15 +57,25 @@ For Family C, every coded demand stores a separate `demand_source`:
 - `entailed` — necessarily entailed by a prescribed action (entailment table)
 - `ambiguous_memo` — uncertain; **must not** count as demand presence in confirmatory analyses
 
+## Candidate frame v0.1 (current data status)
+
+`data/corpus/candidate_frameworks.csv` holds a **provisional candidate register** assembled for later screening.
+
+- It is **not** a frozen or final corpus.
+- Do not treat candidate counts as a definitive “8 frameworks / 10–12 documents” study corpus.
+- **Identity status** (is the doctrine identifiable?) is distinct from **screening status** (likely eligibility).
+- **Surface indications** and `counterexample_commitments.csv` are sampling commitments, **not** audit findings or codebook values.
+- England/UK use `geographic_region=Europe` and `eu_member_state=no` — never `EU/UK`.
+
 ## Freeze rules and falsification
 
 Before main coding:
 
-1. Freeze the **corpus inclusion list** (frameworks/documents).
+1. Complete provenance checks and full-text screening; then freeze the **corpus inclusion list**.
 2. Freeze the **codebook** and **demand-entailment table** versions.
 3. Preregister directional expectations **and** the disconfirming pattern.
 
-**Benchmark comparators** (accessibility / access-and-functional-needs frameworks) provide a falsification route: if general frameworks reach comparator scores on executability/support codes, the gap hypothesis is weakened or retired. They are **not** experimental “positive controls” in a causal sense; they are documentary benchmarks.
+**Benchmark comparator candidates** (accessibility / AFN) provide a falsification route once eligibility is confirmed: if general frameworks reach comparator scores on executability/support codes, the gap hypothesis is weakened or retired. They are **not** experimental “positive controls.”
 
 ## Copyright and local sources
 

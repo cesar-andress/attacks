@@ -1,32 +1,57 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/cesar-andress/attacks/schemas/document.schema.json",
-  "title": "Document (L1)",
+  "title": "Document candidate (L1) — provisional register v0.1",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "document_id",
     "framework_id",
     "title",
+    "relationship_type",
     "redistribution_status",
     "local_file_status",
-    "inclusion_status"
+    "identity_status",
+    "screening_status",
+    "provenance_confidence"
   ],
   "properties": {
     "document_id": { "type": "string", "minLength": 1 },
     "framework_id": { "type": "string", "minLength": 1 },
     "title": { "type": "string", "minLength": 1 },
     "version": { "type": "string" },
-    "publication_date": {
-      "type": "string",
-      "description": "ISO-8601 date or empty"
-    },
+    "publication_date": { "type": "string" },
     "retrieval_date": { "type": "string" },
     "source_url": { "type": "string" },
+    "source_domain_text": { "type": "string" },
     "language": { "type": "string" },
     "document_type": {
       "type": "string",
-      "enum": ["guideline", "assessment_tool", "standard", "other"]
+      "enum": [
+        "guideline",
+        "assessment_tool",
+        "standard",
+        "regulatory_instrument",
+        "annex",
+        "other",
+        "placeholder"
+      ]
+    },
+    "relationship_type": {
+      "type": "string",
+      "enum": [
+        "primary_document",
+        "companion_assessment_tool",
+        "implementation_guide",
+        "appendix_or_annex",
+        "regulatory_instrument",
+        "related_but_independent_framework",
+        "placeholder_unverified"
+      ]
+    },
+    "is_primary_document": {
+      "type": "string",
+      "enum": ["yes", "no", ""]
     },
     "redistribution_status": {
       "type": "string",
@@ -43,18 +68,37 @@
       "enum": ["none", "local_ignored", "tracked_open"]
     },
     "checksum_sha256": { "type": "string" },
-    "page_count": {
-      "type": ["integer", "string", "null"],
-      "description": "Integer or empty string in CSV round-trips"
-    },
-    "word_count": {
-      "type": ["integer", "string", "null"],
-      "description": "Optional; sensitivity analyses only"
-    },
-    "inclusion_status": {
+    "page_count": { "type": ["integer", "string", "null"] },
+    "word_count": { "type": ["integer", "string", "null"] },
+    "identity_status": {
       "type": "string",
-      "enum": ["included", "excluded", "candidate", "deferred"]
+      "enum": [
+        "candidate_verified_identity",
+        "candidate_partly_verified",
+        "candidate_unverified",
+        "excluded_before_full_text"
+      ]
     },
-    "exclusion_reason": { "type": "string" }
+    "screening_status": {
+      "type": "string",
+      "enum": [
+        "not_screened",
+        "uncertain_pending_full_text",
+        "likely_eligible",
+        "likely_ineligible"
+      ]
+    },
+    "provenance_confidence": {
+      "type": "string",
+      "enum": [
+        "verified_official_source",
+        "partly_verified",
+        "known_not_reverified",
+        "provisional_to_locate"
+      ]
+    },
+    "unresolved_verification_action": { "type": "string" },
+    "exclusion_or_uncertainty_concern": { "type": "string" },
+    "document_notes": { "type": "string" }
   }
 }

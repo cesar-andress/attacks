@@ -1,25 +1,35 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/cesar-andress/attacks/schemas/framework.schema.json",
-  "title": "Framework (L0)",
+  "title": "Framework candidate (L0) — provisional register v0.1",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "framework_id",
     "framework_name",
-    "issuing_body",
-    "authority_type",
-    "primary_domain",
+    "identity_status",
+    "screening_status",
+    "provenance_confidence",
     "comparator_status",
-    "inclusion_status"
+    "register_status"
   ],
   "properties": {
     "framework_id": { "type": "string", "minLength": 1 },
     "framework_name": { "type": "string", "minLength": 1 },
-    "issuing_body": { "type": "string", "minLength": 1 },
+    "issuing_body": { "type": "string" },
     "authority_type": {
       "type": "string",
-      "enum": ["government", "professional_association", "peer_reviewed", "other"]
+      "enum": [
+        "government",
+        "professional_association",
+        "peer_reviewed",
+        "research_centre",
+        "non_profit",
+        "standards_organisation",
+        "supranational",
+        "other",
+        "unresolved"
+      ]
     },
     "primary_domain": {
       "type": "string",
@@ -30,28 +40,67 @@
         "active_assailant_response",
         "cpted",
         "accessibility_afn",
+        "comprehensive_school_safety",
+        "prevention_radicalisation",
         "other"
       ]
     },
-    "secondary_domains": {
-      "type": "string",
-      "description": "Pipe-separated domain tags"
-    },
+    "secondary_domains": { "type": "string" },
     "jurisdiction": { "type": "string" },
-    "geographic_group": {
+    "geographic_region": {
       "type": "string",
       "enum": ["US", "Europe", "other", "multi", "unspecified"]
+    },
+    "eu_member_state": {
+      "type": "string",
+      "enum": ["yes", "no", "not_applicable"]
     },
     "intended_setting_scope": { "type": "string" },
     "comparator_status": {
       "type": "string",
-      "enum": ["main_corpus", "benchmark_comparator", "excluded_candidate"]
+      "enum": [
+        "frame_candidate",
+        "benchmark_comparator_candidate",
+        "not_comparator"
+      ]
     },
-    "current_version": { "type": "string" },
-    "framework_notes": { "type": "string" },
-    "inclusion_status": {
+    "version_date_text": { "type": "string" },
+    "source_domain_text": { "type": "string" },
+    "identity_status": {
       "type": "string",
-      "enum": ["included", "excluded", "candidate", "deferred"]
+      "enum": [
+        "candidate_verified_identity",
+        "candidate_partly_verified",
+        "candidate_unverified",
+        "excluded_before_full_text"
+      ]
+    },
+    "screening_status": {
+      "type": "string",
+      "enum": [
+        "not_screened",
+        "uncertain_pending_full_text",
+        "likely_eligible",
+        "likely_ineligible"
+      ]
+    },
+    "provenance_confidence": {
+      "type": "string",
+      "enum": [
+        "verified_official_source",
+        "partly_verified",
+        "known_not_reverified",
+        "provisional_to_locate"
+      ]
+    },
+    "sampling_relevance_note": { "type": "string" },
+    "potential_counterexample_surface_indication": { "type": "string" },
+    "exclusion_or_uncertainty_concern": { "type": "string" },
+    "unresolved_verification_action": { "type": "string" },
+    "framework_notes": { "type": "string" },
+    "register_status": {
+      "type": "string",
+      "enum": ["provisional_v0.1"]
     }
   }
 }
