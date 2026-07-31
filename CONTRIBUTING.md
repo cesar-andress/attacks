@@ -8,10 +8,10 @@ This repository holds **methods, schemas, empty templates, validators, and synth
 
 ## Before proposing changes
 
-1. Read [`docs/protocol/claims_policy.md`](docs/protocol/claims_policy.md).  
-2. Do not invent empirical results, coder identities, qualification outcomes, or registry identifiers.  
-3. Do not unseal or prefill Phase-B target materials.  
-4. Do not weaken qualification freeze, reliability estimability rules, or OPT-B comparator roles without a formal protocol amendment.  
+1. Read [`docs/protocol/claims_policy.md`](docs/protocol/claims_policy.md). 
+2. Do not invent empirical results, coder identities, qualification outcomes, or registry identifiers. 
+3. Do not unseal or prefill Phase-B target materials. 
+4. Do not weaken qualification freeze, reliability estimability rules, or OPT-B comparator roles without a formal protocol amendment. 
 5. Register scientific/editorial blockers in [`docs/todo/`](docs/todo/) rather than leaving unmarked TODOs in released surfaces.
 
 ## Development checks

@@ -1,4 +1,4 @@
-# Release manifest — v1.0.0
+# Release manifest for v1.0.0
 
 - Package version: `1.0.0` (`pyproject.toml`, `src/school_security_audit/__init__.py`, `CITATION.cff`)
 - Git tag: `v1.0.0` (annotated)

@@ -31,9 +31,21 @@ def test_zenodo_doi_is_canonical_everywhere() -> None:
         "README.md",
         "docs/release/RELEASE_NOTES_v1.0.0.md",
         "docs/release/release_manifest_v1.0.0.md",
+        ".zenodo.json",
     ):
         text = (ROOT / rel).read_text(encoding="utf-8")
-        assert doi in text, f"missing Zenodo DOI in {rel}"
+        if rel != ".zenodo.json":
+            assert doi in text, f"missing Zenodo DOI in {rel}"
         assert "DOI pending" not in text
         assert "will be deposited" not in text.lower()
         assert "will be archived" not in text.lower()
+        assert "—" not in text, f"em dash remains in {rel}"
+
+
+def test_citation_lists_all_manuscript_authors() -> None:
+    text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    for name in ("Andrés", "Martín-Moncunill", "Mampaso Desbrow", "Mariñoso"):
+        assert name in text
+    z = (ROOT / ".zenodo.json").read_text(encoding="utf-8")
+    assert z.count('"name"') >= 4
+    assert "—" not in z

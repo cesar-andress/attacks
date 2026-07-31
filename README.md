@@ -1,6 +1,6 @@
 # School-security framework audit (public infrastructure)
 
-**Release:** [v1.0.0](https://github.com/cesar-andress/attacks/releases/tag/v1.0.0) — RP-P1 First Stable Research Protocol Release (methods/infrastructure; not empirical results).
+**Release:** [v1.0.0](https://github.com/cesar-andress/attacks/releases/tag/v1.0.0). RP-P1 First Stable Research Protocol Release (methods/infrastructure; not empirical results).
 
 **Canonical archive (cite this):** [https://doi.org/10.5281/zenodo.21711588](https://doi.org/10.5281/zenodo.21711588) (`10.5281/zenodo.21711588`)
 
@@ -14,24 +14,24 @@ See [`docs/release/RELEASE_NOTES_v1.0.0.md`](docs/release/RELEASE_NOTES_v1.0.0.m
 
 The study asks whether recognized school-security and preparedness frameworks address, in their own prescriptive text:
 
-1. **Protective-action executability** — documentary engagement with whether measures are assessed/tested as executable by intended occupants under realistic conditions (Branch E / current-paper spine).
-2. **Threat detectability** — detection/assessment process codes and false-positive safeguards (Branch F) — **inactive for the current paper**; reserved for a secondary module or separate study ([`docs/protocol/branch_b_scope_decision.md`](docs/protocol/branch_b_scope_decision.md)).
+1. **Protective-action executability**: documentary engagement with whether measures are assessed/tested as executable by intended occupants under realistic conditions (Branch E / current-paper spine).
+2. **Threat detectability**: detection/assessment process codes and false-positive safeguards (Branch F), inactive for the current paper; reserved for a secondary module or separate study ([`docs/protocol/branch_b_scope_decision.md`](docs/protocol/branch_b_scope_decision.md)).
 
 These are **two separate analytical branches**. The repository deliberately does **not** define or accept a single combined “inclusive security score.”
 
-**Corpus freeze status (2026-07-31):** **not frozen** — see [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO**).
+**Corpus freeze status (2026-07-31):** **not frozen**. See [`docs/protocol/go_nogo_report.md`](docs/protocol/go_nogo_report.md) (**NO-GO**).
 
-**Benchmark design (PA-2026-07-31-002 / OPT-B):** **GO** — CF-02 remains conceptual (access still NO_GO); FEMA FNSS 2010 is the single operational Phase-B L1 (`DOC-ALT-FNSS-001`, checksum verified).
+**Benchmark design (PA-2026-07-31-002 / OPT-B):** **GO**. CF-02 remains conceptual (access still NO_GO); FEMA FNSS 2010 is the single operational Phase-B L1 (`DOC-ALT-FNSS-001`, checksum verified).
 
-**Reliability estimability (PA-2026-07-31-003):** adopted — distinguish non-estimable α from coder failure; exact agreement + marginals required; no post-hoc primary-ladder collapse.
+**Reliability estimability (PA-2026-07-31-003):** adopted. Distinguish non-estimable α from coder failure; exact agreement + marginals required; no post-hoc primary-ladder collapse.
 
 **Phase B execution:** **NO_GO** until an independent coder is qualified and coding/adjudication complete. Source readiness ≠ calibration complete. Corpus freeze and full coding remain **NO_GO**.
 
-**Two-phase pilot (PA-2026-07-31-001):** Phase A on P1–P4 = **COMPLETED** (`PROTOCOL_DEVELOPMENT_ONLY`). Package: [`docs/phase_b/`](docs/phase_b/). Gates: [`data/gates/gate_register.csv`](data/gates/gate_register.csv).
+**Two-phase pilot (PA-2026-07-31-001):** Phase A on P1-P4 = **COMPLETED** (`PROTOCOL_DEVELOPMENT_ONLY`). Package: [`docs/phase_b/`](docs/phase_b/). Gates: [`data/gates/gate_register.csv`](data/gates/gate_register.csv).
 
 **Broader research programme:** Paper 1 (this documentary audit) is the empirical foundation of a four-paper programme on inclusive organisational preparedness (SLAPA architecture planned/unvalidated). Programme docs: [`docs/research_program/`](docs/research_program/). Operational Priority 1 remains completing RP-P1.
 
-**Experimental Development Pack:** Synthetic methodological experiments EXP-01–EXP-06 under [`experiments/`](experiments/) — designed for future coder/expert studies; **not** a validated SLAPA survey; human experiments **not** executed. Run `make release-check`.
+**Experimental Development Pack:** Synthetic methodological experiments EXP-01-EXP-06 under [`experiments/`](experiments/), designed for future coder/expert studies; **not** a validated SLAPA survey; human experiments **not** executed. Run `make release-check`.
 
 **Unresolved-item register:** Every open scientific/editorial blocker is tracked in [`docs/todo/`](docs/todo/) (`unresolved_item_register.csv` + allowlist). `make validate` includes `validate_todos` (rejects unregistered open editorial markers; does not ban legitimate scientific uses of “pending”).
 
@@ -69,15 +69,15 @@ Aggregate upward from PE codes; do not impute framework-level judgements downwar
 | F | Threat detectability |
 | G | Population and setting differentiation |
 | H | Evidence, testing, and validation |
-| I | Security–accessibility conflicts and trade-offs |
+| I | Security-accessibility conflicts and trade-offs |
 
-Executability **depth (rung 0–5)** and **locus** (individual / subgroup / setting / multiple / not specified) are **orthogonal** fields. See the codebook.
+Executability **depth (rung 0-5)** and **locus** (individual / subgroup / setting / multiple / not specified) are **orthogonal** fields. See the codebook.
 
 For Family C, every coded demand stores a separate `demand_source`:
 
-- `explicit` — stated in text
-- `entailed` — necessarily entailed by a prescribed action (entailment table)
-- `ambiguous_memo` — uncertain; **must not** count as demand presence in confirmatory analyses
+- `explicit` : stated in text
+- `entailed` : necessarily entailed by a prescribed action (entailment table)
+- `ambiguous_memo` : uncertain; **must not** count as demand presence in confirmatory analyses
 
 ## OpenAlex literature checks
 
@@ -91,10 +91,10 @@ Scholarly identity for selected literature-linked candidates may be verified wit
 `data/corpus/candidate_frameworks.csv` holds a **provisional candidate register** assembled for later screening.
 
 - It is **not** a frozen or final corpus.
-- Do not treat candidate counts as a definitive “8 frameworks / 10–12 documents” study corpus.
+- Do not treat candidate counts as a definitive “8 frameworks / 10-12 documents” study corpus.
 - **Identity status** (is the doctrine identifiable?) is distinct from **screening status** (likely eligibility).
 - **Surface indications** and `counterexample_commitments.csv` are sampling commitments, **not** audit findings or codebook values.
-- England/UK use `geographic_region=Europe` and `eu_member_state=no` — never `EU/UK`.
+- England/UK use `geographic_region=Europe` and `eu_member_state=no` : never `EU/UK`.
 
 ## Freeze rules and falsification
 
@@ -118,17 +118,17 @@ Before main coding:
 ```text
 attacks/
 ├── README.md
-├── Makefile              # validate / test / experiment-demo / release-check
+├── Makefile       # validate / test / experiment-demo / release-check
 ├── LICENSE
 ├── CITATION.cff
 ├── pyproject.toml
-├── docs/                 # protocol, codebook, research_program, todo/, release
-├── experiments/          # Experimental Development Pack (EXP-01…06)
-├── schemas/              # JSON Schemas for L0/L1/L2/coding/experiments
-├── data/                 # CSV templates (empty / constructed only)
-├── src/school_security_audit/   # validation library (importable)
-├── scripts/              # CLI wrappers
-└── tests/                # constructed fixtures + experiment tests
+├── docs/         # protocol, codebook, research_program, todo/, release
+├── experiments/     # Experimental Development Pack (EXP-01…06)
+├── schemas/       # JSON Schemas for L0/L1/L2/coding/experiments
+├── data/         # CSV templates (empty / constructed only)
+├── src/school_security_audit/  # validation library (importable)
+├── scripts/       # CLI wrappers
+└── tests/        # constructed fixtures + experiment tests
 ```
 
 ## Quick start
@@ -153,10 +153,10 @@ PYTHONPATH=src make release-check
 
 Please cite the Zenodo archive (preferred) or the equivalent BibTeX in [`CITATION.bib`](CITATION.bib):
 
-> Andrés, C. (2026). *School-security framework audit — reproducible content-analysis infrastructure* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21711588
+> Andrés, C. (2026). *School-security framework audit : reproducible content-analysis infrastructure* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21711588
 
 Machine-readable metadata: [`CITATION.cff`](CITATION.cff).
 
 ## Licence
 
-MIT — see [`LICENSE`](LICENSE). Framework source documents retain their own copyright terms and are not covered by this licence.
+MIT : see [`LICENSE`](LICENSE). Framework source documents retain their own copyright terms and are not covered by this licence.

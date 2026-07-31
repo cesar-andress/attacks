@@ -1,0 +1,36 @@
+{
+  "title": "School-security framework audit: reproducible content-analysis infrastructure",
+  "version": "v1.0.0",
+  "upload_type": "software",
+  "description": "Public research infrastructure for a structured documentary content analysis of school-security and emergency-preparedness frameworks. Supports L0 framework / L1 document / L2 prescriptive-element coding with separate protective-action executability and threat-detectability branches. This repository is not an effectiveness study and does not redistribute copyrighted framework PDFs by default.",
+  "creators": [
+    {
+      "name": "Andrés, César",
+      "affiliation": "CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain",
+      "orcid": "0009-0001-8968-3404"
+    },
+    {
+      "name": "Martín-Moncunill, David",
+      "affiliation": "CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain",
+      "orcid": "0000-0003-2422-9005"
+    },
+    {
+      "name": "Mampaso Desbrow, Joanne",
+      "affiliation": "Universidad Camilo José Cela, Madrid, Spain"
+    },
+    {
+      "name": "Mariñoso, Pilar Ester",
+      "affiliation": "Universidad Camilo José Cela, Madrid, Spain"
+    }
+  ],
+  "keywords": [
+    "school security",
+    "content analysis",
+    "emergency preparedness",
+    "accessibility",
+    "special education",
+    "open science"
+  ],
+  "license": "mit",
+  "access_right": "open"
+}
