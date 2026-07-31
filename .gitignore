@@ -72,3 +72,11 @@ data/phase_b/generated_packages/**
 data/phase_b/coder_submissions/**
 !data/phase_b/coder_submissions/.gitkeep
 !data/phase_b/coder_submissions/README.md
+
+# Completed operational records with personal data (templates stay public)
+data/operations/completed/
+data/operations/*_filled.csv
+!data/operations/*_template.csv
+!data/operations/execution_dashboard.csv
+!data/operations/release_matrix.csv
+!data/operations/README.md

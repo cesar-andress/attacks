@@ -1,0 +1,18 @@
+gate_id,label,status,evidence_file,responsible_role,next_action,blocking_issue,last_updated
+UCW-003,Compensation and recruitment channel,UNRESOLVED,docs/operations/UCW-003_decision_record.md,PI,Complete decision fields,Decision pending,2026-07-31
+RECRUIT_MATERIALS,Recruitment materials ready,READY,docs/operations/recruitment/,PI,Resolve UCW-003 then recruit,UCW-003,2026-07-31
+CANDIDATE_SELECTED,Candidate selected,NOT_STARTED,private/coder_admin/,PI,Select candidate after UCW-003,No candidate,2026-07-31
+COI_CLEARED,COI cleared,NOT_STARTED,docs/phase_b/independent_coding/forms/independence_coi_form.md,PI,Screen candidate,No candidate,2026-07-31
+CONFIDENTIALITY,Confidentiality completed,NOT_STARTED,docs/phase_b/independent_coding/forms/confidentiality_agreement.md,PI,Execute agreement privately,No candidate,2026-07-31
+TRAINING,Training completed,NOT_STARTED,docs/operations/onboarding/training_completion_record.md,Coder/PI,Release training after onboarding gates,Onboarding incomplete,2026-07-31
+QUAL_ATTEMPT,Qualification attempt,NOT_STARTED,docs/operations/qualification/,PI,Authorize after training,Coder NOT_READY,2026-07-31
+CODER_QUALIFIED,Coder qualified / READY,NOT_READY,docs/phase_b/independent_coding/qualification_decision_rules.md,PI,Do not mark READY without real pass,INDEPENDENT_CODER=NOT_READY,2026-07-31
+CALIBRATION,Benchmark calibration,NO_GO,docs/operations/calibration/runbook.md,PI,Execute after READY,NO_GO,2026-07-31
+CORPUS_FREEZE,Corpus freeze,NO_GO,docs/operations/corpus_freeze/runbook.md,PI,Do not freeze prematurely,NO_GO,2026-07-31
+INDEPENDENT_CODING,Independent coding,NO_GO,docs/operations/coding/runbook.md,Coder/PI,Blocked on calibration/freeze path,NO_GO,2026-07-31
+RELIABILITY,Reliability calculation,NOT_STARTED,docs/operations/reliability/pipeline_readiness.md,PI,Requires locked raw coding,No empirical coding,2026-07-31
+ADJUDICATION,Adjudication,NOT_STARTED,docs/operations/adjudication/runbook.md,PI,After pre-consensus reliability,Blocked,2026-07-31
+ANALYTICAL_DATASET,Analytical dataset,NOT_STARTED,docs/operations/analysis/data_lineage.md,PI,After adjudication layer,Blocked,2026-07-31
+RESULTS,Manuscript Results,NOT_STARTED,paper private sections/05_results.tex,Authors,Write after analysis,No empirical data,2026-07-31
+DISCUSSION,Manuscript Discussion,NOT_STARTED,paper private sections/06_discussion.tex,Authors,After Results,Blocked,2026-07-31
+FINAL_MANUSCRIPT,Final manuscript,NOT_STARTED,docs/operations/checklists/before_manuscript_completion.md,Authors,After Discussion/Conclusion,Blocked,2026-07-31

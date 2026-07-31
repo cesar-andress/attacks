@@ -17,7 +17,11 @@ Signed copies: `private/coder_admin/` only (gitignored).
 |---|---|---|
 | Public source doctrine | Authorized FEMA FNSS PDF (public governmental guidance) | May be used for assigned coding; do not claim exclusive ownership; cite issuer correctly |
 | Controlled project materials | Codebook extracts, coding forms, qualification stimuli, training packs, procedural emails | No redistribution; no public upload |
+| Qualification answer keys | Scoring keys / model answers | Never shared with candidates; admin only |
+| Sealed target package | Phase-B target documents/codes before READY | No access until seal → OPEN is authorized |
+| Copyright-restricted corpus | Non-public full texts after freeze | Local approved storage only; no redistribution |
 | Restricted third-party text | Any non-authorized full text | Do not acquire or use |
+| Coder-generated data | Coding CSVs, memos | Study workflow only; no public AI upload |
 | Human administrative records | COI, identity, contact details | PI-controlled private store only |
 
 FEMA FNSS itself, when obtained from an authorized public host, is **not** treated as a secret document. Controlled **project** materials and **coding outputs** remain confidential to the study workflow.

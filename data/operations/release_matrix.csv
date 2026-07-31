@@ -1,0 +1,11 @@
+artifact,release_status_now,release_status_after_study,rationale,destination,redaction_required,release_trigger,responsible_role
+public_protocol,public,public,Zenodo v1.0.0,zenodo+github,false,already_released,PI
+codebook_schemas,public,public,Methods reproducibility,zenodo+github,false,already_released,PI
+analysis_scripts,public,public,Reproducibility,zenodo+github,false,already_released,PI
+synthetic_fixtures,public,public,CI only; marked synthetic,github,false,already_released,PI
+aggregate_outputs,not_available,conditional_public,No empirical data yet,zenodo_update_or_linked_deposit,true,after_analysis,PI
+adjudicated_dataset,not_available,planned_public,Not in current archive,future_deposit,true,after_adjudication,PI
+copyrighted_pdfs,private,private,Copyright,local_sources,n/a,never_public,PI
+answer_keys,private,private,Integrity,private,n/a,never_public,PI
+candidate_pii,private,private,Privacy,private/coder_admin,n/a,never_public,PI
+coi_and_pay_records,private,private,Privacy/admin,private/coder_admin,n/a,never_public,PI

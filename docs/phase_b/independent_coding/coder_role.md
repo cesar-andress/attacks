@@ -14,7 +14,7 @@ Apply the published codebook independently to unitize and code authorized docume
 - Phase-B target coding (single operational L1): plan for 1–3 working days after qualification (depends on PE yield).  
 - Later corpus double-coding: per the reliability policy (full double-coding if the corpus is small).
 
-Exact scheduling: `TO_BE_SET_BY_HUMAN`.
+Exact scheduling and compensation: Decision pending (see `docs/operations/UCW-003_decision_record.md`).
 
 ## Required skills
 
