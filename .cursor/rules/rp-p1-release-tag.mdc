@@ -1,0 +1,33 @@
+---
+description: Keep RP-P1 public release tag v1.0.0 on the latest commit
+alwaysApply: true
+---
+
+# RP-P1 release tag hygiene (`v1.0.0`)
+
+Whenever you commit changes in this public repository, you MUST move the stable release tag to that new HEAD before finishing.
+
+## Required after every commit
+
+```bash
+git push origin HEAD   # if the commit is not yet on origin
+git tag -f -a v1.0.0 -m "v1.0.0 — RP-P1 First Stable Research Release (points to latest release commit)"
+git push --force origin v1.0.0
+```
+
+## Rules
+
+- Tag name is always `v1.0.0` unless the user explicitly changes the release version.
+- Prefer an annotated tag (`-a`).
+- Force-update is required and expected (`git tag -f` + `git push --force origin v1.0.0`).
+- Do not leave `v1.0.0` pointing at an older commit than `main`/HEAD after your changes.
+- Do not force-push `main`/`master`; only the `v1.0.0` tag is force-moved.
+- Do not invent empirical Results or unseal the target package as part of retagging.
+
+## Verify
+
+```bash
+git rev-parse HEAD
+git rev-parse v1.0.0^{}
+# both SHAs must match
+```
