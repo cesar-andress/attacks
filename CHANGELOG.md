@@ -5,6 +5,27 @@ All notable changes to this repository are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
+## [1.0.0] — 2026-07-31
+
+### Added
+
+- First stable research-infrastructure release tag `v1.0.0`.
+- Release notes and manifest for v1.0.0; `CONTRIBUTING.md`.
+
+### Changed
+
+- Package version set to **1.0.0** (`pyproject.toml`, `__version__`, `CITATION.cff`).
+- Documentation clarifies that v1.0.0 is a stable methods/tooling freeze, not an
+  empirical-results release.
+
+### Notes
+
+- Consolidates the v0.5.0 methodological lineage (OPT-B, qualification freeze,
+  reliability estimability) as the first stable public tag.
+- Target package remains SEALED; independent coder remains NOT_READY;
+  corpus freeze and full coding remain NO_GO.
+- No fabricated Results or empirical α.
+
 ## [0.5.0] — 2026-07-31
 
 ### Added

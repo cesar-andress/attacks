@@ -1,8 +1,12 @@
 # School-security framework audit (public infrastructure)
 
+**Release:** [v1.0.0](https://github.com/cesar-andress/attacks/releases/tag/v1.0.0) — First Stable Research Release (methods/infrastructure; not empirical results).
+
 Public, reproducible research software and metadata templates for a **structured documentary content analysis** of school-security and emergency-preparedness frameworks.
 
 This repository supports **methods, schemas, codebook drafts, empty data templates, and validation tooling**. It does **not** contain the private manuscript, and it does **not** redistribute copyrighted framework PDFs unless redistribution is explicitly permitted and documented.
+
+See [`docs/release/RELEASE_NOTES_v1.0.0.md`](docs/release/RELEASE_NOTES_v1.0.0.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Scientific purpose
 
