@@ -9,6 +9,7 @@ Passing `make release-check` means:
 5. Synthetic experiment analyses run and refuse prohibited claims (α from procedural pass; total SLAPA score; human-executed status).
 
 For tag **v1.0.0**, passing `make release-check` is required before release publication.
+The canonical citable archive for this tag is Zenodo DOI **10.5281/zenodo.21711588**.
 
 It does **not** mean:
 

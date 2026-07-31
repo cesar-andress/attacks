@@ -1,15 +1,19 @@
 # Release notes — v1.0.0
 
-**Title:** RP-P1 v1.0.0 — First Stable Research Release  
+**Release name:** v1.0.0 — School-security framework audit: reproducible content-analysis infrastructure  
+**Release title:** RP-P1 v1.0.0 — First Stable Research Protocol Release  
 **Date:** 2026-07-31  
 **Type:** First stable methodological / research-infrastructure release  
-**Tag:** `v1.0.0`
+**Git tag:** `v1.0.0`  
+**Canonical archive (citable):** [10.5281/zenodo.21711588](https://doi.org/10.5281/zenodo.21711588)
 
 ## Scope
 
 This release freezes the public RP-P1 research infrastructure for a documentary content analysis of school-security and emergency-preparedness guidance.
 
 It is a **stable methods and tooling release**. It is **not** an empirical results release.
+
+The **canonical citable record** is the Zenodo archive at DOI **10.5281/zenodo.21711588**. The GitHub tag `v1.0.0` mirrors that archived repository state.
 
 ## Included
 
@@ -57,4 +61,8 @@ make release-check
 
 ## Citation
 
-See `CITATION.cff` (version 1.0.0).
+Cite the Zenodo record:
+
+> Andrés, C. (2026). School-security framework audit — reproducible content-analysis infrastructure (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21711588
+
+See also `CITATION.cff` and `CITATION.bib`.

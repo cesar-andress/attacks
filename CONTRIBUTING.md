@@ -27,6 +27,10 @@ All checks must pass before a contribution can be considered.
 
 Substantive coding-rule or comparator changes require a versioned amendment under `docs/protocol/amendments/` and an `amendment_log.csv` entry **before** target coding. Qualification freeze materials must not be silently edited.
 
+## Citation of the released package
+
+Cite the Zenodo archive: https://doi.org/10.5281/zenodo.21711588 (`CITATION.cff` / `CITATION.bib`).
+
 ## License
 
 Contributions are accepted under the MIT License (`LICENSE`).

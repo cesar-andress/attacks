@@ -11,12 +11,14 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 
 - First stable research-infrastructure release tag `v1.0.0`.
 - Release notes and manifest for v1.0.0; `CONTRIBUTING.md`.
+- Canonical Zenodo archive DOI **10.5281/zenodo.21711588** in README, citation
+  files, and release documentation.
 
 ### Changed
 
 - Package version set to **1.0.0** (`pyproject.toml`, `__version__`, `CITATION.cff`).
 - Documentation clarifies that v1.0.0 is a stable methods/tooling freeze, not an
-  empirical-results release.
+  empirical-results release; Zenodo is the citable archival record.
 
 ### Notes
 

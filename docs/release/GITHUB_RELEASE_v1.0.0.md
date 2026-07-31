@@ -1,17 +1,23 @@
 # GitHub Release payload — v1.0.0
 
-**Status:** tag `v1.0.0` pushed to `origin`; GitHub Release UI creation blocked in this environment (API 403: token lacks `contents:write` / release permission).
+**Release name:** v1.0.0 — School-security framework audit: reproducible content-analysis infrastructure  
+**Release title:** RP-P1 v1.0.0 — First Stable Research Protocol Release  
+**Zenodo DOI (canonical):** [10.5281/zenodo.21711588](https://doi.org/10.5281/zenodo.21711588)
 
-**Create manually:**
+## Create / update
 
 ```bash
 gh release create v1.0.0 \
-  --title "RP-P1 v1.0.0 — First Stable Research Release" \
+  --title "RP-P1 v1.0.0 — First Stable Research Protocol Release" \
   --notes-file docs/release/RELEASE_NOTES_v1.0.0.md
 ```
 
+If the release already exists, edit notes to match `docs/release/RELEASE_NOTES_v1.0.0.md` and confirm the tag points to the DOI-integrated commit.
+
 Or open: https://github.com/cesar-andress/attacks/releases/new?tag=v1.0.0
 
-**Title:** RP-P1 v1.0.0 — First Stable Research Release  
+## Body (summary)
 
-**Body:** use `docs/release/RELEASE_NOTES_v1.0.0.md` (or the shorter summary in the release-prep commit message / prior agent notes).
+Canonical citable archive: **https://doi.org/10.5281/zenodo.21711588**
+
+Full notes: `docs/release/RELEASE_NOTES_v1.0.0.md`

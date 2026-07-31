@@ -1,12 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite it as below."
+message: "If you use this repository, please cite it using the Zenodo DOI below."
 title: "School-security framework audit — reproducible content-analysis infrastructure"
 authors:
   - family-names: Andrés
     given-names: César
 type: software
 license: MIT
+version: 1.0.0
+date-released: "2026-07-31"
 repository-code: "https://github.com/cesar-andress/attacks"
+doi: "10.5281/zenodo.21711588"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21711588"
+    description: Zenodo archival record for v1.0.0
+url: "https://doi.org/10.5281/zenodo.21711588"
 abstract: >-
   Public research infrastructure for a structured documentary content analysis
   of school-security and emergency-preparedness frameworks. Supports L0
@@ -21,5 +29,3 @@ keywords:
   - accessibility
   - special education
   - open science
-version: 1.0.0
-date-released: "2026-07-31"

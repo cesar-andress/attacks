@@ -1,12 +1,14 @@
 # School-security framework audit (public infrastructure)
 
-**Release:** [v1.0.0](https://github.com/cesar-andress/attacks/releases/tag/v1.0.0) — First Stable Research Release (methods/infrastructure; not empirical results).
+**Release:** [v1.0.0](https://github.com/cesar-andress/attacks/releases/tag/v1.0.0) — RP-P1 First Stable Research Protocol Release (methods/infrastructure; not empirical results).
+
+**Canonical archive (cite this):** [https://doi.org/10.5281/zenodo.21711588](https://doi.org/10.5281/zenodo.21711588) (`10.5281/zenodo.21711588`)
 
 Public, reproducible research software and metadata templates for a **structured documentary content analysis** of school-security and emergency-preparedness frameworks.
 
 This repository supports **methods, schemas, codebook drafts, empty data templates, and validation tooling**. It does **not** contain the private manuscript, and it does **not** redistribute copyrighted framework PDFs unless redistribution is explicitly permitted and documented.
 
-See [`docs/release/RELEASE_NOTES_v1.0.0.md`](docs/release/RELEASE_NOTES_v1.0.0.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
+See [`docs/release/RELEASE_NOTES_v1.0.0.md`](docs/release/RELEASE_NOTES_v1.0.0.md), [`CITATION.cff`](CITATION.cff), and [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Scientific purpose
 
@@ -149,7 +151,11 @@ PYTHONPATH=src make release-check
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff).
+Please cite the Zenodo archive (preferred) or the equivalent BibTeX in [`CITATION.bib`](CITATION.bib):
+
+> Andrés, C. (2026). *School-security framework audit — reproducible content-analysis infrastructure* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21711588
+
+Machine-readable metadata: [`CITATION.cff`](CITATION.cff).
 
 ## Licence
 
