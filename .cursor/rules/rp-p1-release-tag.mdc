@@ -5,13 +5,14 @@ alwaysApply: true
 
 # RP-P1 release tag hygiene (`v1.0.0`)
 
-Whenever you commit changes in this public repository, you MUST move the stable release tag to that new HEAD before finishing.
+Whenever you commit changes in this public repository, you MUST rebuild the stable release tag on that new HEAD before finishing.
 
 ## Required after every commit
 
 ```bash
 git push origin HEAD   # if the commit is not yet on origin
-git tag -f -a v1.0.0 -m "v1.0.0 — RP-P1 First Stable Research Release (points to latest release commit)"
+git tag -d v1.0.0 2>/dev/null || true
+git tag -f -a v1.0.0 -m "v1.0.0 — RP-P1 First Stable Research Protocol Release (points to latest release commit)"
 git push --force origin v1.0.0
 ```
 
@@ -23,6 +24,12 @@ git push --force origin v1.0.0
 - Do not leave `v1.0.0` pointing at an older commit than `main`/HEAD after your changes.
 - Do not force-push `main`/`master`; only the `v1.0.0` tag is force-moved.
 - Do not invent empirical Results or unseal the target package as part of retagging.
+
+## Zenodo policy (non-negotiable)
+
+- Canonical DOI stays **10.5281/zenodo.21711588**.
+- Do **not** create a new Zenodo version or deposit for ordinary updates.
+- Rebuild/move GitHub `v1.0.0` after each commit; never suggest minting another Zenodo release.
 
 ## Verify
 
