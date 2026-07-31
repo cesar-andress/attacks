@@ -26,7 +26,7 @@
 
 ## Only remaining operational prerequisite for calibration
 
-Successful recruitment and qualification of a **real** independent coder (plus human admin fields in UCW-003).
+Successful recruitment and qualification of a **real** independent coder (UCW-003 resolved; recruit by direct contact).
 
 ## Next human actions
 

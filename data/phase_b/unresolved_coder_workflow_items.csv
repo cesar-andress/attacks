@@ -1,5 +1,5 @@
 item_id,topic,status,resolution_condition,blocks_coder_ready,blocks_qualification_attempt,notes
 UCW-001,qualification_attempt_policy,closed,Adopted QUAL-ATTEMPT-v1 on 2026-07-31; recorded in freeze,false,false,Closed — policy adopted and frozen
 UCW-002,qualification_freeze_human_authorization,closed,QUAL-FREEZE-v1 AUTHORIZED 2026-07-31,false,false,Closed — freeze authorized
-UCW-003,compensation_and_recruitment_channel,open_human,TO_BE_SET_BY_HUMAN,true,false,Genuine human/admin decision — not methodological
+UCW-003,compensation_and_recruitment_channel,closed,Direct contact; voluntary unpaid; eligibility by protocol completion (see docs/operations/UCW-003_decision_record.md),false,false,Closed 2026-07-31 — human operational decision recorded
 UCW-004,OV-05_semantic_topic_review,closed,OV-05 decision PASS; see ov05_semantic_overlap_decision.md,false,false,Closed — synthetic BDD tags acceptable; no regeneration

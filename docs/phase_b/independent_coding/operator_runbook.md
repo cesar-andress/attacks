@@ -17,7 +17,7 @@
 
 ### Step 1 — Set human admin fields
 
-- **Human action:** compensation + recruitment channel (`TO_BE_SET_BY_HUMAN` in admin role notes); close process aspects of UCW-003 when set  
+- **Human action:** UCW-003 RESOLVED — recruit one independent coder by direct contact (voluntary unpaid); process COI/confidentiality/training/qualification  
 - **Evidence:** private admin notes only  
 
 ### Step 2 — Recruit

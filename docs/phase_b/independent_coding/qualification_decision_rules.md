@@ -29,7 +29,7 @@
 10. Human review completed (COI/confidentiality/training attestations)  
 11. Manifest fields updated honestly  
 12. Target package still **SEALED** until explicit open step after READY  
-13. Compensation/recruitment channel set (`UCW-003` / `TO_BE_SET_BY_HUMAN`) as required for engagement  
+13. Compensation/recruitment channel set (`UCW-003` RESOLVED: direct contact; voluntary unpaid)  
 
 **Scorer pass alone is never sufficient.**
 

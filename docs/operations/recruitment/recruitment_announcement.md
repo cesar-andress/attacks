@@ -17,17 +17,18 @@ This role codes **text**, not schools, pupils, or real-world incident outcomes. 
 - Calibration coding after qualification: plan 1-3 working days (document-dependent).  
 - Later double-coding may follow if the corpus remains small.
 
-Exact scheduling: Decision pending (UCW-003).
+Scheduling is arranged directly with the study lead.
 
 ## Compensation
 
-Compensation terms: **Decision pending** (UCW-003). Payment, if any, is not contingent on qualification pass/fail or on producing a preferred reliability result.
+This is a **voluntary, non-remunerated** collaboration. There is no financial payment. Participation is not contingent on qualification pass/fail, coding results, reliability estimates, or manuscript conclusions.
 
 ## Requirements
 
-- Ability to apply written coding rules consistently.  
+- Ability to apply written coding rules consistently (no predefined degree or specialist credential required).  
 - Independence from the study’s codebook development and sealed materials.  
 - Completion of conflict-of-interest screening and confidentiality agreement.  
+- Successful completion of training and qualification.  
 - Secure local handling of restricted documents (no public AI upload of corpus files).
 
 ## Confidentiality
@@ -36,7 +37,7 @@ Some materials are copyright-restricted and confidential to the study. Do not re
 
 ## How to apply
 
-Contact the study lead using the channel listed when UCW-003 is resolved. Submit a brief statement of relevant experience and availability. Do not request answer keys or sealed documents.
+Recruitment is by **direct contact** with the study lead (not an open call). If invited, confirm interest and availability. Do not request answer keys or sealed documents.
 
 ## Non-goals
 

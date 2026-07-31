@@ -1,7 +1,7 @@
 # Onboarding checklist (independent coder)
 
 **Rule:** do not release restricted materials before prerequisites are complete.  
-**UCW-003:** active recruitment with concrete pay/channel remains Decision pending until resolved.
+**UCW-003:** RESOLVED — direct contact; voluntary unpaid. Recruit one independent coder; do not invent a candidate.
 
 ## Sequence and stop conditions
 
@@ -9,7 +9,7 @@
 |---|---|---|
 | 1. Candidate screened | Screening form | Stop |
 | 2. Independence/COI reviewed | COI form + decision guide | Stop; no training release |
-| 3. Compensation terms accepted | UCW-003 resolved + written acceptance | Stop active paid onboarding |
+| 3. Collaboration terms accepted | UCW-003 voluntary/unpaid terms acknowledged in writing | Stop onboarding |
 | 4. Confidentiality completed | Signed agreement (private store) | Stop |
 | 5. Candidate ID assigned | `CAND-###` / later `CODER-###` | Stop |
 | 6. Approved account/storage confirmed | Secure handling attestation | Stop |

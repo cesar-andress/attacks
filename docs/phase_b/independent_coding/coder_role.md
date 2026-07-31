@@ -14,7 +14,7 @@ Apply the published codebook independently to unitize and code authorized docume
 - Phase-B target coding (single operational L1): plan for 1–3 working days after qualification (depends on PE yield).  
 - Later corpus double-coding: per the reliability policy (full double-coding if the corpus is small).
 
-Exact scheduling and compensation: Decision pending (see `docs/operations/UCW-003_decision_record.md`).
+Scheduling arranged by direct contact. Compensation: voluntary, non-remunerated (UCW-003 RESOLVED; see `docs/operations/UCW-003_decision_record.md`).
 
 ## Required skills
 
@@ -46,9 +46,9 @@ Record uncertainty only with approved fields (`ambiguous_memo`, procedural notes
 
 ## Compensation / channel / contact
 
-- Compensation: `TO_BE_SET_BY_HUMAN`  
-- Recruitment channel: `TO_BE_SET_BY_HUMAN`  
-- Human contact: `TO_BE_SET_BY_HUMAN`  
+- Compensation: voluntary, non-remunerated (no payment)  
+- Recruitment channel: direct contact  
+- Human contact: study lead (private admin records only)  
 
 ## Coder ID
 

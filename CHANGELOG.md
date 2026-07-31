@@ -63,7 +63,7 @@ and this project aims to adhere to [Semantic Versioning](https://semver.org/).
 - Does **not** recruit or qualify a real coder.
 - Target package remains SEALED.
 - Attempt policy **ADOPTED** (`QUAL-ATTEMPT-v1`); qualification freeze **AUTHORIZED** (`QUAL-FREEZE-v1`).
-- Sole remaining operational blocker: real independent coder (plus UCW-003 human admin fields).
+- Sole remaining operational blocker: real independent coder (UCW-003 RESOLVED: direct contact; voluntary unpaid).
 - Does **not** open corpus freeze or full coding.
 - RP-P2 remains planned; SLAPA remains planned_unvalidated.
 

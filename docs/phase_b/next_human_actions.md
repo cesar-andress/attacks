@@ -4,38 +4,33 @@
 
 **No independent coder has been recruited and qualified.**
 
-Methodological governance is complete:
+UCW-003 is **RESOLVED** (direct contact; voluntary unpaid; eligibility by protocol completion).  
+Record: `docs/operations/UCW-003_decision_record.md`
+
+Methodological governance remains complete:
 
 - Attempt policy **ADOPTED** (`QUAL-ATTEMPT-v1`)  
 - Qualification freeze **AUTHORIZED** (`QUAL-FREEZE-v1`)  
 - OV-05 **PASS** (UCW-004 closed)  
-- Target package **SEALED**
-
-Principal open human/administrative item:
-
-- `UCW-003` — compensation and recruitment channel (**Decision pending**)  
-  Record: `docs/operations/UCW-003_decision_record.md`  
-  Machine status remains `open_human` / `TO_BE_SET_BY_HUMAN` until the human closes that record.
-
-Editorial/reliability work (`PA-2026-07-31-003`) does **not** block recruitment: qualification materials remain frozen; coder instructions unchanged; target remains SEALED.
+- Target package **SEALED**  
+- Independent coder **NOT_READY**  
+- Calibration / corpus freeze / full coding **NO_GO**
 
 Execution index: `docs/operations/README.md`  
 Dashboard: `data/operations/execution_dashboard.csv`
 
 ## NEXT HUMAN ACTIONS
 
-1. **Complete UCW-003 decision fields** — channel, compensation model/amount/timing, eligibility notes, withdrawal/replacement.  
-2. **Recruit** using `docs/operations/recruitment/` (do not invent a candidate).  
-3. **Screen + COI** — `forms/independence_coi_form.md` + `coi_decision_guide.md`; signed copy → `private/coder_admin/` only.  
-4. **Confidentiality** — `IC-CONF-v1` + secure-handling instructions.  
-5. **Onboard** — follow `docs/operations/onboarding/onboarding_checklist.md` gates in order.  
-6. **Train** — release training package; complete `training_completion_record.md`.  
-7. **Qualify** — authorize attempt; deliver frozen qualification package; score; apply `QUAL-ATTEMPT-v1` (max two valid attempts; no answer-key disclosure).  
-8. **Activate READY only if controls pass** — `qualification_decision_rules.md` + activation checklist.  
-9. **Calibration** — `docs/operations/calibration/runbook.md` (gate remains NO_GO until done).  
-10. **Corpus freeze** — only after authorized path; `corpus_freeze/runbook.md`.  
-11. **Independent coding → reliability → adjudication → analysis** — use coding/reliability/adjudication/analysis runbooks.  
-12. **Write Results/Discussion/Conclusion** only after analytical outputs exist.
+1. **Recruit by direct contact** using `docs/operations/recruitment/` (do not invent a candidate in the public repo).  
+2. **Screen + COI** — `forms/independence_coi_form.md` + `coi_decision_guide.md`; signed copy → `private/coder_admin/` only.  
+3. **Confidentiality** — `IC-CONF-v1` + secure-handling instructions.  
+4. **Onboard** — follow `docs/operations/onboarding/onboarding_checklist.md` gates in order.  
+5. **Train** — release training package; complete `training_completion_record.md`.  
+6. **Qualify** — authorize attempt; deliver frozen qualification package; score; apply `QUAL-ATTEMPT-v1`.  
+7. **Activate READY only if controls pass** — `qualification_decision_rules.md` + activation checklist.  
+8. **Calibration** — `docs/operations/calibration/runbook.md` (gate remains NO_GO until done).  
+9. **Corpus freeze → independent coding → reliability → adjudication → analysis** as authorized.  
+10. **Write Results/Discussion/Conclusion** only after analytical outputs exist.
 
 ## Commands
 

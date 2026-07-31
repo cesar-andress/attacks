@@ -1,7 +1,7 @@
 gate_id,label,status,evidence_file,responsible_role,next_action,blocking_issue,last_updated
-UCW-003,Compensation and recruitment channel,UNRESOLVED,docs/operations/UCW-003_decision_record.md,PI,Complete decision fields,Decision pending,2026-07-31
-RECRUIT_MATERIALS,Recruitment materials ready,READY,docs/operations/recruitment/,PI,Resolve UCW-003 then recruit,UCW-003,2026-07-31
-CANDIDATE_SELECTED,Candidate selected,NOT_STARTED,private/coder_admin/,PI,Select candidate after UCW-003,No candidate,2026-07-31
+UCW-003,Compensation and recruitment channel,RESOLVED,docs/operations/UCW-003_decision_record.md,PI,Recruit independent coder via direct contact,None — awaiting candidate,2026-07-31
+RECRUIT_MATERIALS,Recruitment materials ready,READY,docs/operations/recruitment/,PI,Invite candidate via direct contact,No candidate,2026-07-31
+CANDIDATE_SELECTED,Candidate selected,NOT_STARTED,private/coder_admin/,PI,Select and record coded candidate ID privately,No candidate,2026-07-31
 COI_CLEARED,COI cleared,NOT_STARTED,docs/phase_b/independent_coding/forms/independence_coi_form.md,PI,Screen candidate,No candidate,2026-07-31
 CONFIDENTIALITY,Confidentiality completed,NOT_STARTED,docs/phase_b/independent_coding/forms/confidentiality_agreement.md,PI,Execute agreement privately,No candidate,2026-07-31
 TRAINING,Training completed,NOT_STARTED,docs/operations/onboarding/training_completion_record.md,Coder/PI,Release training after onboarding gates,Onboarding incomplete,2026-07-31

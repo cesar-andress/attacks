@@ -7,7 +7,7 @@ No real names or emails. Do not promise authorship, compensation, or credit unle
 
 Subject: Invitation — independent documentary coding assistance  
 
-Body: We are seeking an independent coder for a preregistered documentary content analysis of emergency-preparedness guidance. The role applies a published codebook to authorized texts. Compensation and timeline: `TO_BE_SET_BY_HUMAN`. Attached: role description. No prior involvement in codebook development is required; independence screening will follow.
+Body: We are seeking an independent coder for a preregistered documentary content analysis of emergency-preparedness guidance. The role applies a published codebook to authorized texts. Recruitment is by direct contact; collaboration is voluntary and non-remunerated. Timeline: training/qualification ~4-8 h; if qualified, calibration ~1-3 days. Attached: role description. No prior involvement in codebook development is required; independence screening will follow.
 
 ## 2. Eligibility-screen message
 
@@ -27,7 +27,7 @@ Your qualification submission met the frozen scoring criteria pending final huma
 
 ## 6. Retraining invitation
 
-Your submission did not meet the frozen criteria. Under the adopted attempt policy, a retraining path [is / is not] available. Details: `TO_BE_SET_BY_HUMAN`. Do not use answer keys unless explicitly provided as process feedback.
+Your submission did not meet the frozen criteria. Under the adopted attempt policy, a second attempt on a different set may be authorized if attempt 1 was a valid failure and no answer-key exposure occurred. Details will be stated for your case. Do not use answer keys unless explicitly provided as process feedback.
 
 ## 7. Final fail notification
 

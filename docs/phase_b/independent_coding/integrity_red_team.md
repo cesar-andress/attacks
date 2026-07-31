@@ -18,4 +18,4 @@
 | 14 | Unauthorized redistribution | Med | Confidentiality agreement | Human |
 | 15 | Hidden metadata / PDF staging | Med | gitignore `*.pdf`; release-check | Ops hygiene |
 
-**Remaining operational blocker:** recruit and qualify a real independent coder (UCW-003 human admin fields + attestations). Methodological UCW-001/002/004 are closed.
+**Remaining operational blocker:** recruit and qualify a real independent coder (attestations + frozen qualification). UCW-001/002/003/004 are closed.

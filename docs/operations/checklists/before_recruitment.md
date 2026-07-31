@@ -2,7 +2,8 @@
 
 See `docs/operations/README.md` for authoritative documents.
 
-- [ ] UCW-003 decision fields completed, or explicit unpaid path chosen
+- [x] UCW-003 RESOLVED (direct contact; voluntary unpaid) — see decision record
+- [ ] Direct invitation prepared (no fabricated candidate identity in public repo)
 - [ ] Recruitment announcement and role description reviewed
 - [ ] COI decision guide available
 - [ ] Privacy/retention plan acknowledged

@@ -26,7 +26,7 @@ Apply the published codebook independently to unitize and code authorized docume
 
 ## Eligibility
 
-Sufficient if the candidate can follow written coding rules consistently. Helpful (not required): content analysis, emergency management, school safety, or accessibility familiarity. English reading required; other languages only if later assigned.
+No predefined academic degree, professional credential, or subject-matter expertise is required. Eligibility is determined by independence, confidentiality compliance, COI clearance, completed training, and successful qualification. Helpful (not required): content analysis, emergency management, school safety, or accessibility familiarity. English reading required for assigned English texts.
 
 ## Independence and conflicts
 
@@ -44,9 +44,11 @@ Copyright-restricted guidance PDFs, qualification materials, and sealed targets 
 
 Training package TRAIN-v1 must be completed before qualification. Qualification uses frozen `QUAL-SET-v1` / `QUAL-ATTEMPT-v1`: maximum two valid attempts; no answer-key disclosure; answer-key exposure invalidates the set; technical failures documented may not consume an attempt.
 
-## Compensation
+## Compensation and recruitment channel
 
-Concrete channel and amount: **Decision pending** (UCW-003). Compensation is never contingent on pass/fail or on preferred reliability outcomes.
+**Channel:** direct personal or professional contact (not an open call).  
+**Compensation:** voluntary, non-remunerated collaboration (no payment).  
+Participation is not contingent on pass/fail, coding results, reliability estimates, or manuscript conclusions (UCW-003 RESOLVED).
 
 ## Communication boundaries
 

@@ -18,7 +18,7 @@
 | Benchmark calibration | NO_GO |
 | Corpus freeze | NO_GO |
 | Full coding | NO_GO |
-| UCW-003 | open_human (Decision pending) |
+| UCW-003 | RESOLVED (direct contact; voluntary unpaid) |
 
 ## Document map
 

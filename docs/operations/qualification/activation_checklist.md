@@ -5,7 +5,7 @@
 - [ ] Confidentiality still in force  
 - [ ] No answer-key exposure  
 - [ ] Independence attestation current  
-- [ ] UCW-003 resolved if paid work proceeds  
+- [x] UCW-003 resolved (voluntary unpaid; direct contact)  
 - [ ] Operator runbook READY section complete  
 - [ ] Only then: set coder_readiness=READY and open sealed package per rules  
 - [ ] Calibration runbook prerequisites checked

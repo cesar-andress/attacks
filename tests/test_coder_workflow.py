@@ -66,8 +66,11 @@ def test_attempt_policy_adopted() -> None:
     assert items["UCW-001"]["status"] == "closed"
     assert items["UCW-002"]["status"] == "closed"
     assert items["UCW-004"]["status"] == "closed"
-    assert items["UCW-003"]["status"] == "open_human"
-    assert items["UCW-003"]["resolution_condition"] == "TO_BE_SET_BY_HUMAN"
+    assert items["UCW-003"]["status"] == "closed"
+    res = items["UCW-003"]["resolution_condition"].lower()
+    assert "direct contact" in res
+    assert "voluntary" in res or "unpaid" in res
+    assert items["UCW-003"]["blocks_coder_ready"].lower() == "false"
     man = {
         r["field"]: r["value"]
         for r in read_csv(REPO_ROOT / "data/phase_b/phase_b_execution_manifest.csv")

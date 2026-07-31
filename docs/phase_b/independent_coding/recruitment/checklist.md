@@ -4,7 +4,7 @@
 
 | Step | Action | Evidence path / command |
 |---|---|---|
-| 1 | Set compensation | Admin role notes — `TO_BE_SET_BY_HUMAN` |
+| 1 | Confirm UCW-003 terms | RESOLVED — direct contact; voluntary unpaid (`docs/operations/UCW-003_decision_record.md`) |
 | 2 | Confirm eligibility criteria | `coder_role.md` |
 | 3 | Identify candidate | Private notes only (`private/coder_admin/`) |
 | 4 | Send role description | Template `recruitment/communication_templates.md` §invite |

@@ -25,9 +25,9 @@ You would independently code documentary guidance using a frozen codebook. The s
 | After training attestation | Qualification package (no key) |
 | After READY only | Sealed target / calibration materials |
 
-## Compensation
+## Compensation and recruitment
 
-Decision pending (UCW-003). Non-contingent on pass/fail.
+Recruitment is by **direct contact**. Collaboration is **voluntary and non-remunerated** (no payment). Participation is not contingent on qualification pass/fail, coding results, or reliability outcomes (UCW-003 RESOLVED).
 
 ## Data we store about you
 

@@ -8,7 +8,7 @@ Release only after the listed gate is satisfied. Restricted materials never prec
 | Candidate information sheet | Public | Always | Candidate |
 | Screening + COI blank forms | Public templates | Screened interest | Candidate |
 | Signed COI / confidentiality | Private | After candidate ID assigned | Admin |
-| Compensation terms (UCW-003) | Private admin | UCW-003 resolved | Candidate |
+| Collaboration terms (UCW-003 voluntary unpaid) | Public wording + private acceptance | UCW-003 RESOLVED | Candidate |
 | Public orientation (protocol excerpts) | Public | Confidentiality completed | Candidate |
 | Training package | Restricted project | Onboarding gates 1–7 | Candidate |
 | Qualification package | Restricted | Training completion recorded | Candidate |

@@ -140,10 +140,19 @@ def validate_coder_workflow(root: Path | None = None) -> ValidationReport:
     for cid in ("UCW-001", "UCW-002", "UCW-004"):
         if items.get(cid, {}).get("status") != "closed":
             report.add(f"{cid} must be closed after governance freeze")
-    if items.get("UCW-003", {}).get("status") != "open_human":
-        report.add("UCW-003 must remain open_human (TO_BE_SET_BY_HUMAN)")
-    if items.get("UCW-003", {}).get("resolution_condition") != "TO_BE_SET_BY_HUMAN":
-        report.add("UCW-003 must remain TO_BE_SET_BY_HUMAN")
+    ucw003 = items.get("UCW-003", {})
+    if ucw003.get("status") != "closed":
+        report.add("UCW-003 must be closed after human operational decision")
+    res = (ucw003.get("resolution_condition") or "").lower()
+    if "direct contact" not in res or not ("voluntary" in res or "unpaid" in res):
+        report.add(
+            "UCW-003 resolution_condition must record direct contact and voluntary/unpaid terms"
+        )
+    if ucw003.get("blocks_coder_ready", "").lower() == "true":
+        report.add("UCW-003 must not block coder READY after closure (coder absence still blocks)")
+    ucw_doc = root / "docs/operations/UCW-003_decision_record.md"
+    if ucw_doc.exists() and "RESOLVED" not in ucw_doc.read_text(encoding="utf-8"):
+        report.add("UCW-003 decision record must be RESOLVED when CSV status is closed")
 
     # OV-05 pass
     ov = {

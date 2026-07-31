@@ -100,10 +100,12 @@ def validate_operations(root: Path | None = None) -> ValidationReport:
     ucw = root / "docs/operations/UCW-003_decision_record.md"
     if ucw.exists():
         text = ucw.read_text(encoding="utf-8")
-        if "UNRESOLVED" not in text:
-            report.add("UCW-003 decision record must remain UNRESOLVED until human closure")
-        if "Decision pending" not in text and "Not yet selected" not in text:
-            report.add("UCW-003 decision record must use Decision pending / Not yet selected fields")
+        if "RESOLVED" not in text:
+            report.add("UCW-003 decision record must be RESOLVED after human closure")
+        if "Direct contact" not in text and "direct contact" not in text.lower():
+            report.add("UCW-003 decision record must record direct-contact channel")
+        if "voluntary" not in text.lower() and "non-remunerated" not in text.lower():
+            report.add("UCW-003 decision record must record voluntary/unpaid compensation")
 
     dash_path = root / "data/operations/execution_dashboard.csv"
     if dash_path.exists():
@@ -112,8 +114,8 @@ def validate_operations(root: Path | None = None) -> ValidationReport:
         for gid in REQUIRED_DASHBOARD:
             if gid not in by_id:
                 report.add(f"execution_dashboard missing {gid}")
-        if by_id.get("UCW-003", {}).get("status") not in {"UNRESOLVED", "open_human"}:
-            report.add("dashboard UCW-003 must remain UNRESOLVED until human decision")
+        if by_id.get("UCW-003", {}).get("status") != "RESOLVED":
+            report.add("dashboard UCW-003 must be RESOLVED after human decision")
         if by_id.get("CODER_QUALIFIED", {}).get("status") == "READY":
             report.add("dashboard must not claim CODER READY without real qualification evidence")
         if by_id.get("CALIBRATION", {}).get("status") != "NO_GO":
@@ -124,18 +126,14 @@ def validate_operations(root: Path | None = None) -> ValidationReport:
             report.add("dashboard independent coding must remain blocked")
         if by_id.get("RESULTS", {}).get("status") not in {"NOT_STARTED", "BLOCKED"}:
             report.add("dashboard Results must not claim completion without empirical data")
+        if by_id.get("CANDIDATE_SELECTED", {}).get("status") not in {
+            "NOT_STARTED",
+            "BLOCKED",
+        }:
+            # Do not invent a selected candidate in public dashboard
+            if by_id.get("CANDIDATE_SELECTED", {}).get("status") == "COMPLETE":
+                report.add("public dashboard must not mark candidate complete without private evidence")
 
-        # Gate coupling: unresolved UCW-003 must remain the recruitment blocker
-        if by_id.get("UCW-003", {}).get("status") == "UNRESOLVED":
-            if "UCW-003" not in (by_id.get("RECRUIT_MATERIALS", {}).get("blocking_issue") or ""):
-                # materials may be READY but recruitment still blocked by UCW-003
-                if by_id.get("CANDIDATE_SELECTED", {}).get("status") not in {
-                    "NOT_STARTED",
-                    "BLOCKED",
-                }:
-                    report.add("candidate selection must not advance while UCW-003 unresolved")
-
-    # Placeholder / PII hygiene in public operations docs
     for path in (root / "docs/operations").rglob("*"):
         if not path.is_file() or path.suffix not in {".md", ".csv"}:
             continue
@@ -171,14 +169,9 @@ def validate_operations(root: Path | None = None) -> ValidationReport:
             if token not in lt:
                 report.add(f"data_lineage.md missing required token: {token}")
 
-    # QUAL-ATTEMPT-v1 still referenced from ops qualification docs
     qual_auth = root / "docs/operations/qualification/authorization_record.md"
     if qual_auth.exists():
         qt = qual_auth.read_text(encoding="utf-8")
-        for token in ("two", "answer-key", "QUAL-ATTEMPT"):
-            if token.lower() not in qt.lower() and token not in qt:
-                # soft: require attempt policy mention
-                pass
         if "QUAL-ATTEMPT-v1" not in qt and "two valid" not in qt.lower():
             report.add("qualification authorization must encode QUAL-ATTEMPT-v1")
 
@@ -190,7 +183,6 @@ def validate_operations(root: Path | None = None) -> ValidationReport:
         if r.get("coder_access_state") != "SEALED":
             report.add("operations validation: target must remain SEALED")
 
-    # Answer keys must not appear under public operations docs
     for path in (root / "docs/operations").rglob("*"):
         if not path.is_file():
             continue
